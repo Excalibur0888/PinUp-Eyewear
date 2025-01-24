@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина - PIN-UP Sportswear</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Подключаем SVG спрайт -->
+    <object id="svg-sprite" type="image/svg+xml" data="images/icons.svg" style="display: none;"></object>
+
+    <!-- Хедер -->
+    <header class="header">
+			<div class="container">
+					<div class="header__wrapper">
+							<a href="/" class="logo">
+									<img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
+							</a>
+							
+							<nav class="nav">
+									<ul class="nav__list">
+											<li><a href="catalog.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-menu"></use></svg>
+													Каталог
+											</a></li>
+											<li><a href="about.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
+													О бренде
+											</a></li>
+											<li><a href="blog.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
+													Блог
+											</a></li>
+											<li><a href="contacts.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+													Контакты
+											</a></li>
+									</ul>
+							</nav>
+
+							<div class="header__controls">
+									<button class="btn-icon search-btn">
+											<svg><use xlink:href="images/icons.svg#icon-search"></use></svg>
+									</button>
+									
+									<a href="cart.html" class="btn-icon">
+											<svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
+									</a>
+									<a href="account.html" class="btn-icon">
+											<svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
+									</a>
+							</div>
+
+							<button class="burger-menu">
+									<span></span>
+									<span></span>
+									<span></span>
+							</button>
+					</div>
+			</div>
+	</header>
+
+    <!-- Поиск -->
+    <div class="search-form">
+        <div class="search-form__overlay"></div>
+        <div class="search-form__content">
+            <div class="container">
+                <div class="search-form__header">
+                    <h3 class="search-form__title">Поиск</h3>
+                    <button class="search-close">
+                        <svg><use xlink:href="images/icons.svg#icon-close"></use></svg>
+                    </button>
+                </div>
+                <div class="search-form__body">
+                    <input type="text" class="search-input" placeholder="Введите запрос...">
+                    <div class="search-results"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="main">
+        <section class="cart">
+            <div class="container">
+                <h1>Корзина</h1>
+
+                <!-- Пустая корзина -->
+                <div class="cart__empty">
+                    <svg class="cart__empty-icon">
+                        <use xlink:href="images/icons.svg#icon-cart"></use>
+                    </svg>
+                    <h3 class="cart__empty-title">Ваша корзина пуста</h3>
+                    <p class="cart__empty-text">Добавьте товары в корзину, чтобы оформить заказ</p>
+                    <a href="catalog.html" class="btn btn--primary">Перейти в каталог</a>
+                </div>
+
+                <!-- Содержимое корзины -->
+                <div class="cart__wrapper">
+                    <div class="cart__items">
+                        <!-- Товары будут добавлены через JavaScript -->
+                    </div>
+
+                    <div class="cart__summary">
+                        <h3 class="cart__summary-title">Ваш заказ</h3>
+                        
+                        <div class="cart__summary-row">
+                            <span>Товары (<span class="cart__summary-count">0</span>)</span>
+                            <span class="cart__summary-subtotal">0 ₽</span>
+                        </div>
+                        
+                        <div class="cart__summary-row">
+                            <span>Итого</span>
+                            <span class="cart__summary-total">0 ₽</span>
+                        </div>
+
+                        <button class="btn btn--primary cart__checkout">Оформить заказ</button>
+                        <a href="catalog.html" class="btn cart__continue">Продолжить покупки</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <a href="/" class="logo">
+                        <img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
+                    </a>
+                    <p class="footer__text">Спортивная одежда и аксессуары премиального качества</p>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Меню</h4>
+                    <ul class="footer__list">
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О бренде</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__list">
+                        <li><a href="tel:+77777777777">+7 777 777 77 77</a></li>
+                        <li><a href="mailto:pinupsportswear@gmail.com">pinupsportswear@gmail.com</a></li>
+                    </ul>
+                    <div class="social">
+                        <a href="#" class="social__link">
+                            <svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
+                        </a>
+                        <a href="#" class="social__link">
+                            <svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
+                        </a>
+                        <a href="#" class="social__link">
+                            <svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2024 PIN-UP Sportswear. Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Блог - PIN-UP Sportswear</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Подключаем SVG спрайт -->
+    <object id="svg-sprite" type="image/svg+xml" data="images/icons.svg" style="display: none;"></object>
+
+    <!-- Хедер -->
+    <header class="header">
+			<div class="container">
+					<div class="header__wrapper">
+							<a href="/" class="logo">
+									<img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
+							</a>
+							
+							<nav class="nav">
+									<ul class="nav__list">
+											<li><a href="catalog.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-menu"></use></svg>
+													Каталог
+											</a></li>
+											<li><a href="about.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
+													О бренде
+											</a></li>
+											<li><a href="blog.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
+													Блог
+											</a></li>
+											<li><a href="contacts.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+													Контакты
+											</a></li>
+									</ul>
+							</nav>
+
+							<div class="header__controls">
+									<button class="btn-icon search-btn">
+											<svg><use xlink:href="images/icons.svg#icon-search"></use></svg>
+									</button>
+									
+									<a href="cart.html" class="btn-icon">
+											<svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
+									</a>
+									<a href="account.html" class="btn-icon">
+											<svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
+									</a>
+							</div>
+
+							<button class="burger-menu">
+									<span></span>
+									<span></span>
+									<span></span>
+							</button>
+					</div>
+			</div>
+	</header>
+
+    <!-- Мобильная навигация -->
+    <nav class="mobile-nav">
+        <ul class="mobile-nav__list">
+            <li class="mobile-nav__item">
+                <a href="catalog.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-menu"></use></svg>
+                    Каталог
+                </a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="about.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
+                    О бренде
+                </a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="blog.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
+                    Блог
+                </a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="contacts.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+                    Контакты
+                </a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="favorites.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
+                    Избранное
+                </a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="cart.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
+                    Корзина
+                </a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="account.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
+                    Личный кабинет
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Поиск -->
+    <div class="search-form">
+        <div class="search-form__overlay"></div>
+        <div class="search-form__content">
+            <div class="container">
+                <div class="search-form__header">
+                    <h3 class="search-form__title">Поиск</h3>
+                    <button class="search-close">
+                        <svg><use xlink:href="images/icons.svg#icon-close"></use></svg>
+                    </button>
+                </div>
+                <div class="search-form__body">
+                    <input type="text" class="search-input" placeholder="Введите запрос...">
+                    <div class="search-results"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Блог -->
+    <section class="blog">
+        <div class="container">
+            <h1 class="section-title">Блог о спорте и стиле</h1>
+            
+            <!-- Категории блога -->
+            <div class="blog__categories">
+                <button class="blog-category active" data-category="all">Все статьи</button>
+                <button class="blog-category" data-category="workouts">Тренировки</button>
+                <button class="blog-category" data-category="nutrition">Питание</button>
+                <button class="blog-category" data-category="fashion">Мода</button>
+                <button class="blog-category" data-category="tips">Советы</button>
+            </div>
+
+            <!-- Статьи -->
+            <div class="blog__grid">
+                <!-- Статья 1 -->
+                <article class="blog-card" data-category="tips">
+                    <div class="blog-card__image">
+                        <img src="images/post1.jpg" alt="Эффективные тренировки">
+                        <div class="blog-card__category">Советы</div>
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">10 эффективных упражнений для всего тела</h3>
+                        <p class="blog-card__excerpt">Узнайте о комплексе упражнений, которые помогут вам поддерживать форму и улучшить здоровье.</p>
+                        <div class="blog-card__meta">
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
+                                15.03.2024
+                            </span>
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
+                                1250
+                            </span>
+                        </div>
+                        <a href="#" class="blog-card__link">Читать далее 
+                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Статья 2 -->
+                <article class="blog-card" data-category="nutrition">
+                    <div class="blog-card__image">
+                        <img src="images/post2.jpg" alt="Правильное питание">
+                        <div class="blog-card__category">Питание</div>
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">Правильное питание для активного образа жизни</h3>
+                        <p class="blog-card__excerpt">Рассказываем о принципах здорового питания и его влиянии на спортивные результаты.</p>
+                        <div class="blog-card__meta">
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
+                                12.03.2024
+                            </span>
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
+                                980
+                            </span>
+                        </div>
+                        <a href="#" class="blog-card__link">Читать далее 
+                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Статья 3 -->
+                <article class="blog-card" data-category="fashion">
+                    <div class="blog-card__image">
+                        <img src="images/post3.jpg" alt="Тренды спортивной моды">
+                        <div class="blog-card__category">Мода</div>
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">Тренды спортивной моды 2024</h3>
+                        <p class="blog-card__excerpt">Обзор главных трендов в спортивной одежде этого сезона и советы по созданию стильных образов.</p>
+                        <div class="blog-card__meta">
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
+                                10.03.2024
+                            </span>
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
+                                1560
+                            </span>
+                        </div>
+                        <a href="#" class="blog-card__link">Читать далее 
+                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Статья 4 -->
+                <article class="blog-card" data-category="tips">
+                    <div class="blog-card__image">
+                        <img src="images/post4.jpg" alt="Советы для начинающих">
+                        <div class="blog-card__category">Советы</div>
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">5 советов для начинающих спортсменов</h3>
+                        <p class="blog-card__excerpt">Полезные рекомендации, которые помогут новичкам избежать распространенных ошибок.</p>
+                        <div class="blog-card__meta">
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
+                                08.03.2024
+                            </span>
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
+                                890
+                            </span>
+                        </div>
+                        <a href="#" class="blog-card__link">Читать далее 
+                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Статья 5 -->
+                <article class="blog-card" data-category="workouts">
+                    <div class="blog-card__image">
+                        <img src="images/post5.jpg" alt="Йога для начинающих">
+                        <div class="blog-card__category">Тренировки</div>
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">Йога для начинающих: с чего начать</h3>
+                        <p class="blog-card__excerpt">Базовые асаны и советы по правильному выполнению упражнений для новичков.</p>
+                        <div class="blog-card__meta">
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
+                                05.03.2024
+                            </span>
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
+                                720
+                            </span>
+                        </div>
+                        <a href="#" class="blog-card__link">Читать далее 
+                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Статья 6 -->
+                <article class="blog-card" data-category="nutrition">
+                    <div class="blog-card__image">
+                        <img src="images/post6.jpg" alt="Здоровые перекусы">
+                        <div class="blog-card__category">Питание</div>
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">Здоровые перекусы для спортсменов</h3>
+                        <p class="blog-card__excerpt">Подборка полезных и питательных снеков для поддержания энергии во время тренировок.</p>
+                        <div class="blog-card__meta">
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
+                                03.03.2024
+                            </span>
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
+                                650
+                            </span>
+                        </div>
+                        <a href="#" class="blog-card__link">Читать далее 
+                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Статья 7 -->
+                <article class="blog-card" data-category="workouts">
+                    <div class="blog-card__image">
+                        <img src="images/post7.jpg" alt="Кроссфит тренировки">
+                        <div class="blog-card__category">Тренировки</div>
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">Кроссфит: программа тренировок для начинающих</h3>
+                        <p class="blog-card__excerpt">Полное руководство по началу занятий кроссфитом: техника, программа и советы.</p>
+                        <div class="blog-card__meta">
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
+                                01.03.2024
+                            </span>
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
+                                850
+                            </span>
+                        </div>
+                        <a href="#" class="blog-card__link">Читать далее 
+                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Статья 8 -->
+                <article class="blog-card" data-category="fashion">
+                    <div class="blog-card__image">
+                        <img src="images/post8.jpg" alt="Спортивная обувь">
+                        <div class="blog-card__category">Мода</div>
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">Как выбрать идеальные кроссовки для тренировок</h3>
+                        <p class="blog-card__excerpt">Гид по выбору спортивной обуви: на что обращать внимание при покупке.</p>
+                        <div class="blog-card__meta">
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
+                                28.02.2024
+                            </span>
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
+                                920
+                            </span>
+                        </div>
+                        <a href="#" class="blog-card__link">Читать далее 
+                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Статья 9 -->
+                <article class="blog-card" data-category="tips">
+                    <div class="blog-card__image">
+                        <img src="images/post9.jpg" alt="Восстановление после тренировок">
+                        <div class="blog-card__category">Советы</div>
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">Правильное восстановление после интенсивных тренировок</h3>
+                        <p class="blog-card__excerpt">Комплексный подход к восстановлению: питание, сон, массаж и другие методы.</p>
+                        <div class="blog-card__meta">
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
+                                25.02.2024
+                            </span>
+                            <span>
+                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
+                                780
+                            </span>
+                        </div>
+                        <a href="#" class="blog-card__link">Читать далее 
+                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подписка на блог -->
+    <section class="blog-subscribe">
+        <div class="container">
+            <div class="blog-subscribe__wrapper">
+                <h2 class="blog-subscribe__title">Подпишитесь на наш блог</h2>
+                <p class="blog-subscribe__text">Получайте свежие статьи и новости о спорте, здоровье и стиле</p>
+                <form class="blog-subscribe__form">
+                    <input type="email" class="blog-subscribe__input" placeholder="Ваш email">
+                    <button type="submit" class="btn btn--primary">Подписаться</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <a href="/" class="logo">
+                        <img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
+                    </a>
+                    <p class="footer__text">Спортивная одежда и аксессуары премиального качества</p>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Меню</h4>
+                    <ul class="footer__list">
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О бренде</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Правовая информация</h4>
+                    <ul class="footer__list">
+                        <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
+                        <li><a href="terms-conditions.html">Условия использования</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__list">
+                        <li><a href="tel:+77777777777">+7 777 777 77 77</a></li>
+                        <li><a href="mailto:pinupsportswear@gmail.com">pinupsportswear@gmail.com</a></li>
+                    </ul>
+                    <div class="social">
+                        <a href="#" class="social__link" title="Instagram">
+                            <svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
+                        </a>
+                        <a href="#" class="social__link" title="Facebook">
+                            <svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
+                        </a>
+                        <a href="#" class="social__link" title="Telegram">
+                            <svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
+                        </a>
+                        <a href="#" class="social__link" title="VK">
+                            <svg><use xlink:href="images/icons.svg#icon-vk"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2024 PIN-UP Sportswear. Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

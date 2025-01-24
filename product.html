@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спортивная футболка Pro - PIN-UP Sportswear</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Подключаем SVG спрайт -->
+    <object id="svg-sprite" type="image/svg+xml" data="images/icons.svg" style="display: none;"></object>
+
+    <!-- Хедер -->
+    <header class="header">
+			<div class="container">
+					<div class="header__wrapper">
+							<a href="/" class="logo">
+									<img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
+							</a>
+							
+							<nav class="nav">
+									<ul class="nav__list">
+											<li><a href="catalog.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-menu"></use></svg>
+													Каталог
+											</a></li>
+											<li><a href="about.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
+													О бренде
+											</a></li>
+											<li><a href="blog.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
+													Блог
+											</a></li>
+											<li><a href="contacts.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+													Контакты
+											</a></li>
+									</ul>
+							</nav>
+
+							<div class="header__controls">
+									<button class="btn-icon search-btn">
+											<svg><use xlink:href="images/icons.svg#icon-search"></use></svg>
+									</button>
+									
+									<a href="cart.html" class="btn-icon">
+											<svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
+									</a>
+									<a href="account.html" class="btn-icon">
+											<svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
+									</a>
+							</div>
+
+							<button class="burger-menu">
+									<span></span>
+									<span></span>
+									<span></span>
+							</button>
+					</div>
+			</div>
+	</header>
+
+    <!-- Мобильная навигация -->
+    <nav class="mobile-nav">
+        <ul class="mobile-nav__list">
+            <li class="mobile-nav__item">
+                <a href="catalog.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-menu"></use></svg>
+                    Каталог
+                </a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="about.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
+                    О бренде
+                </a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="blog.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
+                    Блог
+                </a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="contacts.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+                    Контакты
+                </a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="favorites.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
+                    Избранное
+                </a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="cart.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
+                    Корзина
+                </a>
+            </li>
+            <li class="mobile-nav__item">
+                <a href="account.html" class="mobile-nav__link">
+                    <svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
+                    Личный кабинет
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Поиск -->
+    <div class="search-form">
+			<div class="search-form__overlay"></div>
+			<div class="search-form__content">
+					<div class="container">
+							<div class="search-form__header">
+									<h3 class="search-form__title">Поиск</h3>
+									<button class="search-close">
+											<svg><use xlink:href="images/icons.svg#icon-close"></use></svg>
+									</button>
+							</div>
+							<div class="search-form__body">
+									<input type="text" class="search-input" placeholder="Введите запрос...">
+									<div class="search-results"></div>
+							</div>
+					</div>
+			</div>
+	</div>
+
+    <!-- Страница товара -->
+    <section class="product">
+        <div class="container">
+            <div class="product__wrapper">
+                <!-- Галерея товара -->
+                <div class="product__gallery">
+                    <div class="product__slider">
+                        <div class="product__slide active">
+                            <img src="images/tshirt1.jpg" alt="Спортивная футболка Pro">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Информация о товаре -->
+                <div class="product__info">
+                    <h1 class="product__title">Спортивная футболка Pro</h1>
+                    
+                    <div class="product__rating">
+                        <div class="stars">
+                            <svg class="star"><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg class="star"><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg class="star"><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg class="star"><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg class="star"><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                        </div>
+                        <a href="#reviews" class="product__rating-count">125 отзывов</a>
+                    </div>
+
+                    <div class="product__price">2 990 ₽</div>
+
+                    <!-- Выбор размера -->
+                    <div class="product__sizes">
+                        <h3 class="product__subtitle">Размер</h3>
+                        <div class="size-buttons">
+                            <button class="size-button" data-size="XS">XS</button>
+                            <button class="size-button" data-size="S">S</button>
+                            <button class="size-button active" data-size="M">M</button>
+                            <button class="size-button" data-size="L">L</button>
+                            <button class="size-button" data-size="XL">XL</button>
+                        </div>
+                    </div>
+
+                    <div class="product__actions">
+                        <button class="btn btn--primary product__add-to-cart">Добавить в корзину</button>
+                        <button class="product__favorite">
+                            <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
+                            В избранное
+                        </button>
+                    </div>
+
+                    <!-- Характеристики -->
+                    <div class="product__features">
+                        <h3 class="product__subtitle">Характеристики</h3>
+                        <ul>
+                            <li><strong>Материал:</strong> 90% полиэстер, 10% эластан</li>
+                            <li><strong>Технология:</strong> DryFit</li>
+                            <li><strong>Особенности:</strong> Антибактериальная пропитка</li>
+                            <li><strong>Сезон:</strong> Всесезон</li>
+                        </ul>
+                    </div>
+
+                    <!-- Рекомендации по уходу -->
+                    <div class="product__care">
+                        <h3 class="product__subtitle">Рекомендации по уходу</h3>
+                        <ul class="care-icons">
+                            <li class="care-icon">
+                                <svg><use xlink:href="images/icons.svg#icon-wash-30"></use></svg>
+                                <span>Стирка при 30°</span>
+                            </li>
+                            <li class="care-icon">
+                                <svg><use xlink:href="images/icons.svg#icon-no-bleach"></use></svg>
+                                <span>Не отбеливать</span>
+                            </li>
+                            <li class="care-icon">
+                                <svg><use xlink:href="images/icons.svg#icon-iron-low"></use></svg>
+                                <span>Гладить при низкой температуре</span>
+                            </li>
+                            <li class="care-icon">
+                                <svg><use xlink:href="images/icons.svg#icon-no-tumble"></use></svg>
+                                <span>Не сушить в машине</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Отзывы -->
+            <div class="reviews">
+                <h2 class="section-title">Отзывы наших клиентов</h2>
+                <div class="reviews__grid">
+                    <div class="review-card">
+                        <div class="review-card__rating">
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                        </div>
+                        <div class="review-card__verified">
+                            <svg><use xlink:href="images/icons.svg#icon-check"></use></svg>
+                            Проверенный покупатель
+                        </div>
+                        <p class="review-card__text">Отличная футболка! Материал очень приятный к телу, не жарко. Размер подошел идеально. Буду заказывать еще, очень понравилось качество.</p>
+                        <div class="review-card__author">Анна Петрова</div>
+                        <div class="review-card__date">15 марта 2024</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-card__rating">
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                        </div>
+                        <div class="review-card__verified">
+                            <svg><use xlink:href="images/icons.svg#icon-check"></use></svg>
+                            Проверенный покупатель
+                        </div>
+                        <p class="review-card__text">Использую для тренировок, отлично отводит влагу. После нескольких стирок как новая. Рекомендую!</p>
+                        <div class="review-card__author">Дмитрий Иванов</div>
+                        <div class="review-card__date">10 марта 2024</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- С этим товаром покупают -->
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section-title">С этим товаром покупают</h2>
+            <div class="related-products__grid">
+                <!-- Рекомендуемые товары -->
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="images/gloves1.jpg" alt="Перчатки для фитнеса">
+                        <div class="product-card__favorite">
+                            <svg><use xlink:href="images/icons.svg#icon-heart-outline"></use></svg>
+                        </div>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Перчатки для фитнеса</h3>
+                        <div class="product-card__category">Аксессуары</div>
+                        <div class="product-card__price">1 990 ₽</div>
+                        <button class="btn btn--primary product-card__btn">В корзину</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="images/band1.jpg" alt="Фитнес резинки">
+                        <div class="product-card__favorite">
+                            <svg><use xlink:href="images/icons.svg#icon-heart-outline"></use></svg>
+                        </div>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Набор фитнес резинок</h3>
+                        <div class="product-card__category">Аксессуары</div>
+                        <div class="product-card__price">1 290 ₽</div>
+                        <button class="btn btn--primary product-card__btn">В корзину</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-card__image">
+                        <img src="images/towel1.jpg" alt="Спортивное полотенце">
+                        <div class="product-card__favorite">
+                            <svg><use xlink:href="images/icons.svg#icon-heart-outline"></use></svg>
+                        </div>
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">Спортивное полотенце</h3>
+                        <div class="product-card__category">Аксессуары</div>
+                        <div class="product-card__price">890 ₽</div>
+                        <button class="btn btn--primary product-card__btn">В корзину</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <a href="/" class="logo">
+                        <img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
+                    </a>
+                    <p class="footer__text">Спортивная одежда и аксессуары премиального качества</p>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Меню</h4>
+                    <ul class="footer__list">
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О бренде</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Правовая информация</h4>
+                    <ul class="footer__list">
+                        <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
+                        <li><a href="terms-conditions.html">Условия использования</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__list">
+                        <li><a href="tel:+77777777777">+7 777 777 77 77</a></li>
+                        <li><a href="mailto:pinupsportswear@gmail.com">pinupsportswear@gmail.com</a></li>
+                    </ul>
+                    <div class="social">
+                        <a href="#" class="social__link">
+                            <svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
+                        </a>
+                        <a href="#" class="social__link">
+                            <svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
+                        </a>
+                        <a href="#" class="social__link">
+                            <svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2024 PIN-UP Sportswear. Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

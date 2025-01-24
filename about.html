@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О бренде - PIN-UP Sportswear</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Подключаем SVG спрайт -->
+    <object id="svg-sprite" type="image/svg+xml" data="images/icons.svg" style="display: none;"></object>
+
+    <!-- Хедер -->
+    <header class="header">
+			<div class="container">
+					<div class="header__wrapper">
+							<a href="/" class="logo">
+									<img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
+							</a>
+							
+							<nav class="nav">
+									<ul class="nav__list">
+											<li><a href="catalog.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-menu"></use></svg>
+													Каталог
+											</a></li>
+											<li><a href="about.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
+													О бренде
+											</a></li>
+											<li><a href="blog.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
+													Блог
+											</a></li>
+											<li><a href="contacts.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+													Контакты
+											</a></li>
+									</ul>
+							</nav>
+
+							<div class="header__controls">
+									<button class="btn-icon search-btn">
+											<svg><use xlink:href="images/icons.svg#icon-search"></use></svg>
+									</button>
+									
+									<a href="cart.html" class="btn-icon">
+											<svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
+									</a>
+									<a href="account.html" class="btn-icon">
+											<svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
+									</a>
+							</div>
+
+							<button class="burger-menu">
+									<span></span>
+									<span></span>
+									<span></span>
+							</button>
+					</div>
+			</div>
+	</header>
+
+   <!-- Поиск -->
+	 <div class="search-form">
+		<div class="search-form__overlay"></div>
+		<div class="search-form__content">
+				<div class="container">
+						<div class="search-form__header">
+								<h3 class="search-form__title">Поиск</h3>
+								<button class="search-close">
+										<svg><use xlink:href="images/icons.svg#icon-close"></use></svg>
+								</button>
+						</div>
+						<div class="search-form__body">
+								<input type="text" class="search-input" placeholder="Введите запрос...">
+								<div class="search-results"></div>
+						</div>
+				</div>
+		</div>
+</div>
+
+    <main class="main">
+        <!-- Главный баннер -->
+        <section class="about-hero">
+            <div class="container">
+                <h1 class="about-hero__title">PIN-UP Sportswear</h1>
+                <p class="about-hero__subtitle">Создаем спортивную одежду премиального качества с 2018 года</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- История бренда -->
+            <section class="about-section">
+                <h2 class="about-section__title">История бренда</h2>
+                <div class="about-section__content">
+                    <div class="about-section__text">
+                        <p>PIN-UP Sportswear начал свой путь в 2018 году как небольшой локальный бренд спортивной одежды. Основатели бренда, профессиональные спортсмены и дизайнеры, объединились с целью создать одежду, которая бы сочетала в себе функциональность, комфорт и стильный дизайн.</p>
+                        <p>За пять лет мы выросли из маленькой мастерской в современное производство, но сохранили главное – внимание к деталям и качеству каждого изделия. Сегодня PIN-UP Sportswear – это команда из более чем 100 профессионалов, влюбленных в свое дело.</p>
+                        <ul class="about-section__stats">
+                            <li>
+                                <span class="stats__number">5+</span>
+                                <span class="stats__text">лет на рынке</span>
+                            </li>
+                            <li>
+                                <span class="stats__number">100+</span>
+                                <span class="stats__text">сотрудников</span>
+                            </li>
+                            <li>
+                                <span class="stats__number">50k+</span>
+                                <span class="stats__text">довольных клиентов</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="about-section__image">
+                        <img src="images/history.jpg" alt="История бренда">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Философия бренда -->
+            <section class="about-section">
+                <h2 class="about-section__title">Философия бренда</h2>
+                <div class="about-section__content">
+                    <div class="about-section__image">
+                        <img src="images/philosophy.jpg" alt="Философия бренда">
+                    </div>
+                    <div class="about-section__text">
+                        <p>Мы верим, что спортивная одежда должна вдохновлять на движение и помогать достигать новых высот. Наша философия основана на трех ключевых принципах:</p>
+                        <div class="values-grid">
+                            <div class="value-card">
+                                <div class="value-card__icon">
+                                    <svg style="fill: var(--primary-color)"><use xlink:href="images/icons.svg#icon-medal"></use></svg>
+                                </div>
+                                <h3>Качество превыше всего</h3>
+                                <p>Мы используем только премиальные материалы и современные технологии производства, чтобы создавать одежду, которая прослужит вам долгие годы.</p>
+                            </div>
+                            <div class="value-card">
+                                <div class="value-card__icon">
+                                    <svg style="fill: var(--primary-color)"><use xlink:href="images/icons.svg#icon-heart"></use></svg>
+                                </div>
+                                <h3>Забота о клиентах</h3>
+                                <p>Каждый клиент для нас особенный. Мы стремимся создавать не просто одежду, а помогать людям чувствовать себя уверенно и комфортно.</p>
+                            </div>
+                            <div class="value-card">
+                                <div class="value-card__icon">
+                                    <svg style="fill: var(--primary-color)"><use xlink:href="images/icons.svg#icon-shield"></use></svg>
+                                </div>
+                                <h3>Экологичность</h3>
+                                <p>Мы заботимся об окружающей среде, используя экологичные материалы и технологии производства, минимизируя воздействие на природу.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Производство -->
+            <section class="about-section">
+                <h2 class="about-section__title">Наше производство</h2>
+                <div class="production-gallery">
+                    <div class="production-gallery__item">
+                        <div style="position: relative;">
+                            <img src="images/production-1.jpg" alt="Современное оборудование">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3);"></div>
+                        </div>
+                        <div class="production-gallery__content">
+                            <h3>Современное оборудование</h3>
+                            <p>Используем передовые технологии и оборудование для создания качественной продукции</p>
+                        </div>
+                    </div>
+                    <div class="production-gallery__item">
+                        <div style="position: relative;">
+                            <img src="images/production-2.jpg" alt="Контроль качества">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3);"></div>
+                        </div>
+                        <div class="production-gallery__content">
+                            <h3>Контроль качества</h3>
+                            <p>Каждое изделие проходит многоступенчатый контроль качества</p>
+                        </div>
+                    </div>
+                    <div class="production-gallery__item">
+                        <div style="position: relative;">
+                            <img src="images/production-3.jpg" alt="Экологичные материалы">
+                            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3);"></div>
+                        </div>
+                        <div class="production-gallery__content">
+                            <h3>Экологичные материалы</h3>
+                            <p>Выбираем материалы, безопасные для человека и окружающей среды</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Команда -->
+            <section class="about-section">
+                <h2 class="about-section__title">Наша команда</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-member__image">
+                            <img src="images/team-1.jpg" alt="Александр Петров">
+                        </div>
+                        <div class="team-member__content">
+                            <h3>Александр Петров</h3>
+                            <p class="team-member__position">Основатель и CEO</p>
+                            <p class="team-member__quote">"Наша цель - создавать одежду, которая вдохновляет на достижения"</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member__image">
+                            <img src="images/team-2.jpg" alt="Мария Иванова">
+                        </div>
+                        <div class="team-member__content">
+                            <h3>Мария Иванова</h3>
+                            <p class="team-member__position">Главный дизайнер</p>
+                            <p class="team-member__quote">"Дизайн должен быть не только красивым, но и функциональным"</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member__image">
+                            <img src="images/team-3.jpg" alt="Дмитрий Сидоров">
+                        </div>
+                        <div class="team-member__content">
+                            <h3>Дмитрий Сидоров</h3>
+                            <p class="team-member__position">Технический директор</p>
+                            <p class="team-member__quote">"Инновации и качество - основа нашего производства"</p>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member__image">
+                            <img src="images/team-4.jpg" alt="Елена Козлова">
+                        </div>
+                        <div class="team-member__content">
+                            <h3>Елена Козлова</h3>
+                            <p class="team-member__position">Руководитель производства</p>
+                            <p class="team-member__quote">"Каждая деталь имеет значение в создании идеального продукта"</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Присоединяйтесь к нам -->
+        <section class="about-join">
+            <div class="container">
+                <h2 class="about-join__title">Присоединяйтесь к нам</h2>
+                <p class="about-join__text">Подпишитесь на наши социальные сети, чтобы быть в курсе новинок и акций</p>
+                <div class="about-join__social">
+                    <a href="#" class="social__link">
+                        <svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
+                    </a>
+                    <a href="#" class="social__link">
+                        <svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
+                    </a>
+                    <a href="#" class="social__link">
+                        <svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
+                    </a>
+                    <a href="#" class="social__link">
+                        <svg><use xlink:href="images/icons.svg#icon-vk"></use></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Преимущества -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Наши преимущества</h2>
+            <div class="features__grid">
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg style="fill: var(--primary-color)"><use xlink:href="images/icons.svg#icon-quality"></use></svg>
+                    </div>
+                    <h3 class="feature-card__title">Качество</h3>
+                    <p class="feature-card__text">Используем только премиальные материалы и фурнитуру</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg style="fill: var(--primary-color)"><use xlink:href="images/icons.svg#icon-shield"></use></svg>
+                    </div>
+                    <h3 class="feature-card__title">Экологичность</h3>
+                    <p class="feature-card__text">Заботимся об окружающей среде и используем экологичные материалы</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <svg style="fill: var(--primary-color)"><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                    </div>
+                    <h3 class="feature-card__title">Дизайн</h3>
+                    <p class="feature-card__text">Создаем уникальные модели, сочетающие стиль и функциональность</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <a href="/" class="logo">
+                        <img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
+                    </a>
+                    <p class="footer__text">Спортивная одежда и аксессуары премиального качества</p>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Меню</h4>
+                    <ul class="footer__list">
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="about.html">О бренде</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Правовая информация</h4>
+                    <ul class="footer__list">
+                        <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
+                        <li><a href="terms-conditions.html">Условия использования</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__list">
+                        <li><a href="tel:+77777777777">+7 777 777 77 77</a></li>
+                        <li><a href="mailto:pinupsportswear@gmail.com">pinupsportswear@gmail.com</a></li>
+                    </ul>
+                    <div class="social">
+                        <a href="#" class="social__link">
+                            <svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
+                        </a>
+                        <a href="#" class="social__link">
+                            <svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
+                        </a>
+                        <a href="#" class="social__link">
+                            <svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2024 PIN-UP Sportswear. Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - PIN-UP Sportswear</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <object id="svg-sprite" type="image/svg+xml" data="images/icons.svg" style="display: none;"></object>
+
+    <!-- Хедер (такой же как в index.html) -->
+    <header class="header">
+			<div class="container">
+					<div class="header__wrapper">
+							<a href="index.html" class="logo">
+									<img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
+							</a>
+							
+							<nav class="nav">
+									<ul class="nav__list">
+											<li><a href="catalog.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-menu"></use></svg>
+													Каталог
+											</a></li>
+											<li><a href="about.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
+													О бренде
+											</a></li>
+											<li><a href="blog.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
+													Блог
+											</a></li>
+											<li><a href="contacts.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+													Контакты
+											</a></li>
+									</ul>
+							</nav>
+
+							<div class="header__controls">
+									<button class="btn-icon search-btn">
+											<svg><use xlink:href="images/icons.svg#icon-search"></use></svg>
+									</button>
+									<a href="cart.html" class="btn-icon">
+											<svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
+									</a>
+									<a href="account.html" class="btn-icon">
+											<svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
+									</a>
+							</div>
+
+							<button class="burger-menu">
+									<span></span>
+									<span></span>
+									<span></span>
+							</button>
+					</div>
+			</div>
+	</header>
+
+    <main>
+        <section class="auth-section">
+            <div class="container">
+                <div class="auth-form">
+                    <h1 class="auth-form__title">Вход в аккаунт</h1>
+                    <form id="loginForm" class="form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Пароль</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn--primary">Войти</button>
+                        <p class="auth-form__text">
+                            Нет аккаунта? <a href="register.html">Зарегистрироваться</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер (такой же как в index.html) -->
+    <footer class="footer">
+			<div class="container">
+					<div class="footer__grid">
+							<div class="footer__column">
+									<a href="index.html" class="logo">
+											<img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
+									</a>
+									<p class="footer__text">Спортивная одежда и аксессуары премиального качества</p>
+							</div>
+							<div class="footer__column">
+									<h4 class="footer__title">Меню</h4>
+									<ul class="footer__list">
+											<li><a href="catalog.html">Каталог</a></li>
+											<li><a href="about.html">О бренде</a></li>
+											<li><a href="blog.html">Блог</a></li>
+											<li><a href="contacts.html">Контакты</a></li>
+									</ul>
+							</div>
+							<div class="footer__column">
+									<h4 class="footer__title">Правовая информация</h4>
+									<ul class="footer__list">
+											<li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
+											<li><a href="terms-conditions.html">Условия использования</a></li>
+									</ul>
+							</div>
+							<div class="footer__column">
+									<h4 class="footer__title">Контакты</h4>
+									<ul class="footer__list">
+											<li><a href="tel:+75392814760">+7 539 281 47 60</a></li>
+											<li><a href="mailto:pinupsportswear@gmail.com">pinupsportswear@gmail.com</a></li>
+									</ul>
+									<div class="social">
+											<a href="index.html" class="social__link">
+													<svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
+											</a>
+											<a href="index.html" class="social__link">
+													<svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
+											</a>
+											<a href="index.html" class="social__link">
+													<svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
+											</a>
+									</div>
+							</div>
+					</div>
+					<div class="footer__bottom">
+							<p class="footer__copyright">© 2024 PIN-UP Sportswear. Все права защищены</p>
+					</div>
+			</div>
+	</footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html> 

@@ -153,14 +153,17 @@ document.addEventListener('DOMContentLoaded', () => {
         // Добавление обработчиков кликов на карточки товаров
         function addProductClickHandlers() {
             const productCards = catalogGrid.querySelectorAll('.product-card');
-            productCards.forEach(card => {
-                const image = card.querySelector('.product-card__image');
-                if (image) {
-                    image.addEventListener('click', () => {
-                        window.location.href = 'product.html';
-                    });
-                }
-            });
+            if (productCards.length > 0) {
+                productCards.forEach(card => {
+                    const image = card.querySelector('.product-card__image');
+                    if (image) {
+                        image.addEventListener('click', () => {
+                            const productId = card.dataset.productId || '1';
+                            window.location.href = `/product.html?id=${productId}`;
+                        });
+                    }
+                });
+            }
         }
 
         // Проверка, все ли фильтры пусты
@@ -268,28 +271,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Переход на страницу товара
         const productCards = document.querySelectorAll('.product-card');
-        productCards.forEach(card => {
-            const image = card.querySelector('.product-card__image');
-            const button = card.querySelector('.product-card__btn');
-            
-            image.addEventListener('click', () => {
-                const productId = card.dataset.productId || '1';
-                window.location.href = `/product.html?id=${productId}`;
-            });
+        if (productCards.length > 0) {
+            productCards.forEach(card => {
+                const image = card.querySelector('.product-card__image');
+                const button = card.querySelector('.product-card__btn');
+                
+                if (image) {
+                    image.addEventListener('click', () => {
+                        const productId = card.dataset.productId || '1';
+                        window.location.href = `/product.html?id=${productId}`;
+                    });
+                }
 
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                button.textContent = 'Добавлено ✓';
-                button.style.background = '#2ED573';
-                
-                setTimeout(() => {
-                    button.textContent = 'В корзину';
-                    button.style.background = '';
-                }, 2000);
+                if (button) {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        button.textContent = 'Добавлено ✓';
+                        button.style.background = '#2ED573';
+                        
+                        setTimeout(() => {
+                            button.textContent = 'В корзину';
+                            button.style.background = '';
+                        }, 2000);
+                    });
+                }
             });
-        });
+        }
     }
 
     // Отзывы
@@ -458,37 +467,37 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 1,
                     title: 'Спортивная футболка Pro',
                     price: '2 990 ₽',
-                    image: 'images/products/tshirt1.jpg'
+                    image: 'images/tshirt1.jpg'
                 },
                 {
                     id: 2,
                     title: 'Шорты для бега',
                     price: '1 990 ₽',
-                    image: 'images/products/shorts1.jpg'
+                    image: 'images/shorts1.jpg'
                 },
                 {
                     id: 3,
                     title: 'Спортивный костюм',
                     price: '5 990 ₽',
-                    image: 'images/products/suit1.jpg'
+                    image: 'images/suit1.jpg'
                 },
                 {
                     id: 4,
                     title: 'Спортивный топ',
                     price: '1 590 ₽',
-                    image: 'images/products/top1.jpg'
+                    image: 'images/top1.jpg'
                 },
                 {
                     id: 5,
                     title: 'Леггинсы для фитнеса',
                     price: '2 490 ₽',
-                    image: 'images/products/leggings1.jpg'
+                    image: 'images/leggings1.jpg'
                 },
                 {
                     id: 6,
                     title: 'Спортивная сумка',
                     price: '3 990 ₽',
-                    image: 'images/products/bag1.jpg'
+                    image: 'images/bag1.jpg'
                 }
             ];
 

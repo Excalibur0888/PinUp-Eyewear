@@ -730,17 +730,21 @@ document.addEventListener('DOMContentLoaded', () => {
         init() {
             this.updateFavoriteButtons();
             this.initEventListeners();
+            this.renderFavoritesPage();
         }
 
         toggleItem(productId) {
             const index = this.favorites.indexOf(productId);
+            
             if (index === -1) {
                 this.favorites.push(productId);
             } else {
                 this.favorites.splice(index, 1);
             }
+            
             this.save();
             this.updateFavoriteButtons();
+            this.renderFavoritesPage();
         }
 
         save() {
@@ -748,29 +752,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         updateFavoriteButtons() {
-            // Обновляем состояние кнопок на карточках товаров
+            // Обновляем состояние кнопок в каталоге
             document.querySelectorAll('.product-card__favorite').forEach(button => {
-                const productId = button.closest('.product-card').dataset.id;
+                const productId = button.dataset.productId;
                 button.classList.toggle('active', this.favorites.includes(productId));
             });
 
             // Обновляем состояние кнопки на странице товара
             const productFavoriteBtn = document.querySelector('.product__favorite');
             if (productFavoriteBtn) {
-                const productId = productFavoriteBtn.closest('.product').dataset.id;
+                const productId = productFavoriteBtn.dataset.productId;
                 productFavoriteBtn.classList.toggle('active', this.favorites.includes(productId));
             }
         }
 
         initEventListeners() {
-            // Обработчики для кнопок на карточках товаров
+            // Обработчики для кнопок в каталоге
             document.querySelectorAll('.product-card__favorite').forEach(button => {
                 button.addEventListener('click', (e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    const productId = button.closest('.product-card').dataset.id;
+                    const productId = button.dataset.productId;
                     this.toggleItem(productId);
                 });
+            });
+
+            // Предотвращаем переход по ссылке при клике на кнопку избранного
+            document.querySelectorAll('.product-card__image').forEach(imageContainer => {
+                const favoriteBtn = imageContainer.querySelector('.product-card__favorite');
+                if (favoriteBtn) {
+                    favoriteBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    });
+                }
             });
 
             // Обработчик для кнопки на странице товара
@@ -778,17 +793,37 @@ document.addEventListener('DOMContentLoaded', () => {
             if (productFavoriteBtn) {
                 productFavoriteBtn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    e.stopPropagation();
-                    const productId = productFavoriteBtn.closest('.product').dataset.id;
+                    const productId = productFavoriteBtn.dataset.productId;
                     this.toggleItem(productId);
                 });
+            }
+        }
+
+        renderFavoritesPage() {
+            const favoritesGrid = document.querySelector('.favorites__grid');
+            if (!favoritesGrid) return;
+
+            if (this.favorites.length === 0) {
+                favoritesGrid.innerHTML = `
+                    <div class="favorites__empty">
+                        <svg class="favorites__empty-icon">
+                            <use xlink:href="images/icons.svg#icon-heart"></use>
+                        </svg>
+                        <h3 class="favorites__empty-title">Список избранного пуст</h3>
+                        <p class="favorites__empty-text">Добавляйте товары в избранное, чтобы не потерять их</p>
+                        <a href="catalog.html" class="btn btn--primary">Перейти в каталог</a>
+                    </div>
+                `;
             }
         }
     }
 
     // Инициализация при загрузке страницы
     document.addEventListener('DOMContentLoaded', () => {
-        new Favorites();
+        // ... existing code ...
+        
+        // Инициализация избранного
+        const favorites = new Favorites();
     });
 
     // Профиль
@@ -1149,4 +1184,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Вызываем функцию при загрузке страницы
     document.addEventListener('DOMContentLoaded', loadProductData);
+}); 
+// Обработчик для кнопки "Добавить в корзину"
+document.addEventListener('DOMContentLoaded', function() {
+	const addToCartButtons = document.querySelectorAll('.product__add-to-cart');
+	const favoriteButtons = document.querySelectorAll('.product__favorite');
+
+	// Обработка кнопок "Добавить в корзину"
+	addToCartButtons.forEach(button => {
+			button.addEventListener('click', function() {
+					// Добавляем класс added
+					this.classList.add('added');
+					
+					// Меняем текст кнопки
+					this.textContent = 'Добавлено';
+					
+					// Через 2 секунды возвращаем исходное состояние
+					setTimeout(() => {
+							this.classList.remove('added');
+							this.textContent = 'Добавить в корзину';
+					}, 2000);
+			});
+	});
+
+	// Обработка кнопок "В избранное"
+	favoriteButtons.forEach(button => {
+			button.addEventListener('click', function(e) {
+					e.preventDefault(); // Предотвращаем действие по умолчанию
+					this.classList.toggle('active');
+			});
+	});
 }); 

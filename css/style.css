@@ -655,34 +655,70 @@ h2::after {
 
 /* Подписка */
 .subscribe {
-    padding: 80px 0;
-    background-color: var(--secondary-color);
-    color: var(--white);
+    padding: 60px 0;
+    background: var(--light-gray);
 }
 
 .subscribe__wrapper {
-    text-align: center;
     max-width: 600px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .subscribe__title {
-    font-size: 36px;
-		color: var(--white);
-    margin-bottom: 20px;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.subscribe__text {
+    color: #666;
+    margin-bottom: 30px;
 }
 
 .subscribe__form {
     display: flex;
-    gap: 10px;
-    margin-top: 30px;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .subscribe__input {
-    flex: 1;
-    padding: 12px;
-    border: none;
-    border-radius: 4px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.subscribe__input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.subscribe__form .form-group {
+    text-align: left;
+}
+
+.subscribe__form .checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.subscribe__form .checkbox input {
+    margin-top: 3px;
+}
+
+.subscribe__form .checkbox a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.subscribe__form .checkbox a:hover {
+    text-decoration: underline;
 }
 
 /* Отзывы */
@@ -1028,13 +1064,13 @@ h2::after {
 }
 
 .catalog__filters {
-		background: var(--white);
-		padding: 30px;
-		border-radius: 15px;
-		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-		align-self: start;
-		position: sticky;
-		top: 100px;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    align-self: start;
+    position: sticky;
+    top: 100px;
     margin-bottom: 30px;
     max-width: 250px;
 }
@@ -1146,41 +1182,35 @@ h2::after {
 }
 
 @media (max-width: 991px) {
-    .catalog__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-}
-
-@media (max-width: 576px) {
-    .catalog__grid {
+    .catalog__wrapper {
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
-    .product-card {
+    .catalog__filters {
+        position: static;
         max-width: 100%;
-    }
-
-    .product-card__image {
-        height: 400px;
-    }
-
-    .product-card__content {
+        margin-bottom: 20px;
         padding: 20px;
     }
 
-    .product-card__title {
-        font-size: 18px;
+    .catalog__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .catalog__wrapper {
+        gap: 15px;
     }
 
-    .product-card__price {
-        font-size: 20px;
+    .catalog__filters {
+        padding: 15px;
+        margin-bottom: 15px;
     }
 
-    .product-card__btn {
-        padding: 12px;
-        font-size: 14px;
+    .catalog__grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1253,27 +1283,53 @@ h2::after {
     position: absolute;
     top: 15px;
     right: 15px;
-    width: 24px;
-    height: 24px;
-    background: none;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
     border: none;
+    border-radius: 50%;
     cursor: pointer;
-    z-index: 2;
-    transition: transform 0.3s ease;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .product-card__favorite svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     fill: none;
-    stroke: #fff;
+    stroke: #666;
     stroke-width: 2;
-    transition: fill 0.3s ease, stroke 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.product-card__favorite:hover {
+    transform: scale(1.1);
+    background: rgba(255, 78, 80, 0.1);
+}
+
+.product-card__favorite:hover svg {
+    stroke: #FF4E50;
+}
+
+.product-card__favorite.active {
+    background: rgba(255, 78, 80, 0.1);
 }
 
 .product-card__favorite.active svg {
     fill: #FF4E50;
     stroke: #FF4E50;
+}
+
+.product-card__favorite:hover {
+    transform: scale(1.1);
+}
+
+.product-card__link {
+    position: relative;
+    z-index: 1;
 }
 
 .product-card__content {
@@ -1823,48 +1879,70 @@ h2::after {
 
 /* Подписка на блог */
 .blog-subscribe {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    background-size: cover;
-    background-position: center;
-    padding: 80px 0;
-    color: var(--white);
-    text-align: center;
+    padding: 60px 0;
+    background: var(--light-gray);
 }
 
 .blog-subscribe__wrapper {
     max-width: 600px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .blog-subscribe__title {
-	color: var(--white);
-    font-size: 36px;
-    margin-bottom: 20px;
+    font-size: 32px;
+    margin-bottom: 15px;
 }
 
 .blog-subscribe__text {
+    color: #666;
     margin-bottom: 30px;
-    font-size: 18px;
 }
 
 .blog-subscribe__form {
     display: flex;
+    flex-direction: column;
     gap: 15px;
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
 }
 
 .blog-subscribe__input {
-    flex: 1;
     padding: 15px;
-    border: none;
-    border-radius: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     font-size: 16px;
+    width: 100%;
 }
 
-.blog-subscribe__form .btn {
-    padding: 15px 30px;
-    border-radius: 30px;
+.blog-subscribe__input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.blog-subscribe__form .form-group {
+    text-align: left;
+}
+
+.blog-subscribe__form .checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.blog-subscribe__form .checkbox input {
+    margin-top: 3px;
+}
+
+.blog-subscribe__form .checkbox a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.blog-subscribe__form .checkbox a:hover {
+    text-decoration: underline;
 }
 
 /* Адаптивность для блога */
@@ -2172,20 +2250,36 @@ h2::after {
     display: flex;
     align-items: center;
     gap: 8px;
+    padding: 12px 24px;
     background: none;
-    border: none;
+    border: 2px solid #ddd;
+    border-radius: 4px;
     cursor: pointer;
     color: #666;
     font-size: 14px;
+    transition: all 0.3s ease;
 }
 
 .product__favorite svg {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     fill: none;
     stroke: #666;
     stroke-width: 2;
-    transition: fill 0.3s ease, stroke 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.product__favorite:hover {
+    border-color: #FF4E50;
+    color: #FF4E50;
+}
+
+.product__favorite:hover svg {
+    stroke: #FF4E50;
+}
+
+.product__favorite.active {
+    background: rgba(255, 78, 80, 0.1);
 }
 
 .product__favorite.active svg {
@@ -3691,10 +3785,6 @@ svg {
 }
 
 /* Отзывы на странице товара */
-.reviews {
-    margin-top: 60px;
-}
-
 .reviews__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -3893,5 +3983,64 @@ svg {
     font-weight: 700;
     text-align: center;
     color: var(--text-dark);
+}
+
+.product__add-to-cart {
+    flex: 1;
+}
+
+.product__add-to-cart.added {
+    background-color: #2ED573;
+    border-color: #2ED573;
+    color: white;
+}
+
+.product__add-to-cart.added:hover {
+    background-color: #28c066;
+    border-color: #28c066;
+    color: white;
+}
+
+.product__favorite {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: none;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #666;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.product__favorite svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #666;
+    stroke-width: 2;
+    transition: all 0.3s ease;
+}
+
+.product__favorite:hover {
+    border-color: #FF4E50;
+    color: #FF4E50;
+}
+
+.product__favorite:hover svg {
+    stroke: #FF4E50;
+}
+
+.product__favorite.active {
+    border-color: #FF4E50;
+    background: rgba(255, 78, 80, 0.1);
+    color: #FF4E50;
+}
+
+.product__favorite.active svg {
+    fill: #FF4E50;
+    stroke: #FF4E50;
 }
   

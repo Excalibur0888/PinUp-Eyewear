@@ -1,246 +1,386 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Контакты PIN-UP Sportswear - свяжитесь с нами для получения информации о доставке, оплате и других вопросах."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Контакты - PIN-UP Sportswear</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <!-- Подключаем SVG спрайт -->
-    <object id="svg-sprite" type="image/svg+xml" data="images/icons.svg" style="display: none;"></object>
+    <object
+      id="svg-sprite"
+      type="image/svg+xml"
+      data="images/icons.svg"
+      style="display: none"
+    ></object>
 
     <!-- Хедер -->
     <header class="header">
-			<div class="container">
-					<div class="header__wrapper">
-							<a href="/" class="logo">
-									<img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
-							</a>
-							
-							<nav class="nav">
-									<ul class="nav__list">
-											<li><a href="catalog.html" class="nav__link">
-													<svg><use xlink:href="images/icons.svg#icon-menu"></use></svg>
-													Каталог
-											</a></li>
-											<li><a href="about.html" class="nav__link">
-													<svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
-													О бренде
-											</a></li>
-											<li><a href="blog.html" class="nav__link">
-													<svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
-													Блог
-											</a></li>
-											<li><a href="contacts.html" class="nav__link">
-													<svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
-													Контакты
-											</a></li>
-									</ul>
-							</nav>
+      <div class="container">
+        <div class="header__wrapper">
+          <a href="/" class="logo">
+            <img
+              src="images/logo.svg"
+              alt="PIN-UP Sportswear"
+              class="logo__img"
+            />
+          </a>
 
-							<div class="header__controls">
-									<button class="btn-icon search-btn">
-											<svg><use xlink:href="images/icons.svg#icon-search"></use></svg>
-									</button>
-									
-									<a href="cart.html" class="btn-icon">
-											<svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
-									</a>
-									<a href="account.html" class="btn-icon">
-											<svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
-									</a>
-							</div>
+          <nav class="nav">
+            <ul class="nav__list">
+              <li>
+                <a href="catalog.html" class="nav__link">
+                  <svg><use xlink:href="images/icons.svg#icon-menu"></use></svg>
+                  Каталог
+                </a>
+              </li>
+              <li>
+                <a href="about.html" class="nav__link">
+                  <svg>
+                    <use xlink:href="images/icons.svg#icon-about"></use>
+                  </svg>
+                  О бренде
+                </a>
+              </li>
+              <li>
+                <a href="blog.html" class="nav__link">
+                  <svg>
+                    <use xlink:href="images/icons.svg#icon-article"></use>
+                  </svg>
+                  Блог
+                </a>
+              </li>
+              <li>
+                <a href="contacts.html" class="nav__link">
+                  <svg>
+                    <use xlink:href="images/icons.svg#icon-phone"></use>
+                  </svg>
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </nav>
 
-							<button class="burger-menu">
-									<span></span>
-									<span></span>
-									<span></span>
-							</button>
-					</div>
-			</div>
-	</header>
+          <div class="header__controls">
+            <button class="btn-icon search-btn">
+              <svg><use xlink:href="images/icons.svg#icon-search"></use></svg>
+            </button>
+
+            <a href="cart.html" class="btn-icon">
+              <svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
+            </a>
+            <a href="account.html" class="btn-icon">
+              <svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
+            </a>
+          </div>
+
+          <button class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Мобильная навигация -->
+    <nav class="mobile-nav">
+      <ul class="mobile-nav__list">
+        <li class="mobile-nav__item">
+          <a href="catalog.html" class="mobile-nav__link">
+            <svg><use xlink:href="images/icons.svg#icon-menu"></use></svg>
+            Каталог
+          </a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="about.html" class="mobile-nav__link">
+            <svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
+            О бренде
+          </a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="blog.html" class="mobile-nav__link">
+            <svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
+            Блог
+          </a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="contacts.html" class="mobile-nav__link">
+            <svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+            Контакты
+          </a>
+        </li>
+
+        <li class="mobile-nav__item">
+          <a href="cart.html" class="mobile-nav__link">
+            <svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
+            Корзина
+          </a>
+        </li>
+        <li class="mobile-nav__item">
+          <a href="account.html" class="mobile-nav__link">
+            <svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
+            Личный кабинет
+          </a>
+        </li>
+      </ul>
+    </nav>
 
     <!-- Поиск -->
     <div class="search-form">
-			<div class="search-form__overlay"></div>
-			<div class="search-form__content">
-					<div class="container">
-							<div class="search-form__header">
-									<h3 class="search-form__title">Поиск</h3>
-									<button class="search-close">
-											<svg><use xlink:href="images/icons.svg#icon-close"></use></svg>
-									</button>
-							</div>
-							<div class="search-form__body">
-									<input type="text" class="search-input" placeholder="Введите запрос...">
-									<div class="search-results"></div>
-							</div>
-					</div>
-			</div>
-	</div>
+      <div class="search-form__overlay"></div>
+      <div class="search-form__content">
+        <div class="container">
+          <div class="search-form__header">
+            <h3 class="search-form__title">Поиск</h3>
+            <button class="search-close">
+              <svg><use xlink:href="images/icons.svg#icon-close"></use></svg>
+            </button>
+          </div>
+          <div class="search-form__body">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Введите запрос..."
+            />
+            <div class="search-results"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Контакты -->
     <section class="contacts">
-        <div class="container">
-            <h1 class="section-title">Контакты</h1>
-            
-            <div class="contacts__grid">
-                <!-- Форма обратной связи -->
-                <div class="contacts__form">
-                    <h2 class="contacts__subtitle">Напишите нам</h2>
-                    <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Ваше имя</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone" class="form-label">Телефон</label>
-                            <input type="tel" id="phone" name="phone" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label">Сообщение</label>
-                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn--primary">Отправить сообщение</button>
-                    </form>
-                </div>
+      <div class="container">
+        <h1 class="section-title">Контакты</h1>
 
-                <!-- Информация -->
-                <div class="contacts__info">
-                    <div class="contact-block">
-                        <h3 class="contact-block__title">
-                            <svg><use xlink:href="images/icons.svg#icon-map"></use></svg>
-                            Адрес
-                        </h3>
-                        <p class="contact-block__text">г. Алматы, ул. Примерная, 123</p>
-                    </div>
+        <div class="contacts__grid">
+          <!-- Форма обратной связи -->
+          <div class="contacts__form">
+            <h2 class="contacts__subtitle">Напишите нам</h2>
+            <form action="thanks_form.php" method="post" class="contact-form">
+              <div class="form-group">
+                <label for="name" class="form-label">Ваше имя</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone" class="form-label">Телефон</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="form-input"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Сообщение</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-textarea"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-group">
+                <label class="checkbox">
+                  <input type="checkbox" name="privacy" value="on" required />
+                  Я согласен с &nbsp;<a href="privacy-policy.html">
+                    политикой конфиденциальности</a
+                  >
+                </label>
+              </div>
+              <button type="submit" class="btn btn--primary">
+                Отправить сообщение
+              </button>
+            </form>
+          </div>
 
-                    <div class="contact-block">
-                        <h3 class="contact-block__title">
-                            <svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
-                            Телефон
-                        </h3>
-                        <p class="contact-block__text">
-                            <a href="tel:+77777777777">+7 777 777 77 77</a>
-                        </p>
-                    </div>
-
-                    <div class="contact-block">
-                        <h3 class="contact-block__title">
-                            <svg><use xlink:href="images/icons.svg#icon-mail"></use></svg>
-                            Email
-                        </h3>
-                        <p class="contact-block__text">
-                            <a href="mailto:pinupsportswear@gmail.com">pinupsportswear@gmail.com</a>
-                        </p>
-                    </div>
-
-                    <div class="contact-block">
-                        <h3 class="contact-block__title">
-                            <svg><use xlink:href="images/icons.svg#icon-clock"></use></svg>
-                            Режим работы
-                        </h3>
-                        <p class="contact-block__text">
-                            Пн-Пт: 9:00 - 18:00<br>
-                            Сб-Вс: 10:00 - 16:00
-                        </p>
-                    </div>
-
-                    <div class="contact-block">
-                        <h3 class="contact-block__title">
-                            <svg><use xlink:href="images/icons.svg#icon-share"></use></svg>
-                            Социальные сети
-                        </h3>
-                        <div class="social">
-                            <a href="#" class="social__link" title="Instagram">
-                                <svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
-                            </a>
-                            <a href="#" class="social__link" title="Facebook">
-                                <svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
-                            </a>
-                            <a href="#" class="social__link" title="Telegram">
-                                <svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
-                            </a>
-                            <a href="#" class="social__link" title="VK">
-                                <svg><use xlink:href="images/icons.svg#icon-vk"></use></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+          <!-- Информация -->
+          <div class="contacts__info">
+            <div class="contact-block">
+              <h3 class="contact-block__title">
+                <svg><use xlink:href="images/icons.svg#icon-map"></use></svg>
+                Адрес
+              </h3>
+              <p class="contact-block__text">
+                просп. Тауелсиздик, Астана 020000
+              </p>
             </div>
 
-            <!-- Карта -->
-            <div class="contacts__map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.8674932556!2d76.92819731535958!3d43.25744797913561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDE1JzI2LjgiTiA3NsKwNTUnNDEuNSJF!5e0!3m2!1sru!2skz!4v1625147433244!5m2!1sru!2skz" 
-                        width="100%" 
-                        height="450" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                </iframe>
+            <div class="contact-block">
+              <h3 class="contact-block__title">
+                <svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+                Телефон
+              </h3>
+              <p class="contact-block__text">
+                <a href="tel:+75392814760">+7 539 281 47 60</a>
+              </p>
             </div>
+
+            <div class="contact-block">
+              <h3 class="contact-block__title">
+                <svg><use xlink:href="images/icons.svg#icon-mail"></use></svg>
+                Email
+              </h3>
+              <p class="contact-block__text">
+                <a href="mailto:pinupsportswear@gmail.com"
+                  >pinupsportswear@gmail.com</a
+                >
+              </p>
+            </div>
+
+            <div class="contact-block">
+              <h3 class="contact-block__title">
+                <svg><use xlink:href="images/icons.svg#icon-clock"></use></svg>
+                Режим работы
+              </h3>
+              <p class="contact-block__text">
+                Пн-Пт: 9:00 - 18:00<br />
+                Сб-Вс: 10:00 - 16:00
+              </p>
+            </div>
+
+            <div class="contact-block">
+              <h3 class="contact-block__title">
+                <svg><use xlink:href="images/icons.svg#icon-share"></use></svg>
+                Социальные сети
+              </h3>
+              <div class="social">
+                <a href="index.html" class="social__link" title="Instagram">
+                  <svg>
+                    <use xlink:href="images/icons.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+                <a href="index.html" class="social__link" title="Facebook">
+                  <svg>
+                    <use xlink:href="images/icons.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+                <a href="index.html" class="social__link" title="Telegram">
+                  <svg>
+                    <use xlink:href="images/icons.svg#icon-telegram"></use>
+                  </svg>
+                </a>
+                <a href="index.html" class="social__link" title="VK">
+                  <svg><use xlink:href="images/icons.svg#icon-vk"></use></svg>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Карта -->
+        <div class="contacts__map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1381.7950242849643!2d71.4541521014448!3d51.14961937710198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4245814f54f0fb13%3A0xd7885f40167b3c2b!2z0L_RgNC-0YHQvy4g0KLQsNGD0LXQu9GB0LjQt9C00LjQuiwg0JDRgdGC0LDQvdCwIDAyMDAwMA!5e1!3m2!1sru!2skz!4v1737716798951!5m2!1sru!2skz"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
     </section>
 
     <!-- Футер -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__column">
-                    <a href="/" class="logo">
-                        <img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
-                    </a>
-                    <p class="footer__text">Спортивная одежда и аксессуары премиального качества</p>
-                </div>
-                <div class="footer__column">
-                    <h4 class="footer__title">Меню</h4>
-                    <ul class="footer__list">
-                        <li><a href="catalog.html">Каталог</a></li>
-                        <li><a href="about.html">О бренде</a></li>
-                        <li><a href="blog.html">Блог</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                    </ul>
-                </div>
-                <div class="footer__column">
-                    <h4 class="footer__title">Правовая информация</h4>
-                    <ul class="footer__list">
-                        <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
-                        <li><a href="terms-conditions.html">Условия использования</a></li>
-                    </ul>
-                </div>
-                <div class="footer__column">
-                    <h4 class="footer__title">Контакты</h4>
-                    <ul class="footer__list">
-                        <li><a href="tel:+77777777777">+7 777 777 77 77</a></li>
-                        <li><a href="mailto:pinupsportswear@gmail.com">pinupsportswear@gmail.com</a></li>
-                    </ul>
-                    <div class="social">
-                        <a href="#" class="social__link" title="Instagram">
-                            <svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
-                        </a>
-                        <a href="#" class="social__link" title="Facebook">
-                            <svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
-                        </a>
-                        <a href="#" class="social__link" title="Telegram">
-                            <svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
-                        </a>
-                        <a href="#" class="social__link" title="VK">
-                            <svg><use xlink:href="images/icons.svg#icon-vk"></use></svg>
-                        </a>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__column">
+            <a href="/" class="logo">
+              <img
+                src="images/logo.svg"
+                alt="PIN-UP Sportswear"
+                class="logo__img"
+              />
+            </a>
+            <p class="footer__text">
+              Спортивная одежда и аксессуары премиального качества
+            </p>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__title">Меню</h4>
+            <ul class="footer__list">
+              <li><a href="catalog.html">Каталог</a></li>
+              <li><a href="about.html">О бренде</a></li>
+              <li><a href="blog.html">Блог</a></li>
+              <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__title">Правовая информация</h4>
+            <ul class="footer__list">
+              <li>
+                <a href="privacy-policy.html">Политика конфиденциальности</a>
+              </li>
+              <li><a href="terms-conditions.html">Условия использования</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__title">Контакты</h4>
+            <ul class="footer__list">
+              <li><a href="tel:+75392814760">+7 539 281 47 60</a></li>
+              <li>
+                <a href="mailto:pinupsportswear@gmail.com"
+                  >pinupsportswear@gmail.com</a
+                >
+              </li>
+            </ul>
+            <div class="social">
+              <a href="index.html" class="social__link" title="Instagram">
+                <svg>
+                  <use xlink:href="images/icons.svg#icon-instagram"></use>
+                </svg>
+              </a>
+              <a href="index.html" class="social__link" title="Facebook">
+                <svg>
+                  <use xlink:href="images/icons.svg#icon-facebook"></use>
+                </svg>
+              </a>
+              <a href="index.html" class="social__link" title="Telegram">
+                <svg>
+                  <use xlink:href="images/icons.svg#icon-telegram"></use>
+                </svg>
+              </a>
+              <a href="index.html" class="social__link" title="VK">
+                <svg><use xlink:href="images/icons.svg#icon-vk"></use></svg>
+              </a>
             </div>
-            <div class="footer__bottom">
-                <p class="footer__copyright">© 2024 PIN-UP Sportswear. Все права защищены</p>
-            </div>
+          </div>
         </div>
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            © 2024 PIN-UP Sportswear. Все права защищены
+          </p>
+        </div>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>
-</body>
-</html> 
+  </body>
+</html>

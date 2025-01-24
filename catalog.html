@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+		<meta name="description" content="Каталог товаров PIN-UP Sportswear - выбор спортивной одежды и аксессуаров. Удобная навигация и быстрый доступ к товарам.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог - PIN-UP Sportswear</title>
     <link rel="stylesheet" href="css/style.css">
@@ -88,12 +89,7 @@
                     Контакты
                 </a>
             </li>
-            <li class="mobile-nav__item">
-                <a href="favorites.html" class="mobile-nav__link">
-                    <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
-                    Избранное
-                </a>
-            </li>
+            
             <li class="mobile-nav__item">
                 <a href="cart.html" class="mobile-nav__link">
                     <svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
@@ -190,7 +186,7 @@
                                 <a href="product.html?title=Спортивная футболка Pro&price=2990&sizes=XS,S,M,L,XL&image=/images/tshirt1.jpg" class="product-card__link">
                                     <img src="images/tshirt1.jpg" alt="Спортивная футболка Pro">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="1">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -212,7 +208,7 @@
                                 <a href="product.html?title=Леггинсы для йоги&price=3490&sizes=S,M,L&image=/images/leggings1.jpg" class="product-card__link">
                                     <img src="images/leggings1.jpg" alt="Леггинсы для йоги">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="2">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -234,7 +230,7 @@
                                 <a href="product.html?title=Худи с капюшоном&price=4990&sizes=M,L,XL&image=/images/hoodie1.jpg" class="product-card__link">
                                     <img src="images/hoodie1.jpg" alt="Худи с капюшоном">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="3">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -256,7 +252,7 @@
                                 <a href="product.html?title=Спортивный топ&price=1990&sizes=XS,S,M&image=/images/top1.jpg" class="product-card__link">
                                     <img src="images/top1.jpg" alt="Спортивный топ">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="4">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -275,7 +271,7 @@
                                 <a href="product.html?title=Шорты для бега&price=1990&sizes=S,M,L,XL&image=/images/shorts1.jpg" class="product-card__link">
                                     <img src="images/shorts1.jpg" alt="Шорты для бега">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="5">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -294,7 +290,7 @@
                                 <a href="product.html?title=Спортивная сумка&price=2990&sizes=One Size&image=/images/bag1.jpg" class="product-card__link">
                                     <img src="images/bag1.jpg" alt="Спортивная сумка">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="6">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -321,7 +317,7 @@
                                 <a href="product.html?title=Ветровка&price=5990&sizes=XS,S,M,L&image=/images/jacket1.jpg" class="product-card__link">
                                     <img src="images/jacket1.jpg" alt="Ветровка">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="7">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -340,7 +336,7 @@
                                 <a href="product.html?title=Бутылка для воды&price=990&sizes=One Size&image=/images/bottle1.jpg" class="product-card__link">
                                     <img src="images/bottle1.jpg" alt="Бутылка для воды">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="8">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -367,7 +363,7 @@
                                 <a href="product.html?title=Спортивные брюки&price=3990&sizes=XS,S,M,L&image=/images/pants1.jpg" class="product-card__link">
                                     <img src="images/pants1.jpg" alt="Спортивные брюки">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="9">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -386,7 +382,7 @@
                                 <a href="product.html?title=Коврик для йоги&price=1990&sizes=One Size&image=/images/mat1.jpg" class="product-card__link">
                                     <img src="images/mat1.jpg" alt="Коврик для йоги">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="10">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -410,7 +406,7 @@
                                 <a href="product.html?title=Спортивный бра-топ&price=1490&sizes=XS,S,M&image=/images/top2.jpg" class="product-card__link">
                                     <img src="images/top2.jpg" alt="Спортивный бра-топ">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="11">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -429,7 +425,7 @@
                                 <a href="product.html?title=Спортивные носки (3 пары)&price=690&sizes=One Size&image=/images/socks1.jpg" class="product-card__link">
                                     <img src="images/socks1.jpg" alt="Спортивные носки">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="12">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -453,7 +449,7 @@
                                 <a href="product.html?title=Шорты для фитнеса&price=1890&sizes=S,M,L&image=/images/shorts2.jpg" class="product-card__link">
                                     <img src="images/shorts2.jpg" alt="Шорты для фитнеса">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="13">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -472,7 +468,7 @@
                                 <a href="product.html?title=Повязка на голову&price=590&sizes=One Size&image=/images/headband1.jpg" class="product-card__link">
                                     <img src="images/headband1.jpg" alt="Повязка на голову">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="14">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -499,7 +495,7 @@
                                 <a href="product.html?title=Куртка Windbreaker&price=4990&sizes=XS,S,M,L&image=/images/jacket2.jpg" class="product-card__link">
                                     <img src="images/jacket2.jpg" alt="Куртка Windbreaker">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="15">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -518,7 +514,7 @@
                                 <a href="product.html?title=Пояс атлетический&price=2990&sizes=One Size&image=/images/belt1.jpg" class="product-card__link">
                                     <img src="images/belt1.jpg" alt="Пояс атлетический">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="16">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -546,7 +542,7 @@
                                 <a href="product.html?title=Рюкзак Sport Pro&price=3490&sizes=One Size&image=/images/backpack1.jpg" class="product-card__link">
                                     <img src="images/backpack1.jpg" alt="Рюкзак Sport Pro">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="17">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -570,7 +566,7 @@
                                 <a href="product.html?title=Майка Comfort Fit&price=1290&sizes=XS,S,M,L,XL&image=/images/tshirt2.jpg" class="product-card__link">
                                     <img src="images/tshirt2.jpg" alt="Майка Comfort Fit">
                                 </a>
-                                <button class="product-card__favorite">
+                                <button class="product-card__favorite" data-product-id="18">
                                     <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
                                 </button>
                             </div>
@@ -673,17 +669,17 @@
                 <div class="footer__column">
                     <h4 class="footer__title">Контакты</h4>
                     <ul class="footer__list">
-                        <li><a href="tel:+77777777777">+7 777 777 77 77</a></li>
+                        <li><a href="tel:+75392814760">+7 539 281 47 60</a></li>
                         <li><a href="mailto:pinupsportswear@gmail.com">pinupsportswear@gmail.com</a></li>
                     </ul>
                     <div class="social">
-                        <a href="#" class="social__link">
+                        <a href="index.html" class="social__link">
                             <svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
                         </a>
-                        <a href="#" class="social__link">
+                        <a href="index.html" class="social__link">
                             <svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
                         </a>
-                        <a href="#" class="social__link">
+                        <a href="index.html" class="social__link">
                             <svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
                         </a>
                     </div>

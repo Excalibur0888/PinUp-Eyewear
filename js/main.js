@@ -467,44 +467,140 @@ document.addEventListener('DOMContentLoaded', () => {
                     id: 1,
                     title: 'Спортивная футболка Pro',
                     price: '2 990 ₽',
-                    image: 'images/tshirt1.jpg'
+                    image: 'images/tshirt1.jpg',
+                    category: 'Мужская одежда'
                 },
                 {
                     id: 2,
-                    title: 'Шорты для бега',
-                    price: '1 990 ₽',
-                    image: 'images/shorts1.jpg'
+                    title: 'Леггинсы для йоги',
+                    price: '3 490 ₽',
+                    image: 'images/leggings1.jpg',
+                    category: 'Женская одежда'
                 },
                 {
                     id: 3,
-                    title: 'Спортивный костюм',
-                    price: '5 990 ₽',
-                    image: 'images/suit1.jpg'
+                    title: 'Худи с капюшоном',
+                    price: '4 990 ₽',
+                    image: 'images/hoodie1.jpg',
+                    category: 'Мужская одежда'
                 },
                 {
                     id: 4,
                     title: 'Спортивный топ',
-                    price: '1 590 ₽',
-                    image: 'images/top1.jpg'
+                    price: '1 990 ₽',
+                    image: 'images/top1.jpg',
+                    category: 'Женская одежда'
                 },
                 {
                     id: 5,
-                    title: 'Леггинсы для фитнеса',
-                    price: '2 490 ₽',
-                    image: 'images/leggings1.jpg'
+                    title: 'Шорты для бега',
+                    price: '1 990 ₽',
+                    image: 'images/shorts1.jpg',
+                    category: 'Мужская одежда'
                 },
                 {
                     id: 6,
                     title: 'Спортивная сумка',
+                    price: '2 990 ₽',
+                    image: 'images/bag1.jpg',
+                    category: 'Аксессуары'
+                },
+                {
+                    id: 7,
+                    title: 'Ветровка',
+                    price: '5 990 ₽',
+                    image: 'images/jacket1.jpg',
+                    category: 'Женская одежда'
+                },
+                {
+                    id: 8,
+                    title: 'Бутылка для воды',
+                    price: '990 ₽',
+                    image: 'images/bottle1.jpg',
+                    category: 'Аксессуары'
+                },
+                {
+                    id: 9,
+                    title: 'Спортивные брюки',
                     price: '3 990 ₽',
-                    image: 'images/bag1.jpg'
+                    image: 'images/pants1.jpg',
+                    category: 'Мужская одежда'
+                },
+                {
+                    id: 10,
+                    title: 'Коврик для йоги',
+                    price: '1 990 ₽',
+                    image: 'images/mat1.jpg',
+                    category: 'Аксессуары'
+                },
+                {
+                    id: 11,
+                    title: 'Спортивный бра-топ',
+                    price: '1 490 ₽',
+                    image: 'images/top2.jpg',
+                    category: 'Женская одежда'
+                },
+                {
+                    id: 12,
+                    title: 'Спортивные носки (3 пары)',
+                    price: '690 ₽',
+                    image: 'images/socks1.jpg',
+                    category: 'Аксессуары'
+                },
+                {
+                    id: 13,
+                    title: 'Шорты для фитнеса',
+                    price: '1 890 ₽',
+                    image: 'images/shorts2.jpg',
+                    category: 'Женская одежда'
+                },
+                {
+                    id: 14,
+                    title: 'Повязка на голову',
+                    price: '590 ₽',
+                    image: 'images/headband1.jpg',
+                    category: 'Аксессуары'
+                },
+                {
+                    id: 15,
+                    title: 'Куртка Windbreaker',
+                    price: '4 990 ₽',
+                    image: 'images/jacket2.jpg',
+                    category: 'Женская одежда'
+                },
+                {
+                    id: 16,
+                    title: 'Пояс атлетический',
+                    price: '2 990 ₽',
+                    image: 'images/belt1.jpg',
+                    category: 'Аксессуары'
+                },
+                {
+                    id: 17,
+                    title: 'Рюкзак Sport Pro',
+                    price: '3 490 ₽',
+                    image: 'images/backpack1.jpg',
+                    category: 'Аксессуары'
+                },
+                {
+                    id: 18,
+                    title: 'Майка Comfort Fit',
+                    price: '1 290 ₽',
+                    image: 'images/tshirt2.jpg',
+                    category: 'Мужская одежда'
                 }
             ];
 
             // Поиск по товарам
             const results = products.filter(product => {
-                const words = product.title.toLowerCase().split(' ');
-                return words.some(word => word.includes(query)) || product.title.toLowerCase().includes(query);
+                const searchStr = query.toLowerCase();
+                const title = product.title.toLowerCase();
+                const category = product.category.toLowerCase();
+                
+                // Ищем совпадения в названии, категории и отдельных словах
+                return title.includes(searchStr) || 
+                       category.includes(searchStr) || 
+                       title.split(' ').some(word => word.toLowerCase().includes(searchStr));
             });
 
             // Отображение результатов
@@ -514,12 +610,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             searchResults.innerHTML = results.map(product => `
-                <a href="product.html" class="search-result">
+                <a href="product.html?id=${product.id}" class="search-result">
                     <div class="search-result__image">
                         <img src="${product.image}" alt="${product.title}">
                     </div>
                     <div class="search-result__content">
                         <div class="search-result__title">${product.title}</div>
+                        <div class="search-result__category">${product.category}</div>
                         <div class="search-result__price">${product.price}</div>
                     </div>
                 </a>

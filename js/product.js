@@ -112,6 +112,47 @@ document.addEventListener('DOMContentLoaded', function() {
         favoriteButton.classList.add('active');
     }
 
+    // Обработчики для кнопок корзины в секции related-products
+    const relatedProductButtons = document.querySelectorAll('.related-products .product-card__btn');
+    relatedProductButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (!window.canAddToCart()) return;
+
+            const productCard = this.closest('.product-card');
+            const productData = {
+                id: parseInt(productCard.dataset.productId),
+                title: productCard.querySelector('.product-card__title').textContent,
+                price: productCard.querySelector('.product-card__price').textContent,
+                image: productCard.querySelector('img').src,
+                quantity: 1
+            };
+
+            const user = getCurrentUser();
+            let cart = getUserCart(user.id);
+            
+            const existingItemIndex = cart.findIndex(item => item.id === productData.id);
+
+            if (existingItemIndex !== -1) {
+                cart[existingItemIndex].quantity += 1;
+            } else {
+                cart.push(productData);
+            }
+
+            saveUserCart(user.id, cart);
+
+            // Визуальное подтверждение
+            this.textContent = 'Добавлено ✓';
+            this.classList.add('added');
+            
+            setTimeout(() => {
+                this.textContent = 'В корзину';
+                this.classList.remove('added');
+            }, 2000);
+        });
+    });
+
     // Инициализируем страницу
     updateProductUI();
 }); 

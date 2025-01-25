@@ -6,7 +6,7 @@ function initCountdownTimer() {
     function getEndTime() {
         const now = new Date();
         // 24 часа 59 минут 59 секунд в миллисекундах
-        return now.getTime() + ((24 * 60 * 60 + 59 * 60 + 59) * 1000);
+        return now.getTime() + ((23 * 60 * 60 + 59 * 60 + 59) * 1000);
     }
 
     let endDate = getEndTime();
@@ -95,10 +95,209 @@ function initPromoCodeCopy() {
     });
 }
 
+// Массив товаров для поиска
+const searchProducts = [
+    {
+        id: 1,
+        title: 'Авиаторы Classic Gold',
+        price: '4 990 ₽',
+        image: 'images/product1.jpg',
+        category: 'авиаторы'
+    },
+    {
+        id: 2,
+        title: 'Спортивные очки Pro',
+        price: '5 990 ₽',
+        image: 'images/product2.jpg',
+        category: 'спортивные'
+    },
+    {
+        id: 3,
+        title: 'Стильные очки Urban',
+        price: '3 990 ₽',
+        image: 'images/product3.jpg',
+        category: 'стильные'
+    },
+    {
+        id: 4,
+        title: 'Авиаторы Silver Mirror',
+        price: '4 490 ₽',
+        image: 'images/product4.jpg',
+        category: 'авиаторы'
+    },
+    {
+        id: 5,
+        title: 'Спортивные очки Extreme',
+        price: '6 990 ₽',
+        image: 'images/product5.jpg',
+        category: 'спортивные'
+    },
+    {
+        id: 6,
+        title: 'Стильные очки Vintage',
+        price: '3 490 ₽',
+        image: 'images/product6.jpg',
+        category: 'стильные'
+    },
+    {
+        id: 7,
+        title: 'Авиаторы Gold Gradient',
+        price: '5 490 ₽',
+        image: 'images/product7.jpg',
+        category: 'авиаторы'
+    },
+    {
+        id: 8,
+        title: 'Спортивные очки Shield',
+        price: '7 990 ₽',
+        image: 'images/product8.jpg',
+        category: 'спортивные'
+    },
+    {
+        id: 9,
+        title: 'Стильные очки Retro',
+        price: '4 290 ₽',
+        image: 'images/product9.jpg',
+        category: 'стильные'
+    },
+    {
+        id: 10,
+        title: 'Авиаторы Black Edition',
+        price: '5 990 ₽',
+        image: 'images/product10.jpg',
+        category: 'авиаторы'
+    },
+    {
+        id: 11,
+        title: 'Спортивные очки Race',
+        price: '6 490 ₽',
+        image: 'images/product11.jpg',
+        category: 'спортивные'
+    },
+    {
+        id: 12,
+        title: 'Стильные очки Modern',
+        price: '3 990 ₽',
+        image: 'images/product12.jpg',
+        category: 'стильные'
+    },
+    {
+        id: 13,
+        title: 'Авиаторы Premium Steel',
+        price: '7 990 ₽',
+        image: 'images/product13.jpg',
+        category: 'авиаторы'
+    },
+    {
+        id: 14,
+        title: 'Спортивные очки Ultra',
+        price: '8 990 ₽',
+        image: 'images/product14.jpg',
+        category: 'спортивные'
+    },
+    {
+        id: 15,
+        title: 'Стильные очки Classic',
+        price: '4 490 ₽',
+        image: 'images/product15.jpg',
+        category: 'стильные'
+    },
+    {
+        id: 16,
+        title: 'Авиаторы Titanium',
+        price: '9 990 ₽',
+        image: 'images/product16.jpg',
+        category: 'авиаторы'
+    },
+    {
+        id: 17,
+        title: 'Спортивные очки Elite',
+        price: '7 490 ₽',
+        image: 'images/product17.jpg',
+        category: 'спортивные'
+    },
+    {
+        id: 18,
+        title: 'Стильные очки Fashion',
+        price: '5 490 ₽',
+        image: 'images/product18.jpg',
+        category: 'стильные'
+    }
+];
+
+// Функция поиска
+function initSearch() {
+    const searchInput = document.querySelector('.search-input');
+    const searchResults = document.querySelector('.search-results');
+    const searchForm = document.querySelector('.search-form');
+    const searchClose = document.querySelector('.search-close');
+    const searchBtn = document.querySelector('.search-btn');
+
+    // Открытие поиска
+    searchBtn.addEventListener('click', () => {
+        searchForm.classList.add('active');
+        document.body.classList.add('search-open');
+        searchInput.focus();
+    });
+
+    // Закрытие поиска
+    searchClose.addEventListener('click', () => {
+        searchForm.classList.remove('active');
+        document.body.classList.remove('search-open');
+        searchInput.value = '';
+        searchResults.innerHTML = '';
+    });
+
+    // Обработка поиска
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        
+        if (query.length === 0) {
+            searchResults.innerHTML = '';
+            return;
+        }
+
+        const filteredProducts = searchProducts.filter(product => 
+            product.title.toLowerCase().includes(query) ||
+            product.category.toLowerCase().includes(query)
+        );
+
+        if (filteredProducts.length === 0) {
+            searchResults.innerHTML = '<div class="search-empty">Ничего не найдено</div>';
+            return;
+        }
+
+        const html = filteredProducts.map(product => `
+            <a href="product.html?id=${product.id}&title=${encodeURIComponent(product.title)}&price=${encodeURIComponent(product.price)}&image=${encodeURIComponent(product.image)}" class="search-result">
+                <div class="search-result__image">
+                    <img src="${product.image}" alt="${product.title}">
+                </div>
+                <div class="search-result__content">
+                    <div class="search-result__title">${product.title}</div>
+                    <div class="search-result__price">${product.price}</div>
+                </div>
+            </a>
+        `).join('');
+
+        searchResults.innerHTML = html;
+    });
+
+    // Закрытие по клику вне формы
+    document.addEventListener('click', (e) => {
+        if (!searchForm.contains(e.target) && !searchBtn.contains(e.target)) {
+            searchForm.classList.remove('active');
+            document.body.classList.remove('search-open');
+            searchInput.value = '';
+            searchResults.innerHTML = '';
+        }
+    });
+}
+
 // Делаем функции доступными глобально
 window.initCountdownTimer = initCountdownTimer;
 window.initAccordion = initAccordion;
 window.initPromoCodeCopy = initPromoCodeCopy;
+window.initSearch = initSearch;
 
 document.addEventListener('DOMContentLoaded', () => {
     // Мобильное меню и хедер
@@ -202,10 +401,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const category = product.querySelector('.product-card__category').textContent.toLowerCase();
             const categoryMatch = selectedCategories.length === 0 || 
                 selectedCategories.some(selectedCat => {
-                    if (selectedCat === 'aviators') return category.includes('мужская');
-                    if (selectedCat === 'sport') return category.includes('женская');
-                    if (selectedCat === 'style') return category.includes('аксессуары');
-                return false;
+                    if (selectedCat === 'aviators') return category.includes('авиаторы');
+                    if (selectedCat === 'sport') return category.includes('спортивные');
+                    if (selectedCat === 'style') return category.includes('стильные');
+                    return false;
                 });
 
             // Проверка цены
@@ -495,222 +694,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', animateOnScroll);
 
     // Поиск
-    const searchBtn = document.querySelector('.search-btn');
-    const searchForm = document.querySelector('.search-form');
-    const searchClose = document.querySelector('.search-close');
-    const searchInput = document.querySelector('.search-input');
-    const searchResults = document.querySelector('.search-results');
-
-    if (searchBtn && searchForm && searchClose) {
-        // Открытие поиска
-        searchBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            searchForm.classList.add('active');
-            document.body.classList.add('search-open');
-            searchInput.focus();
-        });
-
-        // Закрытие поиска
-        searchClose.addEventListener('click', () => {
-            searchForm.classList.remove('active');
-            document.body.classList.remove('search-open');
-            searchInput.value = '';
-            searchResults.innerHTML = '';
-        });
-
-        // Закрытие при клике вне поиска
-        document.addEventListener('click', (e) => {
-            if (!searchForm.contains(e.target) && !searchBtn.contains(e.target)) {
-                searchForm.classList.remove('active');
-                document.body.classList.remove('search-open');
-                searchInput.value = '';
-                searchResults.innerHTML = '';
-            }
-        });
-
-        // Поиск товаров
-        searchInput.addEventListener('input', debounce((e) => {
-            const query = e.target.value.trim().toLowerCase();
-            if (query.length === 0) {
-                searchResults.innerHTML = '';
-                return;
-            }
-
-            // Демо-данные товаров
-            const products = [
-                {
-                    id: 1,
-                    title: 'Спортивная футболка Pro',
-                    price: '2 990 ₽',
-                    image: 'images/tshirt1.jpg',
-                    category: 'Мужская одежда'
-                },
-                {
-                    id: 2,
-                    title: 'Леггинсы для йоги',
-                    price: '3 490 ₽',
-                    image: 'images/leggings1.jpg',
-                    category: 'Женская одежда'
-                },
-                {
-                    id: 3,
-                    title: 'Худи с капюшоном',
-                    price: '4 990 ₽',
-                    image: 'images/hoodie1.jpg',
-                    category: 'Мужская одежда'
-                },
-                {
-                    id: 4,
-                    title: 'Спортивный топ',
-                    price: '1 990 ₽',
-                    image: 'images/top1.jpg',
-                    category: 'Женская одежда'
-                },
-                {
-                    id: 5,
-                    title: 'Шорты для бега',
-                    price: '1 990 ₽',
-                    image: 'images/shorts1.jpg',
-                    category: 'Мужская одежда'
-                },
-                {
-                    id: 6,
-                    title: 'Спортивная сумка',
-                    price: '2 990 ₽',
-                    image: 'images/bag1.jpg',
-                    category: 'Аксессуары'
-                },
-                {
-                    id: 7,
-                    title: 'Ветровка',
-                    price: '5 990 ₽',
-                    image: 'images/jacket1.jpg',
-                    category: 'Женская одежда'
-                },
-                {
-                    id: 8,
-                    title: 'Бутылка для воды',
-                    price: '990 ₽',
-                    image: 'images/bottle1.jpg',
-                    category: 'Аксессуары'
-                },
-                {
-                    id: 9,
-                    title: 'Спортивные брюки',
-                    price: '3 990 ₽',
-                    image: 'images/pants1.jpg',
-                    category: 'Мужская одежда'
-                },
-                {
-                    id: 10,
-                    title: 'Коврик для йоги',
-                    price: '1 990 ₽',
-                    image: 'images/mat1.jpg',
-                    category: 'Аксессуары'
-                },
-                {
-                    id: 11,
-                    title: 'Спортивный бра-топ',
-                    price: '1 490 ₽',
-                    image: 'images/top2.jpg',
-                    category: 'Женская одежда'
-                },
-                {
-                    id: 12,
-                    title: 'Спортивные носки (3 пары)',
-                    price: '690 ₽',
-                    image: 'images/socks1.jpg',
-                    category: 'Аксессуары'
-                },
-                {
-                    id: 13,
-                    title: 'Шорты для фитнеса',
-                    price: '1 890 ₽',
-                    image: 'images/shorts2.jpg',
-                    category: 'Женская одежда'
-                },
-                {
-                    id: 14,
-                    title: 'Повязка на голову',
-                    price: '590 ₽',
-                    image: 'images/headband1.jpg',
-                    category: 'Аксессуары'
-                },
-                {
-                    id: 15,
-                    title: 'Куртка Windbreaker',
-                    price: '4 990 ₽',
-                    image: 'images/jacket2.jpg',
-                    category: 'Женская одежда'
-                },
-                {
-                    id: 16,
-                    title: 'Пояс атлетический',
-                    price: '2 990 ₽',
-                    image: 'images/belt1.jpg',
-                    category: 'Аксессуары'
-                },
-                {
-                    id: 17,
-                    title: 'Рюкзак Sport Pro',
-                    price: '3 490 ₽',
-                    image: 'images/backpack1.jpg',
-                    category: 'Аксессуары'
-                },
-                {
-                    id: 18,
-                    title: 'Майка Comfort Fit',
-                    price: '1 290 ₽',
-                    image: 'images/tshirt2.jpg',
-                    category: 'Мужская одежда'
-                }
-            ];
-
-            // Поиск по товарам
-            const results = products.filter(product => {
-                const searchStr = query.toLowerCase();
-                const title = product.title.toLowerCase();
-                const category = product.category.toLowerCase();
-                
-                // Ищем совпадения в названии, категории и отдельных словах
-                return title.includes(searchStr) || 
-                       category.includes(searchStr) || 
-                       title.split(' ').some(word => word.toLowerCase().includes(searchStr));
-            });
-
-            // Отображение результатов
-            if (results.length === 0) {
-                searchResults.innerHTML = '<div class="search-empty">Ничего не найдено</div>';
-                return;
-            }
-
-            searchResults.innerHTML = results.map(product => `
-                <a href="product.html?id=${product.id}" class="search-result">
-                    <div class="search-result__image">
-                        <img src="${product.image}" alt="${product.title}">
-                    </div>
-                    <div class="search-result__content">
-                        <div class="search-result__title">${product.title}</div>
-                        <div class="search-result__category">${product.category}</div>
-                        <div class="search-result__price">${product.price}</div>
-                    </div>
-                </a>
-            `).join('');
-        }, 300));
-    }
-
-    // Функция debounce
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
+    initSearch();
 
     // Форма подписки
     const subscribeForm = document.querySelector('.subscribe__form');

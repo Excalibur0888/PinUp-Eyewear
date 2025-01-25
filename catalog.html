@@ -2,8 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-		<meta name="description" content="Каталог товаров PIN-UP Eyewear - выбор спортивной одежды и аксессуаров. Удобная навигация и быстрый доступ к товарам.">
+		<meta name="description" content="Каталог товаров PIN-UP Eyewear - выбор спортивных очков и аксессуаров. Удобная навигация и быстрый доступ к товарам.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="icon" href="images/favicon.png">
     <title>Каталог - PIN-UP Eyewear</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -123,458 +124,514 @@
 					</div>
 			</div>
 	</div>
-<main>
-    <!-- Каталог -->
-    <section class="catalog">
-        <div class="container">
-            <h1 class="section-title">Каталог товаров</h1>
-            
-            <div class="catalog__wrapper">
-                <!-- Фильтры -->
-                <aside class="catalog__filters filters">
-                    <div class="filter-group">
-                        <h3 class="filter-group__title">Категории</h3>
-                        <ul class="filter-group__list">
-                            <li><label class="checkbox"><input type="checkbox" value="aviators" checked> Авиаторы</label></li>
-                            <li><label class="checkbox"><input type="checkbox" value="sport" checked> Спортивные</label></li>
-                            <li><label class="checkbox"><input type="checkbox" value="style"> Стильные</label></li>
-                        </ul>
-                    </div>
+    <main>
+        <!-- Баннер каталога -->
+        <section class="catalog-hero">
+            <div class="container">
+                <h1 class="catalog-hero__title">Каталог товаров</h1>
+                <p class="catalog-hero__text">Широкий выбор стильных очков для любого случая</p>
+            </div>
+        </section>
 
-                    <div class="filter-group">
-                        <h3 class="filter-group__title">Цена</h3>
-                        <div class="price-range">
-                            <div class="price-range__inputs">
-                                <input type="number" class="price-range__input" name="price_min" placeholder="от" min="0">
-                                <span class="price-range__dash">—</span>
-                                <input type="number" class="price-range__input" name="price_max" placeholder="до" min="0">
-                            </div>
+        <!-- Каталог -->
+        <section class="catalog">
+            <div class="container">                
+                <div class="catalog__wrapper">
+                    <!-- Фильтры -->
+                    <aside class="catalog__filters filters">
+                        <div class="filter-group">
+                            <h3 class="filter-group__title">Категории</h3>
+                            <ul class="filter-group__list">
+                                <li><label class="checkbox"><input type="checkbox" value="aviators"> Авиаторы</label></li>
+                                <li><label class="checkbox"><input type="checkbox" value="sport"> Спортивные</label></li>
+                                <li><label class="checkbox"><input type="checkbox" value="style"> Стильные</label></li>
+                            </ul>
                         </div>
-                    </div>
-                </aside>
 
-                <!-- Товары -->
-                <div class="catalog__content">
-                    <div class="catalog__sort">
-                        <select class="sort-select">
-                            <option value="popular">По популярности</option>
-                            <option value="price-asc">По возрастанию цены</option>
-                            <option value="price-desc">По убыванию цены</option>
-                            <option value="new">Новинки</option>
-                        </select>
-                    </div>
-
-                    <div class="catalog__grid">
-                        <!-- Товар 1 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <div class="product-card__badges">
-                                    <span class="badge badge--new">New</span>
-                                    <span class="badge badge--hit">Хит</span>
+                        <div class="filter-group">
+                            <h3 class="filter-group__title">Цена</h3>
+                            <div class="price-range">
+                                <div class="price-range__inputs">
+                                    <input type="number" class="price-range__input" name="price_min" placeholder="от" min="0">
+                                    <span class="price-range__dash">—</span>
+                                    <input type="number" class="price-range__input" name="price_max" placeholder="до" min="0">
                                 </div>
-                                <a href="product.html?title=Очки-авиаторы Classic&price=4990&sizes=One Size&image=/images/aviator1.jpg" class="product-card__link">
-                                    <img src="images/aviator1.jpg" alt="Очки-авиаторы Classic">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Очки-авиаторы Classic</h3>
-                                <div class="product-card__category">Авиаторы</div>
-                                <div class="product-card__price">4 990 ₽</div>
-                                <a href="product.html?title=Очки-авиаторы Classic&price=4990&sizes=One Size&image=/images/aviator1.jpg" class="btn btn--outline">Подробнее</a>
                             </div>
                         </div>
+                    </aside>
 
-                        <!-- Товар 2 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <div class="product-card__badges">
-                                    <span class="badge badge--sale">-20%</span>
+                    <!-- Товары -->
+                    <div class="catalog__content">
+                        <div class="catalog__sort">
+                            <select class="sort-select">
+                                <option value="popular">По популярности</option>
+                                <option value="price-asc">По возрастанию цены</option>
+                                <option value="price-desc">По убыванию цены</option>
+                                <option value="new">Новинки</option>
+                            </select>
+                        </div>
+
+                        <div class="catalog__grid">
+                            <!-- Товар 1 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <div class="product-card__badges">
+                                        <span class="badge badge--new">New</span>
+                                        <span class="badge badge--hit">Хит</span>
+                                    </div>
+                                    <a href="product.html?title=Очки-авиаторы Classic&price=4990&sizes=One Size&image=/images/aviator1.jpg" class="product-card__link">
+                                        <img src="images/aviator1.jpg" alt="Очки-авиаторы Classic">
+                                    </a>
                                 </div>
-                                <a href="product.html?title=Спортивные очки Pro&price=3990&sizes=One Size&image=/images/sport1.jpg" class="product-card__link">
-                                    <img src="images/sport1.jpg" alt="Спортивные очки Pro">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Спортивные очки Pro</h3>
-                                <div class="product-card__category">Спортивные</div>
-                                <div class="product-card__price">3 990 ₽</div>
-                                <a href="product.html?title=Спортивные очки Pro&price=3990&sizes=One Size&image=/images/sport1.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
-
-                        <!-- Товар 3 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <div class="product-card__badges">
-                                    <span class="badge badge--hit">Хит</span>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Очки-авиаторы Classic</h3>
+                                    <div class="product-card__category">Авиаторы</div>
+                                    <div class="product-card__price">4 990 ₽</div>
+                                    <a href="product.html?title=Очки-авиаторы Classic&price=4990&sizes=One Size&image=/images/aviator1.jpg" class="btn btn--outline">Подробнее</a>
                                 </div>
-                                <a href="product.html?title=Авиаторы Premium&price=6990&sizes=One Size&image=/images/aviator2.jpg" class="product-card__link">
-                                    <img src="images/aviator2.jpg" alt="Авиаторы Premium">
-                                </a>
                             </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Авиаторы Premium</h3>
-                                <div class="product-card__category">Авиаторы</div>
-                                <div class="product-card__price">6 990 ₽</div>
-                                <a href="product.html?title=Авиаторы Premium&price=6990&sizes=One Size&image=/images/aviator2.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
 
-                        <!-- Товар 4 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <div class="product-card__badges">
-                                    <span class="badge badge--hit">Хит</span>
+                            <!-- Товар 2 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <div class="product-card__badges">
+                                        <span class="badge badge--sale">-20%</span>
+                                    </div>
+                                    <a href="product.html?title=Спортивные очки Pro&price=3990&sizes=One Size&image=/images/sport1.jpg" class="product-card__link">
+                                        <img src="images/sport1.jpg" alt="Спортивные очки Pro">
+                                    </a>
                                 </div>
-                                <a href="product.html?title=Стильные очки Urban&price=5490&sizes=One Size&image=/images/style1.jpg" class="product-card__link">
-                                    <img src="images/style1.jpg" alt="Стильные очки Urban">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Стильные очки Urban</h3>
-                                <div class="product-card__category">Стильные</div>
-                                <div class="product-card__price">5 490 ₽</div>
-                                <a href="product.html?title=Стильные очки Urban&price=5490&sizes=One Size&image=/images/style1.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
-
-                        <!-- Товар 5 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <a href="product.html?title=Спортивные очки Shield&price=4490&sizes=One Size&image=/images/sport2.jpg" class="product-card__link">
-                                    <img src="images/sport2.jpg" alt="Спортивные очки Shield">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Спортивные очки Shield</h3>
-                                <div class="product-card__category">Спортивные</div>
-                                <div class="product-card__price">4 490 ₽</div>
-                                <a href="product.html?title=Спортивные очки Shield&price=4490&sizes=One Size&image=/images/sport2.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
-
-                        <!-- Товар 6 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <a href="product.html?title=Стильные очки Retro&price=3990&sizes=One Size&image=/images/style2.jpg" class="product-card__link">
-                                    <img src="images/style2.jpg" alt="Стильные очки Retro">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Стильные очки Retro</h3>
-                                <div class="product-card__category">Стильные</div>
-                                <div class="product-card__price">3 990 ₽</div>
-                                <a href="product.html?title=Стильные очки Retro&price=3990&sizes=One Size&image=/images/style2.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
-
-                        <!-- Товар 7 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <div class="product-card__badges">
-                                    <span class="badge badge--new">New</span>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Спортивные очки Pro</h3>
+                                    <div class="product-card__category">Спортивные</div>
+                                    <div class="product-card__price">3 990 ₽</div>
+                                    <a href="product.html?title=Спортивные очки Pro&price=3990&sizes=One Size&image=/images/sport1.jpg" class="btn btn--outline">Подробнее</a>
                                 </div>
-                                <a href="product.html?title=Авиаторы Gold&price=7990&sizes=One Size&image=/images/aviator3.jpg" class="product-card__link">
-                                    <img src="images/aviator3.jpg" alt="Авиаторы Gold">
-                                </a>
                             </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Авиаторы Gold</h3>
-                                <div class="product-card__category">Авиаторы</div>
-                                <div class="product-card__price">7 990 ₽</div>
-                                <a href="product.html?title=Авиаторы Gold&price=7990&sizes=One Size&image=/images/aviator3.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
 
-                        <!-- Товар 8 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <a href="product.html?title=Спортивные очки Aero&price=5990&sizes=One Size&image=/images/sport3.jpg" class="product-card__link">
-                                    <img src="images/sport3.jpg" alt="Спортивные очки Aero">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Спортивные очки Aero</h3>
-                                <div class="product-card__category">Спортивные</div>
-                                <div class="product-card__price">5 990 ₽</div>
-                                <a href="product.html?title=Спортивные очки Aero&price=5990&sizes=One Size&image=/images/sport3.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
-
-                        <!-- Товар 9 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <div class="product-card__badges">
-                                    <span class="badge badge--sale">-15%</span>
+                            <!-- Товар 3 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <div class="product-card__badges">
+                                        <span class="badge badge--hit">Хит</span>
+                                    </div>
+                                    <a href="product.html?title=Авиаторы Premium&price=6990&sizes=One Size&image=/images/aviator2.jpg" class="product-card__link">
+                                        <img src="images/aviator2.jpg" alt="Авиаторы Premium">
+                                    </a>
                                 </div>
-                                <a href="product.html?title=Стильные очки Modern&price=4490&sizes=One Size&image=/images/style3.jpg" class="product-card__link">
-                                    <img src="images/style3.jpg" alt="Стильные очки Modern">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Стильные очки Modern</h3>
-                                <div class="product-card__category">Стильные</div>
-                                <div class="product-card__price">4 490 ₽</div>
-                                <a href="product.html?title=Стильные очки Modern&price=4490&sizes=One Size&image=/images/style3.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
-
-                        <!-- Товар 10 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <a href="product.html?title=Авиаторы Silver&price=5490&sizes=One Size&image=/images/aviator4.jpg" class="product-card__link">
-                                    <img src="images/aviator4.jpg" alt="Авиаторы Silver">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Авиаторы Silver</h3>
-                                <div class="product-card__category">Авиаторы</div>
-                                <div class="product-card__price">5 490 ₽</div>
-                                <a href="product.html?title=Авиаторы Silver&price=5490&sizes=One Size&image=/images/aviator4.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
-
-                        <!-- Товар 11 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <a href="product.html?title=Спортивные очки Pro Max&price=6490&sizes=One Size&image=/images/sport4.jpg" class="product-card__link">
-                                    <img src="images/sport4.jpg" alt="Спортивные очки Pro Max">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Спортивные очки Pro Max</h3>
-                                <div class="product-card__category">Спортивные</div>
-                                <div class="product-card__price">6 490 ₽</div>
-                                <a href="product.html?title=Спортивные очки Pro Max&price=6490&sizes=One Size&image=/images/sport4.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
-
-                        <!-- Товар 12 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <a href="product.html?title=Стильные очки Classic&price=3990&sizes=One Size&image=/images/style5.jpg" class="product-card__link">
-                                    <img src="images/style5.jpg" alt="Стильные очки Classic">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Стильные очки Classic</h3>
-                                <div class="product-card__category">Стильные</div>
-                                <div class="product-card__price">3 990 ₽</div>
-                                <a href="product.html?title=Стильные очки Classic&price=3990&sizes=One Size&image=/images/style5.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
-
-                        <!-- Товар 13 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <a href="product.html?title=Авиаторы Titanium&price=8990&sizes=One Size&image=/images/aviator5.jpg" class="product-card__link">
-                                    <img src="images/aviator5.jpg" alt="Авиаторы Titanium">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Авиаторы Titanium</h3>
-                                <div class="product-card__category">Авиаторы</div>
-                                <div class="product-card__price">8 990 ₽</div>
-                                <a href="product.html?title=Авиаторы Titanium&price=8990&sizes=One Size&image=/images/aviator5.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
-
-                        <!-- Товар 14 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <a href="product.html?title=Спортивные очки Elite&price=7490&sizes=One Size&image=/images/sport5.jpg" class="product-card__link">
-                                    <img src="images/sport5.jpg" alt="Спортивные очки Elite">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Спортивные очки Elite</h3>
-                                <div class="product-card__category">Спортивные</div>
-                                <div class="product-card__price">7 490 ₽</div>
-                                <a href="product.html?title=Спортивные очки Elite&price=7490&sizes=One Size&image=/images/sport5.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
-
-                        <!-- Товар 15 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <div class="product-card__badges">
-                                    <span class="badge badge--hit">Хит</span>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Авиаторы Premium</h3>
+                                    <div class="product-card__category">Авиаторы</div>
+                                    <div class="product-card__price">6 990 ₽</div>
+                                    <a href="product.html?title=Авиаторы Premium&price=6990&sizes=One Size&image=/images/aviator2.jpg" class="btn btn--outline">Подробнее</a>
                                 </div>
-                                <a href="product.html?title=Стильные очки Premium&price=6990&sizes=One Size&image=/images/style6.jpg" class="product-card__link">
-                                    <img src="images/style6.jpg" alt="Стильные очки Premium">
-                                </a>
                             </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Стильные очки Premium</h3>
-                                <div class="product-card__category">Стильные</div>
-                                <div class="product-card__price">6 990 ₽</div>
-                                <a href="product.html?title=Стильные очки Premium&price=6990&sizes=One Size&image=/images/style6.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
 
-                        <!-- Товар 16 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <a href="product.html?title=Авиаторы Carbon&price=9990&sizes=One Size&image=/images/aviator6.jpg" class="product-card__link">
-                                    <img src="images/aviator6.jpg" alt="Авиаторы Carbon">
-                                </a>
-                            </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Авиаторы Carbon</h3>
-                                <div class="product-card__category">Авиаторы</div>
-                                <div class="product-card__price">9 990 ₽</div>
-                                <a href="product.html?title=Авиаторы Carbon&price=9990&sizes=One Size&image=/images/aviator6.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
-
-                        <!-- Товар 17 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <div class="product-card__badges">
-                                    <span class="badge badge--new">New</span>
-                                    <span class="badge badge--hit">Хит</span>
+                            <!-- Товар 4 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <div class="product-card__badges">
+                                        <span class="badge badge--hit">Хит</span>
+                                    </div>
+                                    <a href="product.html?title=Стильные очки Urban&price=5490&sizes=One Size&image=/images/style1.jpg" class="product-card__link">
+                                        <img src="images/style1.jpg" alt="Стильные очки Urban">
+                                    </a>
                                 </div>
-                                <a href="product.html?title=Спортивные очки Ultra&price=8490&sizes=One Size&image=/images/sport6.jpg" class="product-card__link">
-                                    <img src="images/sport6.jpg" alt="Спортивные очки Ultra">
-                                </a>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Стильные очки Urban</h3>
+                                    <div class="product-card__category">Стильные</div>
+                                    <div class="product-card__price">5 490 ₽</div>
+                                    <a href="product.html?title=Стильные очки Urban&price=5490&sizes=One Size&image=/images/style1.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
                             </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Спортивные очки Ultra</h3>
-                                <div class="product-card__category">Спортивные</div>
-                                <div class="product-card__price">8 490 ₽</div>
-                                <a href="product.html?title=Спортивные очки Ultra&price=8490&sizes=One Size&image=/images/sport6.jpg" class="btn btn--outline">Подробнее</a>
-                            </div>
-                        </div>
 
-                        <!-- Товар 18 -->
-                        <div class="product-card" >
-                            <div class="product-card__image">
-                                <a href="product.html?title=Стильные очки Vintage&price=5990&sizes=One Size&image=/images/style7.jpg" class="product-card__link">
-                                    <img src="images/style7.jpg" alt="Стильные очки Vintage">
-                                </a>
+                            <!-- Товар 5 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <a href="product.html?title=Спортивные очки Shield&price=4490&sizes=One Size&image=/images/sport2.jpg" class="product-card__link">
+                                        <img src="images/sport2.jpg" alt="Спортивные очки Shield">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Спортивные очки Shield</h3>
+                                    <div class="product-card__category">Спортивные</div>
+                                    <div class="product-card__price">4 490 ₽</div>
+                                    <a href="product.html?title=Спортивные очки Shield&price=4490&sizes=One Size&image=/images/sport2.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
                             </div>
-                            <div class="product-card__content">
-                                <h3 class="product-card__title">Стильные очки Vintage</h3>
-                                <div class="product-card__category">Стильные</div>
-                                <div class="product-card__price">5 990 ₽</div>
-                                <a href="product.html?title=Стильные очки Vintage&price=5990&sizes=One Size&image=/images/style7.jpg" class="btn btn--outline">Подробнее</a>
+
+                            <!-- Товар 6 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <a href="product.html?title=Стильные очки Retro&price=3990&sizes=One Size&image=/images/style2.jpg" class="product-card__link">
+                                        <img src="images/style2.jpg" alt="Стильные очки Retro">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Стильные очки Retro</h3>
+                                    <div class="product-card__category">Стильные</div>
+                                    <div class="product-card__price">3 990 ₽</div>
+                                    <a href="product.html?title=Стильные очки Retro&price=3990&sizes=One Size&image=/images/style2.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
+                            </div>
+
+                            <!-- Товар 7 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <div class="product-card__badges">
+                                        <span class="badge badge--new">New</span>
+                                    </div>
+                                    <a href="product.html?title=Авиаторы Gold&price=7990&sizes=One Size&image=/images/aviator3.jpg" class="product-card__link">
+                                        <img src="images/aviator3.jpg" alt="Авиаторы Gold">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Авиаторы Gold</h3>
+                                    <div class="product-card__category">Авиаторы</div>
+                                    <div class="product-card__price">7 990 ₽</div>
+                                    <a href="product.html?title=Авиаторы Gold&price=7990&sizes=One Size&image=/images/aviator3.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
+                            </div>
+
+                            <!-- Товар 8 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <a href="product.html?title=Спортивные очки Aero&price=5990&sizes=One Size&image=/images/sport3.jpg" class="product-card__link">
+                                        <img src="images/sport3.jpg" alt="Спортивные очки Aero">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Спортивные очки Aero</h3>
+                                    <div class="product-card__category">Спортивные</div>
+                                    <div class="product-card__price">5 990 ₽</div>
+                                    <a href="product.html?title=Спортивные очки Aero&price=5990&sizes=One Size&image=/images/sport3.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
+                            </div>
+
+                            <!-- Товар 9 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <div class="product-card__badges">
+                                        <span class="badge badge--sale">-15%</span>
+                                    </div>
+                                    <a href="product.html?title=Стильные очки Modern&price=4490&sizes=One Size&image=/images/style3.jpg" class="product-card__link">
+                                        <img src="images/style3.jpg" alt="Стильные очки Modern">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Стильные очки Modern</h3>
+                                    <div class="product-card__category">Стильные</div>
+                                    <div class="product-card__price">4 490 ₽</div>
+                                    <a href="product.html?title=Стильные очки Modern&price=4490&sizes=One Size&image=/images/style3.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
+                            </div>
+
+                            <!-- Товар 10 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <a href="product.html?title=Авиаторы Silver&price=5490&sizes=One Size&image=/images/aviator4.jpg" class="product-card__link">
+                                        <img src="images/aviator4.jpg" alt="Авиаторы Silver">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Авиаторы Silver</h3>
+                                    <div class="product-card__category">Авиаторы</div>
+                                    <div class="product-card__price">5 490 ₽</div>
+                                    <a href="product.html?title=Авиаторы Silver&price=5490&sizes=One Size&image=/images/aviator4.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
+                            </div>
+
+                            <!-- Товар 11 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <a href="product.html?title=Спортивные очки Pro Max&price=6490&sizes=One Size&image=/images/sport4.jpg" class="product-card__link">
+                                        <img src="images/sport4.jpg" alt="Спортивные очки Pro Max">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Спортивные очки Pro Max</h3>
+                                    <div class="product-card__category">Спортивные</div>
+                                    <div class="product-card__price">6 490 ₽</div>
+                                    <a href="product.html?title=Спортивные очки Pro Max&price=6490&sizes=One Size&image=/images/sport4.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
+                            </div>
+
+                            <!-- Товар 12 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <a href="product.html?title=Стильные очки Classic&price=3990&sizes=One Size&image=/images/style5.jpg" class="product-card__link">
+                                        <img src="images/style5.jpg" alt="Стильные очки Classic">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Стильные очки Classic</h3>
+                                    <div class="product-card__category">Стильные</div>
+                                    <div class="product-card__price">3 990 ₽</div>
+                                    <a href="product.html?title=Стильные очки Classic&price=3990&sizes=One Size&image=/images/style5.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
+                            </div>
+
+                            <!-- Товар 13 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <a href="product.html?title=Авиаторы Titanium&price=8990&sizes=One Size&image=/images/aviator5.jpg" class="product-card__link">
+                                        <img src="images/aviator5.jpg" alt="Авиаторы Titanium">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Авиаторы Titanium</h3>
+                                    <div class="product-card__category">Авиаторы</div>
+                                    <div class="product-card__price">8 990 ₽</div>
+                                    <a href="product.html?title=Авиаторы Titanium&price=8990&sizes=One Size&image=/images/aviator5.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
+                            </div>
+
+                            <!-- Товар 14 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <a href="product.html?title=Спортивные очки Elite&price=7490&sizes=One Size&image=/images/sport5.jpg" class="product-card__link">
+                                        <img src="images/sport5.jpg" alt="Спортивные очки Elite">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Спортивные очки Elite</h3>
+                                    <div class="product-card__category">Спортивные</div>
+                                    <div class="product-card__price">7 490 ₽</div>
+                                    <a href="product.html?title=Спортивные очки Elite&price=7490&sizes=One Size&image=/images/sport5.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
+                            </div>
+
+                            <!-- Товар 15 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <div class="product-card__badges">
+                                        <span class="badge badge--hit">Хит</span>
+                                    </div>
+                                    <a href="product.html?title=Стильные очки Premium&price=6990&sizes=One Size&image=/images/style6.jpg" class="product-card__link">
+                                        <img src="images/style6.jpg" alt="Стильные очки Premium">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Стильные очки Premium</h3>
+                                    <div class="product-card__category">Стильные</div>
+                                    <div class="product-card__price">6 990 ₽</div>
+                                    <a href="product.html?title=Стильные очки Premium&price=6990&sizes=One Size&image=/images/style6.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
+                            </div>
+
+                            <!-- Товар 16 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <a href="product.html?title=Авиаторы Carbon&price=9990&sizes=One Size&image=/images/aviator6.jpg" class="product-card__link">
+                                        <img src="images/aviator6.jpg" alt="Авиаторы Carbon">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Авиаторы Carbon</h3>
+                                    <div class="product-card__category">Авиаторы</div>
+                                    <div class="product-card__price">9 990 ₽</div>
+                                    <a href="product.html?title=Авиаторы Carbon&price=9990&sizes=One Size&image=/images/aviator6.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
+                            </div>
+
+                            <!-- Товар 17 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <div class="product-card__badges">
+                                        <span class="badge badge--new">New</span>
+                                        <span class="badge badge--hit">Хит</span>
+                                    </div>
+                                    <a href="product.html?title=Спортивные очки Ultra&price=8490&sizes=One Size&image=/images/sport6.jpg" class="product-card__link">
+                                        <img src="images/sport6.jpg" alt="Спортивные очки Ultra">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Спортивные очки Ultra</h3>
+                                    <div class="product-card__category">Спортивные</div>
+                                    <div class="product-card__price">8 490 ₽</div>
+                                    <a href="product.html?title=Спортивные очки Ultra&price=8490&sizes=One Size&image=/images/sport6.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
+                            </div>
+
+                            <!-- Товар 18 -->
+                            <div class="product-card" >
+                                <div class="product-card__image">
+                                    <a href="product.html?title=Стильные очки Vintage&price=5990&sizes=One Size&image=/images/style7.jpg" class="product-card__link">
+                                        <img src="images/style7.jpg" alt="Стильные очки Vintage">
+                                    </a>
+                                </div>
+                                <div class="product-card__content">
+                                    <h3 class="product-card__title">Стильные очки Vintage</h3>
+                                    <div class="product-card__category">Стильные</div>
+                                    <div class="product-card__price">5 990 ₽</div>
+                                    <a href="product.html?title=Стильные очки Vintage&price=5990&sizes=One Size&image=/images/style7.jpg" class="btn btn--outline">Подробнее</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Товары недели -->
-    <section class="related-products">
-        <div class="container">
-            <h2 class="section-title">Товары недели</h2>
-            <div class="related-products__grid">
-                <!-- Товар недели 1 -->
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <div class="product-card__badges">
-                            <span class="badge badge--sale">-30%</span>
-                            <span class="badge badge--hit">Хит</span>
+        <!-- Товары недели -->
+        <section class="related-products">
+            <div class="container">
+                <h2 class="section-title">Товары недели</h2>
+                <div class="related-products__grid">
+                    <!-- Товар недели 1 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <div class="product-card__badges">
+                                <span class="badge badge--sale">-30%</span>
+                                <span class="badge badge--hit">Хит</span>
+                            </div>
+                            <img src="images/aviator-gold.jpg" alt="Авиаторы Gold Edition">
                         </div>
-                        <img src="images/aviator-gold.jpg" alt="Авиаторы Gold Edition">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Авиаторы Gold Edition</h3>
+                            <div class="product-card__category">Авиаторы</div>
+                            <div class="product-card__price">7 990 ₽</div>
+                            <a href="product.html?title=Авиаторы Gold Edition&price=7990&image=/images/aviator-gold.jpg" class="btn btn--outline">Подробнее</a>
+                        </div>
                     </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Авиаторы Gold Edition</h3>
-                        <div class="product-card__category">Авиаторы</div>
-                        <div class="product-card__price">7 990 ₽</div>
-                        <a href="product.html?title=Авиаторы Gold Edition&price=7990&image=/images/aviator-gold.jpg" class="btn btn--outline">Подробнее</a>
-                    </div>
-                </div>
 
-                <!-- Товар недели 2 -->
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <div class="product-card__badges">
-                            <span class="badge badge--sale">-25%</span>
+                    <!-- Товар недели 2 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <div class="product-card__badges">
+                                <span class="badge badge--sale">-25%</span>
+                            </div>
+                            <img src="images/sport-pro.jpg" alt="Спортивные очки Elite">
                         </div>
-                        <img src="images/sport-pro.jpg" alt="Спортивные очки Elite">
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Стильные очки Retro</h3>
+                            <div class="product-card__category">Стильные</div>
+                            <div class="product-card__price">5 490 ₽</div>
+                            <a href="product.html?title=Стильные очки Retro&price=5490&image=/images/sport-pro.jpg" class="btn btn--outline">Подробнее</a>
+                        </div>
                     </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Спортивные очки Elite</h3>
-                        <div class="product-card__category">Спортивные</div>
-                        <div class="product-card__price">5 990 ₽</div>
-                        <a href="product.html?title=Спортивные очки Elite&price=5990&image=/images/sport-pro.jpg" class="btn btn--outline">Подробнее</a>
-                    </div>
-                </div>
 
-                <!-- Товар недели 3 -->
-                <div class="product-card">
-                    <div class="product-card__image">
-                        <div class="product-card__badges">
-                            <span class="badge badge--sale">-20%</span>
-                            <span class="badge badge--new">New</span>
+                    <!-- Товар недели 3 -->
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <div class="product-card__badges">
+                                <span class="badge badge--sale">-20%</span>
+                                <span class="badge badge--new">New</span>
+                            </div>
+                            <img src="images/style-premium.jpg" alt="Стильные очки Modern">
                         </div>
-                        <img src="images/style-premium.jpg" alt="Стильные очки Modern">
-                    </div>
-                    <div class="product-card__content">
-                        <h3 class="product-card__title">Стильные очки Modern</h3>
-                        <div class="product-card__category">Стильные</div>
-                        <div class="product-card__price">4 990 ₽</div>
-                        <a href="product.html?title=Стильные очки Modern&price=4990&image=/images/style-premium.jpg" class="btn btn--outline">Подробнее</a>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Стильные очки Modern</h3>
+                            <div class="product-card__category">Стильные</div>
+                            <div class="product-card__price">4 990 ₽</div>
+                            <a href="product.html?title=Стильные очки Modern&price=4990&image=/images/style-premium.jpg" class="btn btn--outline">Подробнее</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-	</main>
+        </section>
+    </main>
     <!-- Футер -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__column">
-                    <a href="index.html" class="logo">
-                        <img src="images/logo.svg" alt="PIN-UP Eyewear" class="logo__img">
-                    </a>
-                    <p class="footer__text">Стильные очки и аксессуары премиального качества
-</p>
-                </div>
-                <div class="footer__column">
-                    <h4 class="footer__title">Меню</h4>
-                    <ul class="footer__list">
-                        <li><a href="catalog.html">Каталог</a></li>
-                        <li><a href="about.html">Акции</a></li>
-                        <li><a href="blog.html">Полезные статьи</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                    </ul>
-                </div>
-                <div class="footer__column">
-                    <h4 class="footer__title">Правовая информация</h4>
-                    <ul class="footer__list">
-                        <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
-                        <li><a href="terms-conditions.html">Условия использования</a></li>
-                    </ul>
-                </div>
-                <div class="footer__column">
-                    <h4 class="footer__title">Контакты</h4>
-                    <ul class="footer__list">
-                        <li><a href="tel:+75392814760">+7 539 281 47 60</a></li>
-                        <li><a href="mailto:pinupeyewear@gmail.com">pinupeyewear@gmail.com</a></li>
-                    </ul>
-                    <div class="social">
-                        <a href="index.html" class="social__link">
-                            <svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
-                        </a>
-                        <a href="index.html" class="social__link">
-                            <svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
-                        </a>
-                        <a href="index.html" class="social__link">
-                            <svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p class="footer__copyright">© 2024 PIN-UP Eyewear. Все права защищены</p>
-            </div>
-        </div>
-    </footer>
+			<div class="container">
+					<!-- Верхняя часть футера -->
+					<section class="footer__top">
+							<div class="footer__newsletter">
+									<h3 class="footer__newsletter-title">Подпишитесь на наши новости</h3>
+									<p class="footer__newsletter-text">Будьте в курсе новых коллекций и специальных предложений</p>
+									<form action="thanks_form.php" method="post" class="footer__form">
+											<div class="footer__form-group">
+													<input type="email" class="footer__input" placeholder="Введите ваш email" required>
+													<button type="submit" class="btn btn--primary">Подписаться</button>
+											</div>
+											<div class="footer__form-checkbox">
+													<label class="checkbox checkbox--light">
+															<input type="checkbox" required>
+															<span>Я согласен с <a href="privacy-policy.html" class="footer__policy-link">политикой конфиденциальности</a></span>
+													</label>
+											</div>
+									</form>
+							</div>
+					</section>
+
+					<!-- Основная часть футера -->
+					<section class="footer__grid">
+							<!-- Информация о компании -->
+							<div class="footer__column">
+									<a href="index.html" class="logo footer__logo">
+											<img src="images/logo.svg" alt="PIN-UP Eyewear" class="logo__img">
+									</a>
+									<p class="footer__text">Стильные очки и аксессуары премиального качества</p>
+									<div class="footer__social">
+											<a href="index.html" class="footer__social-link" aria-label="Instagram">
+													<svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
+											</a>
+											<a href="index.html" class="footer__social-link" aria-label="Facebook">
+													<svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
+											</a>
+											<a href="index.html" class="footer__social-link" aria-label="Telegram">
+													<svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
+											</a>
+									</div>
+							</div>
+
+							<!-- Навигация -->
+							<div class="footer__column">
+									<h4 class="footer__title">Навигация</h4>
+									<ul class="footer__list">
+											<li><a href="catalog.html" class="footer__link">Каталог</a></li>
+											<li><a href="about.html" class="footer__link">О нас</a></li>
+											<li><a href="blog.html" class="footer__link">Блог</a></li>
+											<li><a href="contacts.html" class="footer__link">Контакты</a></li>
+									</ul>
+							</div>
+
+							<!-- Категории -->
+							<div class="footer__column">
+									<h4 class="footer__title">Категории</h4>
+									<ul class="footer__list">
+											<li><a href="catalog.html?category=aviator" class="footer__link">Авиаторы</a></li>
+											<li><a href="catalog.html?category=sport" class="footer__link">Спортивные очки</a></li>
+											<li><a href="catalog.html?category=fashion" class="footer__link">Стильные очки</a></li>
+											<li><a href="catalog.html?category=new" class="footer__link">Новинки</a></li>
+									</ul>
+							</div>
+							<!-- Контакты -->
+							<div class="footer__column">
+									<h4 class="footer__title">Контакты</h4>
+									<ul class="footer__list footer__list--contacts">
+											<li class="footer__contact-item">
+													<svg><use xlink:href="images/icons.svg#icon-map"></use></svg>
+													<span>ул. Зенгир 1, Астана 010010, Казахстан</span>
+											</li>
+											<li class="footer__contact-item">
+													<svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+													<a href="tel:+75392814760" class="footer__link">+7 539 281 47 60</a>
+											</li>
+											<li class="footer__contact-item">
+													<svg><use xlink:href="images/icons.svg#icon-mail"></use></svg>
+													<a href="mailto:pinupeyewear@gmail.com" class="footer__link">pinupeyewear@gmail.com</a>
+											</li>
+											<li class="footer__contact-item">
+													<svg><use xlink:href="images/icons.svg#icon-clock"></use></svg>
+													<span>Пн-Вс: 10:00 - 22:00</span>
+											</li>
+									</ul>
+							</div>
+					</section>
+
+					<!-- Нижняя часть футера -->
+					<div class="footer__bottom">
+							<div class="footer__bottom-content">
+									<p class="footer__copyright">© 2024 PIN-UP Eyewear. Все права защищены</p>
+									<div class="footer__links">
+											<a href="privacy-policy.html" class="footer__bottom-link">Политика конфиденциальности</a>
+											<a href="terms-conditions.html" class="footer__bottom-link">Пользовательское соглашение</a>
+									</div>
+							</div>
+					</div>
+			</div>
+	</footer>
 
     <!-- Подключаем скрипты -->
     <script src="js/main.js"></script>

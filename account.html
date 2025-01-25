@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
 		<meta name="description" content="Личный кабинет PIN-UP Eyewear - управляйте заказами, избранным и личными данными. Удобный доступ к истории покупок и персональным скидкам.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="icon" href="images/favicon.png">
     <title>Личный кабинет - PIN-UP Eyewear</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -124,141 +125,174 @@
 			</div>
 	</div>
 	<main>
-    <!-- Профиль -->
-    <section class="profile">
-        <div class="container">
-            <h1 class="section-title">Личный кабинет</h1>
-            
-            <div class="profile__wrapper">
-                <!-- Боковое меню -->
-                <aside class="profile__sidebar">
-                    <nav class="profile__nav">
-                        <button class="profile__nav-btn active" data-tab="info">
+        <!-- Баннер профиля -->
+        <section class="account-hero">
+            <div class="container">
+                <h1 class="account-hero__title">Личный кабинет</h1>
+                <p class="account-hero__text">Управляйте своими личными данными и настройками аккаунта</p>
+            </div>
+        </section>
+
+        <!-- Профиль -->
+        <section class="account-section">
+            <div class="container">
+                <div class="account-grid">
+                    <!-- Информация о пользователе -->
+                    <div class="account-user">
+                        <div class="account-user__avatar">
                             <svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
-                            Личные данные
-                        </button>
-                        <button style="display: none;" class="profile__nav-btn" data-tab="favorites">
-                            <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
-                            Избранное
-                        </button>
-                        <button class="profile__nav-btn logout">
-                            <svg><use xlink:href="images/icons.svg#icon-close"></use></svg>
-                            Выйти
-                        </button>
-                    </nav>
-                </aside>
-
-                <!-- Контент -->
-                <div class="profile__content">
-                    <!-- Личные данные -->
-                    <div class="profile__tab active" data-tab="info">
-                        <h2 class="profile__tab-title">Личные данные</h2>
-                        <form class="profile__form">
-                            <div class="profile__form-row">
-                                <div class="profile__form-group">
-                                    <label>Имя</label>
-                                    <input type="text" name="first_name" required>
-                            </div>
-                                <div class="profile__form-group">
-                                    <label>Фамилия</label>
-                                    <input type="text" name="last_name" required>
-                            </div>
-                            </div>
-                            <div class="profile__form-row">
-                                <div class="profile__form-group">
-                                    <label>Email</label>
-                                    <input type="email" name="email" required>
+                        </div>
+                        <div class="account-user__info">
+                            <h2 class="account-user__name">Имя пользователя</h2>
+                            <p class="account-user__email">email@example.com</p>
+                        </div>
                     </div>
-                                <div class="profile__form-group">
-                                    <label>Телефон</label>
-                                    <input type="tel" name="phone" required>
+
+                    <!-- Форма редактирования -->
+                    <form class="account-form">
+                        <div class="account-form__group">
+                            <label class="account-form__label">Имя</label>
+                            <input type="text" name="first_name" class="account-form__input" required>
+                        </div>
+                        
+                        <div class="account-form__group">
+                            <label class="account-form__label">Фамилия</label>
+                            <input type="text" name="last_name" class="account-form__input" required>
+                        </div>
+                        
+                        <div class="account-form__group">
+                            <label class="account-form__label">Email</label>
+                            <input type="email" name="email" class="account-form__input" required>
+                        </div>
+                        
+                        <div class="account-form__group">
+                            <label class="account-form__label">Телефон</label>
+                            <input type="tel" name="phone" class="account-form__input" required>
+                        </div>
+                        
+                        <div class="account-form__group">
+                            <label class="account-form__label">Дата рождения</label>
+                            <input type="date" name="birth_date" class="account-form__input">
+                        </div>
+                        
+                        <div class="account-form__group">
+                            <label class="account-form__label">Пол</label>
+                            <select name="gender" class="account-form__select">
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                            </select>
                         </div>
 
-                    </div>
-                            <div class="profile__form-row">
-                                <div class="profile__form-group">
-                                    <label>Дата рождения</label>
-                                    <input type="date" name="birth_date">
-                        </div>
-                                <div class="profile__form-group">
-                                    <label>Пол</label>
-                                    <select name="gender">
-                                        <option value="male">Мужской</option>
-                                        <option value="female">Женский</option>
-                                    </select>
-                                </div>
-                            </div>
+                        <div class="account-form__actions">
                             <button type="submit" class="btn btn--primary">Сохранить изменения</button>
-                        </form>
-                    </div>
-
-                    <!-- Избранное -->
-                    <div class="profile__tab" data-tab="favorites">
-                        <div class="favorites">
-                            <h2 class="section-title">Избранное</h2>
-                            <div class="favorites__grid">
-                                <!-- Товары будут добавлены динамически через JavaScript -->
-                            </div>
-                            <!-- Пустое состояние -->
-                            <div class="favorites__empty" style="display: none;">
-                                <div class="favorites__empty-icon">
-                                    <svg><use xlink:href="images/icons.svg#icon-heart"></use></svg>
-                                </div>
-                                <h3 class="favorites__empty-title">Список избранного пуст</h3>
-                                <p class="favorites__empty-text">Добавляйте товары в избранное, чтобы не потерять их</p>
-                                <a href="catalog.html" class="btn btn--primary">Перейти в каталог</a>
-                            </div>
+                            <button type="button" id="logoutBtn" class="btn btn--outline">Выйти из аккаунта</button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 	</main>
     <!-- Футер -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__column">
-                    <a href="index.html" class="logo">
-                        <img src="images/logo.svg" alt="PIN-UP Eyewear" class="logo__img">
-                    </a>
-                    <p class="footer__text">Стильные очки и аксессуары премиального качества
-</p>
-                </div>
-                <div class="footer__column">
-                    <h4 class="footer__title">Меню</h4>
-                    <ul class="footer__list">
-                        <li><a href="catalog.html">Каталог</a></li>
-                        <li><a href="about.html">Акции</a></li>
-                        <li><a href="blog.html">Полезные статьи</a></li>
-                        <li><a href="contacts.html">Контакты</a></li>
-                    </ul>
-                </div>
-                <div class="footer__column">
-                    <h4 class="footer__title">Контакты</h4>
-                    <ul class="footer__list">
-                        <li><a href="tel:+75392814760">+7 539 281 47 60</a></li>
-                        <li><a href="mailto:pinupeyewear@gmail.com">pinupeyewear@gmail.com</a></li>
-                    </ul>
-                    <div class="social">
-                        <a href="index.html" class="social__link">
-                            <svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
-                        </a>
-                        <a href="index.html" class="social__link">
-                            <svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
-                        </a>
-                        <a href="index.html" class="social__link">
-                            <svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p class="footer__copyright">© 2024 PIN-UP Eyewear. Все права защищены</p>
-            </div>
-        </div>
-    </footer>
+			<div class="container">
+					<!-- Верхняя часть футера -->
+					<section class="footer__top">
+							<div class="footer__newsletter">
+									<h3 class="footer__newsletter-title">Подпишитесь на наши новости</h3>
+									<p class="footer__newsletter-text">Будьте в курсе новых коллекций и специальных предложений</p>
+									<form action="thanks_form.php" method="post" class="footer__form">
+											<div class="footer__form-group">
+													<input type="email" class="footer__input" placeholder="Введите ваш email" required>
+													<button type="submit" class="btn btn--primary">Подписаться</button>
+											</div>
+											<div class="footer__form-checkbox">
+													<label class="checkbox checkbox--light">
+															<input type="checkbox" required>
+															<span>Я согласен с <a href="privacy-policy.html" class="footer__policy-link">политикой конфиденциальности</a></span>
+													</label>
+											</div>
+									</form>
+							</div>
+					</section>
+
+					<!-- Основная часть футера -->
+					<section class="footer__grid">
+							<!-- Информация о компании -->
+							<div class="footer__column">
+									<a href="index.html" class="logo footer__logo">
+											<img src="images/logo.svg" alt="PIN-UP Eyewear" class="logo__img">
+									</a>
+									<p class="footer__text">Стильные очки и аксессуары премиального качества</p>
+									<div class="footer__social">
+											<a href="index.html" class="footer__social-link" aria-label="Instagram">
+													<svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
+											</a>
+											<a href="index.html" class="footer__social-link" aria-label="Facebook">
+													<svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
+											</a>
+											<a href="index.html" class="footer__social-link" aria-label="Telegram">
+													<svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
+											</a>
+									</div>
+							</div>
+
+							<!-- Навигация -->
+							<div class="footer__column">
+									<h4 class="footer__title">Навигация</h4>
+									<ul class="footer__list">
+											<li><a href="catalog.html" class="footer__link">Каталог</a></li>
+											<li><a href="about.html" class="footer__link">О нас</a></li>
+											<li><a href="blog.html" class="footer__link">Блог</a></li>
+											<li><a href="contacts.html" class="footer__link">Контакты</a></li>
+									</ul>
+							</div>
+
+							<!-- Категории -->
+							<div class="footer__column">
+									<h4 class="footer__title">Категории</h4>
+									<ul class="footer__list">
+											<li><a href="catalog.html?category=aviator" class="footer__link">Авиаторы</a></li>
+											<li><a href="catalog.html?category=sport" class="footer__link">Спортивные очки</a></li>
+											<li><a href="catalog.html?category=fashion" class="footer__link">Стильные очки</a></li>
+											<li><a href="catalog.html?category=new" class="footer__link">Новинки</a></li>
+									</ul>
+							</div>
+							<!-- Контакты -->
+							<div class="footer__column">
+									<h4 class="footer__title">Контакты</h4>
+									<ul class="footer__list footer__list--contacts">
+											<li class="footer__contact-item">
+													<svg><use xlink:href="images/icons.svg#icon-map"></use></svg>
+													<span>ул. Зенгир 1, Астана 010010, Казахстан</span>
+											</li>
+											<li class="footer__contact-item">
+													<svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+													<a href="tel:+75392814760" class="footer__link">+7 539 281 47 60</a>
+											</li>
+											<li class="footer__contact-item">
+													<svg><use xlink:href="images/icons.svg#icon-mail"></use></svg>
+													<a href="mailto:pinupeyewear@gmail.com" class="footer__link">pinupeyewear@gmail.com</a>
+											</li>
+											<li class="footer__contact-item">
+													<svg><use xlink:href="images/icons.svg#icon-clock"></use></svg>
+													<span>Пн-Вс: 10:00 - 22:00</span>
+											</li>
+									</ul>
+							</div>
+					</section>
+
+					<!-- Нижняя часть футера -->
+					<div class="footer__bottom">
+							<div class="footer__bottom-content">
+									<p class="footer__copyright">© 2024 PIN-UP Eyewear. Все права защищены</p>
+									<div class="footer__links">
+											<a href="privacy-policy.html" class="footer__bottom-link">Политика конфиденциальности</a>
+											<a href="terms-conditions.html" class="footer__bottom-link">Пользовательское соглашение</a>
+									</div>
+							</div>
+					</div>
+			</div>
+	</footer>
 
     <script src="js/auth.js"></script>
     <script src="js/main.js"></script>

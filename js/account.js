@@ -6,6 +6,87 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    // Обновляем информацию о пользователе в шапке
+    const userNameElement = document.querySelector('.account-user__name');
+    const userEmailElement = document.querySelector('.account-user__email');
+    
+    if (userNameElement && userEmailElement) {
+        userNameElement.textContent = `${user.first_name || ''} ${user.last_name || ''}`.trim() || 'Пользователь';
+        userEmailElement.textContent = user.email || '';
+    }
+
+    // Заполняем форму профиля данными пользователя
+    const accountForm = document.querySelector('.account-form');
+    if (accountForm) {
+        // Заполняем поля формы
+        accountForm.first_name.value = user.first_name || '';
+        accountForm.last_name.value = user.last_name || '';
+        accountForm.email.value = user.email || '';
+        accountForm.phone.value = user.phone || '';
+        accountForm.birth_date.value = user.birth_date || '';
+        accountForm.gender.value = user.gender || 'male';
+
+        // Обработка отправки формы
+        accountForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Показываем индикатор загрузки
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Сохранение...';
+            submitBtn.disabled = true;
+
+            // Собираем данные формы
+            const updatedUser = {
+                ...user,
+                first_name: this.first_name.value,
+                last_name: this.last_name.value,
+                email: this.email.value,
+                phone: this.phone.value,
+                birth_date: this.birth_date.value,
+                gender: this.gender.value,
+                updatedAt: new Date().toISOString()
+            };
+
+            // Имитируем задержку сохранения
+            setTimeout(() => {
+                try {
+                    // Обновляем пользователя в localStorage
+                    const users = getUsers();
+                    const userIndex = users.findIndex(u => u.id === user.id);
+                    users[userIndex] = updatedUser;
+                    saveUsers(users);
+                    setCurrentUser(updatedUser);
+
+                    // Обновляем отображаемое имя и email
+                    userNameElement.textContent = `${updatedUser.first_name || ''} ${updatedUser.last_name || ''}`.trim() || 'Пользователь';
+                    userEmailElement.textContent = updatedUser.email || '';
+
+                    // Показываем уведомление об успехе
+                    alert('Данные успешно сохранены');
+                } catch (error) {
+                    console.error('Ошибка при сохранении:', error);
+                    alert('Произошла ошибка при сохранении данных');
+                } finally {
+                    // Возвращаем кнопку в исходное состояние
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
+            }, 1000);
+        });
+    }
+
+    // Обработка кнопки выхода
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (confirm('Вы действительно хотите выйти?')) {
+                window.logout();
+            }
+        });
+    }
+
     // Функция для отображения избранных товаров
     function displayFavorites() {
         const favoritesTab = document.querySelector('.profile__tab[data-tab="favorites"]');
@@ -86,59 +167,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             this.classList.add('active');
             document.querySelector(`.profile__tab[data-tab="${tabName}"]`).classList.add('active');
-
-            // Если переключились на вкладку избранного, обновляем список
-            if (tabName === 'favorites') {
-                displayFavorites();
-            }
         });
     });
-
-    // Инициализация избранного при загрузке страницы
-    displayFavorites();
-
-    // Заполняем форму профиля данными пользователя
-    const profileForm = document.querySelector('.profile__form');
-    if (profileForm) {
-        profileForm.first_name.value = user.first_name || '';
-        profileForm.last_name.value = user.last_name || '';
-        profileForm.email.value = user.email || '';
-        profileForm.phone.value = user.phone || '';
-        profileForm.birth_date.value = user.birth_date || '';
-        profileForm.gender.value = user.gender || 'male';
-
-        // Обработка сохранения профиля
-        profileForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const users = getUsers();
-            const updatedUser = {
-                ...user,
-                first_name: this.first_name.value,
-                last_name: this.last_name.value,
-                email: this.email.value,
-                phone: this.phone.value,
-                birth_date: this.birth_date.value,
-                gender: this.gender.value,
-                updatedAt: new Date().toISOString()
-            };
-
-            // Обновляем пользователя в списке всех пользователей
-            const userIndex = users.findIndex(u => u.id === user.id);
-            users[userIndex] = updatedUser;
-            saveUsers(users);
-
-            // Обновляем данные текущего пользователя
-            setCurrentUser(updatedUser);
-            alert('Профиль успешно обновлен');
-        });
-    }
-
-    // Обработка кнопки выхода
-    const logoutBtn = document.querySelector('.profile__nav-btn.logout');
-    if (logoutBtn) {
-        logoutBtn.addEventListener('click', logout);
-    }
 
     // Обработка добавления адреса
     const addAddressBtn = document.getElementById('addAddressBtn');

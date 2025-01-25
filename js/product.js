@@ -28,31 +28,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Обработчик добавления в корзину
     const addToCartButton = document.querySelector('.product__add-to-cart');
-        addToCartButton.addEventListener('click', function() {
-            if (!window.canAddToCart()) return;
+    addToCartButton.addEventListener('click', function() {
+        if (!window.canAddToCart()) return;
 
-            const productData = {
+        const productData = {
             title: title,
             price: `${price} ₽`,
             image: image,
-                quantity: 1
-            };
+            quantity: 1
+        };
 
         const user = getCurrentUser();
         let cart = getUserCart(user.id);
         
-            const existingItemIndex = cart.findIndex(item => 
-            item.title === productData.title
-            );
+        const existingItemIndex = cart.findIndex(item => 
+        item.title === productData.title
+        );
 
-            if (existingItemIndex !== -1) {
-                cart[existingItemIndex].quantity += 1;
-            } else {
-                cart.push(productData);
-            }
+        if (existingItemIndex !== -1) {
+            cart[existingItemIndex].quantity += 1;
+        } else {
+            cart.push(productData);
+        }
 
-            saveUserCart(user.id, cart);
-        });
+        saveUserCart(user.id, cart);
+
+        // Добавляем класс для анимации
+        this.classList.add('added');
+        
+        // Меняем текст кнопки
+        const btnText = this.querySelector('.btn-text');
+        btnText.textContent = 'Добавлено';
+        
+        // Через 2 секунды возвращаем кнопку в исходное состояние
+        setTimeout(() => {
+            this.classList.remove('added');
+            btnText.textContent = 'Добавить в корзину';
+        }, 2000);
+    });
 
     // Обработчик добавления в избранное
     const favoriteButton = document.querySelector('.product__favorite');

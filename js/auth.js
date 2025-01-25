@@ -29,6 +29,18 @@ window.canAccessCart = function() {
     return true;
 }
 
+// Делаем функцию logout глобально доступной
+window.logout = function() {
+    const user = getCurrentUser();
+    if (user) {
+        // Очищаем все данные пользователя
+        clearUserCart(user.id);
+        clearUserFavorites(user.id);
+        localStorage.removeItem(AUTH_KEY);
+    }
+    window.location.href = 'login.html';
+}
+
 function getUsers() {
     return JSON.parse(localStorage.getItem(USERS_KEY) || '[]');
 }
@@ -71,17 +83,6 @@ function saveUserFavorites(userId, favorites) {
 
 function clearUserFavorites(userId) {
     localStorage.removeItem(FAVORITES_KEY + '_' + userId);
-}
-
-function logout() {
-    const user = getCurrentUser();
-    if (user) {
-        // Очищаем все данные пользователя
-        clearUserCart(user.id);
-        clearUserFavorites(user.id);
-        localStorage.removeItem(AUTH_KEY);
-    }
-    window.location.href = 'login.html';
 }
 
 // Проверка авторизации

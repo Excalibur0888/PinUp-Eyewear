@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Бургер-меню
     const burgerMenu = document.querySelector('.burger-menu');
-    const mobileNav = document.querySelector('.mobile-nav');
+    const mobileNav = document.querySelector('.adaptive');
     const body = document.body;
 
     if (burgerMenu && mobileNav) {
@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Закрытие меню при клике на ссылку
-        document.querySelectorAll('.mobile-nav__link').forEach(link => {
+        document.querySelectorAll('.adaptive__link').forEach(link => {
             link.addEventListener('click', () => {
                 burgerMenu.classList.remove('active');
                 mobileNav.classList.remove('active');
@@ -576,9 +576,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Отзывы
-    const reviewsTrack = document.querySelector('.reviews__track');
-    if (reviewsTrack) {
-        const reviews = [
+    const main__reviewsTrack = document.querySelector('.main__reviews__track');
+    if (main__reviewsTrack) {
+        const main__reviews = [
             {
                 text: "Превосходное качество очков! Ношу их уже больше года, линзы как новые. Очень доволен консультацией при выборе оправы.",
                 author: "Руслан Ахметов",
@@ -602,14 +602,14 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         let currentReviewIndex = 0;
-        const prevBtn = document.querySelector('.reviews__prev');
-        const nextBtn = document.querySelector('.reviews__next');
-        const dotsContainer = document.querySelector('.reviews__dots');
+        const prevBtn = document.querySelector('.main__reviews__prev');
+        const nextBtn = document.querySelector('.main__reviews__next');
+        const dotsContainer = document.querySelector('.main__reviews__dots');
 
         // Создаем точки для слайдера
-        reviews.forEach((_, index) => {
+        main__reviews.forEach((_, index) => {
             const dot = document.createElement('button');
-            dot.className = 'reviews__dot' + (index === 0 ? ' active' : '');
+            dot.className = 'main__reviews__dot' + (index === 0 ? ' active' : '');
             dot.addEventListener('click', () => {
                 currentReviewIndex = index;
                 showReview(currentReviewIndex);
@@ -618,7 +618,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         function showReview(index) {
-            const review = reviews[index];
+            const review = main__reviews[index];
             const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
             
             const newCard = document.createElement('div');
@@ -633,15 +633,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
 
-            reviewsTrack.innerHTML = '';
-            reviewsTrack.appendChild(newCard);
+            main__reviewsTrack.innerHTML = '';
+            main__reviewsTrack.appendChild(newCard);
             
             // Обновляем состояние кнопок
             if (prevBtn) prevBtn.disabled = index === 0;
-            if (nextBtn) nextBtn.disabled = index === reviews.length - 1;
+            if (nextBtn) nextBtn.disabled = index === main__reviews.length - 1;
 
             // Обновляем активную точку
-            document.querySelectorAll('.reviews__dot').forEach((dot, i) => {
+            document.querySelectorAll('.main__reviews__dot').forEach((dot, i) => {
                 dot.classList.toggle('active', i === index);
             });
             
@@ -658,7 +658,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             nextBtn.addEventListener('click', () => {
-                if (currentReviewIndex < reviews.length - 1) {
+                if (currentReviewIndex < main__reviews.length - 1) {
                     currentReviewIndex++;
                     showReview(currentReviewIndex);
                 }
@@ -669,7 +669,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Автоматическое переключение слайдов
             setInterval(() => {
-                if (currentReviewIndex < reviews.length - 1) {
+                if (currentReviewIndex < main__reviews.length - 1) {
                     currentReviewIndex++;
                 } else {
                     currentReviewIndex = 0;
@@ -849,17 +849,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
 
-            // Добавление в корзину из каталога
-            document.querySelectorAll('.product-card__btn').forEach(btn => {
+            // Добавление в корзину из каталога и рекомендаций
+            document.querySelectorAll('.product-card__btn, .suggestions__btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const card = btn.closest('.product-card');
+                    const card = btn.closest('.product-card') || btn.closest('.suggestions__item');
                     
                     const product = {
                         id: Date.now().toString(),
-                        title: card.querySelector('.product-card__title').textContent,
-                        price: card.querySelector('.product-card__price').textContent,
-                        image: card.querySelector('.product-card__image img').src,
+                        title: card.querySelector('.product-card__title, .suggestions__title').textContent,
+                        price: card.querySelector('.product-card__price, .suggestions__price').textContent,
+                        image: card.querySelector('img').src,
                     };
 
                     this.addItem(product);

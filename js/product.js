@@ -98,19 +98,19 @@ document.addEventListener('DOMContentLoaded', function() {
         favoriteButton.classList.add('active');
     }
 
-    // Обработчики для кнопок корзины в секции related-products
-    const relatedProductButtons = document.querySelectorAll('.related-products .product-card__btn');
+    // Обработчики для кнопок корзины в секции рекомендуемых товаров
+    const relatedProductButtons = document.querySelectorAll('.suggestions .suggestions__btn');
     relatedProductButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             
             if (!window.canAddToCart()) return;
 
-            const productCard = this.closest('.product-card');
+            const productCard = this.closest('.suggestions__item');
             const productData = {
                 id: parseInt(productCard.dataset.productId),
-                title: productCard.querySelector('.product-card__title').textContent,
-                price: productCard.querySelector('.product-card__price').textContent,
+                title: productCard.querySelector('.suggestions__title').textContent,
+                price: productCard.querySelector('.suggestions__price').textContent,
                 image: productCard.querySelector('img').src,
                 quantity: 1
             };

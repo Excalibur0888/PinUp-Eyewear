@@ -187,7 +187,7 @@ body {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-.mobile-nav {
+.adaptive {
     display: none;
     position: fixed;
     top: 70px;
@@ -201,21 +201,21 @@ body {
     z-index: 999;
 }
 
-.mobile-nav.active {
+.adaptive.active {
     transform: translateY(0);
 }
 
-.mobile-nav__list {
+.adaptive__list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.mobile-nav__item {
+.adaptive__item {
     margin-bottom: 15px;
 }
 
-.mobile-nav__link {
+.adaptive__link {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -225,12 +225,12 @@ body {
     padding: 10px 0;
 }
 
-.mobile-nav__link svg {
+.adaptive__link svg {
     width: 20px;
     height: 20px;
 }
 
-.mobile-nav__link:hover {
+.adaptive__link:hover {
     color: var(--primary-color);
 }
 
@@ -243,7 +243,7 @@ body {
         display: flex;
     }
 
-    .mobile-nav {
+    .adaptive {
         display: block;
     }
 
@@ -408,12 +408,12 @@ h2::after {
 }
 
 /* Преимущества */
-.features {
+.why__choose {
     padding: 80px 0;
     background: var(--light-gray);
 }
 
-.features__grid {
+.why__choose__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -473,13 +473,13 @@ h2::after {
 }
 
 @media (max-width: 991px) {
-    .features__grid {
+    .why__choose__grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 576px) {
-    .features__grid {
+    .why__choose__grid {
         grid-template-columns: 1fr;
     }
 }
@@ -575,7 +575,7 @@ h2::after {
 }
 
 /* Отзывы - стрелки */
-.reviews__controls {
+.main__reviews__controls {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -589,8 +589,8 @@ h2::after {
     pointer-events: none;
 }
 
-.reviews__prev,
-.reviews__next {
+.main__reviews__prev,
+.main__reviews__next {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -605,54 +605,54 @@ h2::after {
     pointer-events: auto;
 }
 
-.reviews__prev:hover,
-.reviews__next:hover {
+.main__reviews__prev:hover,
+.main__reviews__next:hover {
     background: var(--primary-color);
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.reviews__prev svg,
-.reviews__next svg {
+.main__reviews__prev svg,
+.main__reviews__next svg {
     width: 24px;
     height: 24px;
     fill: var(--primary-color);
     transition: fill 0.3s ease;
 }
 
-.reviews__prev:hover svg,
-.reviews__next:hover svg {
+.main__reviews__prev:hover svg,
+.main__reviews__next:hover svg {
     fill: var(--white);
 }
 
-.reviews__prev {
+.main__reviews__prev {
     left: -70px;
     position: absolute;
 }
 
-.reviews__next {
+.main__reviews__next {
     right: -70px;
     position: absolute;
 }
 
 @media (max-width: 1200px) {
-    .reviews__prev {
+    .main__reviews__prev {
         left: 20px;
     }
     
-    .reviews__next {
+    .main__reviews__next {
         right: 20px;
     }
 }
 
 @media (max-width: 768px) {
-    .reviews__controls {
+    .main__reviews__controls {
         display: none;
     }
 }
 
 @media (max-width: 991px) {
-    .features__grid,
+    .why__choose__grid,
     .values-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -669,7 +669,7 @@ h2::after {
         margin-bottom: 25px;
     }
 
-    .features__grid,
+    .why__choose__grid,
     .values-grid {
         grid-template-columns: 1fr;
     }
@@ -681,20 +681,20 @@ h2::after {
 }
 
 /* Отзывы */
-.reviews {
+.main__reviews {
     padding: 80px 0;
     background: var(--white);
     overflow: hidden;
 }
 
-.reviews__slider {
+.main__reviews__slider {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 50px;
 }
 
-.reviews__track {
+.main__reviews__track {
     display: flex;
     transition: transform 0.5s ease;
 }
@@ -771,7 +771,7 @@ h2::after {
     height: 16px;
 }
 
-.reviews__controls {
+.main__reviews__controls {
     position: absolute;
     top: 50%;
     left: 0;
@@ -782,8 +782,8 @@ h2::after {
     pointer-events: none;
 }
 
-.reviews__prev,
-.reviews__next {
+.main__reviews__prev,
+.main__reviews__next {
     width: 50px;
     height: 50px;
     border: none;
@@ -798,38 +798,38 @@ h2::after {
     pointer-events: auto;
 }
 
-.reviews__prev:hover,
-.reviews__next:hover {
+.main__reviews__prev:hover,
+.main__reviews__next:hover {
     background: var(--primary-color);
 }
 
-.reviews__prev:hover svg,
-.reviews__next:hover svg {
+.main__reviews__prev:hover svg,
+.main__reviews__next:hover svg {
     fill: var(--white);
 }
 
-.reviews__prev svg,
-.reviews__next svg {
+.main__reviews__prev svg,
+.main__reviews__next svg {
     width: 24px;
     height: 24px;
     fill: var(--primary-color);
     transition: fill 0.3s ease;
 }
 
-.reviews__prev:disabled,
-.reviews__next:disabled {
+.main__reviews__prev:disabled,
+.main__reviews__next:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
-.reviews__dots {
+.main__reviews__dots {
     display: flex;
     justify-content: center;
     gap: 8px;
     margin-top: 30px;
 }
 
-.reviews__dot {
+.main__reviews__dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -840,13 +840,13 @@ h2::after {
     transition: all 0.3s ease;
 }
 
-.reviews__dot.active {
+.main__reviews__dot.active {
     background: var(--primary-color);
     transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
-    .reviews__slider {
+    .main__reviews__slider {
         padding: 0 20px;
     }
 
@@ -858,14 +858,14 @@ h2::after {
         font-size: 16px;
     }
 
-    .reviews__prev,
-    .reviews__next {
+    .main__reviews__prev,
+    .main__reviews__next {
         width: 40px;
         height: 40px;
     }
 
-    .reviews__prev svg,
-    .reviews__next svg {
+    .main__reviews__prev svg,
+    .main__reviews__next svg {
         width: 20px;
         height: 20px;
     }
@@ -1132,7 +1132,7 @@ h2::after {
 /* Адаптивность */
 @media (max-width: 1024px) {
     .categories__grid,
-    .features__grid,
+    .why__choose__grid,
     .footer__grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1155,7 +1155,7 @@ h2::after {
 
 @media (max-width: 576px) {
     .categories__grid,
-    .features__grid,
+    .why__choose__grid,
     .footer__grid {
         grid-template-columns: 1fr;
     }
@@ -2761,39 +2761,39 @@ h2::after {
 }
 
 /* Отзывы о товаре */
-.product-reviews {
+.product-main__reviews {
     padding: 60px 0;
     background: #f9f9f9;
 }
 
-.product-reviews__header {
+.product-main__reviews__header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 40px;
 }
 
-.product-reviews__summary {
+.product-main__reviews__summary {
     display: flex;
     gap: 40px;
 }
 
-.product-reviews__average {
+.product-main__reviews__average {
     text-align: center;
 }
 
-.product-reviews__score {
+.product-main__reviews__score {
     font-size: 48px;
     font-weight: bold;
     display: block;
     margin-bottom: 10px;
 }
 
-.product-reviews__count {
+.product-main__reviews__count {
     color: var(--text-secondary);
 }
 
-.product-reviews__bars {
+.product-main__reviews__bars {
     flex: 1;
 }
 
@@ -2828,7 +2828,7 @@ h2::after {
     color: var(--text-secondary);
 }
 
-.product-reviews__list {
+.product-main__reviews__list {
     display: grid;
     gap: 20px;
     margin-bottom: 40px;
@@ -2899,7 +2899,7 @@ h2::after {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .product-reviews__summary {
+    .product-main__reviews__summary {
         flex-direction: column;
         gap: 20px;
     }
@@ -2922,7 +2922,7 @@ h2::after {
         grid-template-columns: 1fr;
     }
 
-    .product-reviews__header {
+    .product-main__reviews__header {
         flex-direction: column;
         gap: 20px;
     }
@@ -3136,8 +3136,8 @@ button {
 .size-button,
 .size-filter__btn,
 .blog-category,
-.reviews__btn,
-.reviews__dot,
+.main__reviews__btn,
+.main__reviews__dot,
 .search-close,
 .mobile-menu-btn {
     cursor: pointer;
@@ -4174,7 +4174,7 @@ svg {
 }
 
 /* Отзывы на странице товара */
-.reviews__grid {
+.main__reviews__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
@@ -4252,7 +4252,7 @@ svg {
 }
 
 @media (max-width: 768px) {
-    .reviews__grid {
+    .main__reviews__grid {
         grid-template-columns: 1fr;
     }
 
@@ -5054,7 +5054,7 @@ svg {
 
 /* Стили для страницы контактов */
 .contacts-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/contacts-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     background-size: cover;
     background-position: center;
     padding: 100px 0;
@@ -5304,8 +5304,10 @@ svg {
 }
 
 .footer__form-checkbox {
+		display: flex;
+		justify-content: center;
     margin-top: 15px;
-    text-align: left;
+    text-align: center;
 }
 
 .checkbox--light {

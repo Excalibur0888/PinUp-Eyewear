@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="cart-item__info">
                     <h3 class="cart-item__title">${item.title}</h3>
-                    <p class="cart-item__size">Размер: ${item.size}</p>
                     <div class="cart-item__price">${item.price}</div>
                 </div>
                 <div class="cart-item__quantity">

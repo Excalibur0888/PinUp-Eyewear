@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const title = urlParams.get('title');
     const price = urlParams.get('price');
-    const sizes = urlParams.get('sizes')?.split(',') || [];
     const image = urlParams.get('image');
     
     // Функция обновления UI товара
@@ -14,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
         // Обновляем заголовок страницы
-        document.title = `${title} - PIN-UP Sportswear`;
+        document.title = `${title} - PIN-UP Eyewear`;
 
         // Обновляем основную информацию
         document.querySelector('.product__title').textContent = title;
@@ -24,43 +23,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const productImage = document.querySelector('.product__slide img');
         productImage.src = image;
         productImage.alt = title;
-
-        // Обновляем кнопки размеров
-        const sizeButtons = document.querySelectorAll('.size-button');
-        sizeButtons.forEach(button => {
-            const size = button.dataset.size;
-            if (sizes.includes(size)) {
-                button.style.display = 'block';
-            } else {
-                button.style.display = 'none';
-            }
-        });
             }
 
-    // Обработчики для кнопок размера
-    const sizeButtons = document.querySelectorAll('.size-button');
-    sizeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            sizeButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
 
     // Обработчик добавления в корзину
     const addToCartButton = document.querySelector('.product__add-to-cart');
         addToCartButton.addEventListener('click', function() {
             if (!window.canAddToCart()) return;
 
-        const selectedSize = document.querySelector('.size-button.active')?.dataset.size;
-            if (!selectedSize) {
-                alert('Пожалуйста, выберите размер');
-                return;
-            }
-
             const productData = {
             title: title,
             price: `${price} ₽`,
-            size: selectedSize,
             image: image,
                 quantity: 1
             };
@@ -69,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let cart = getUserCart(user.id);
         
             const existingItemIndex = cart.findIndex(item => 
-            item.title === productData.title && item.size === productData.size
+            item.title === productData.title
             );
 
             if (existingItemIndex !== -1) {

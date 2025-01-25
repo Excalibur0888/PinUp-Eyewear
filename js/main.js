@@ -1,3 +1,105 @@
+// Функция инициализации таймера обратного отсчета
+function initCountdownTimer() {
+    const timerElement = document.querySelector('.promo-timer');
+    if (!timerElement) return;
+
+    function getEndTime() {
+        const now = new Date();
+        // 24 часа 59 минут 59 секунд в миллисекундах
+        return now.getTime() + ((24 * 60 * 60 + 59 * 60 + 59) * 1000);
+    }
+
+    let endDate = getEndTime();
+
+    function updateTimer() {
+        const now = new Date().getTime();
+        let distance = endDate - now;
+
+        // Если время вышло, перезапускаем таймер
+        if (distance < 0) {
+            endDate = getEndTime();
+            distance = endDate - now;
+        }
+
+        const hours = Math.floor(distance / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Обновляем отображение
+        const daysElement = timerElement.querySelector('.days');
+        const hoursElement = timerElement.querySelector('.hours');
+        const minutesElement = timerElement.querySelector('.minutes');
+
+        if (daysElement) daysElement.textContent = String(hours).padStart(2, '0');
+        if (hoursElement) hoursElement.textContent = String(minutes).padStart(2, '0');
+        if (minutesElement) minutesElement.textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateTimer();
+    const timerInterval = setInterval(updateTimer, 1000); // Обновляем каждую секунду
+
+    // Очищаем интервал при уничтожении компонента
+    return () => clearInterval(timerInterval);
+}
+
+// Функция инициализации аккордеона
+function initAccordion() {
+    const accordionItems = document.querySelectorAll('.accordion__item');
+    
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion__header');
+        const content = item.querySelector('.accordion__content');
+        
+        if (!header || !content) return;
+        
+        content.style.maxHeight = '0px';
+        content.style.overflow = 'hidden';
+        content.style.transition = 'max-height 0.3s ease-out';
+        
+        header.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Закрываем все элементы
+            accordionItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                const otherContent = otherItem.querySelector('.accordion__content');
+                if (otherContent) {
+                    otherContent.style.maxHeight = '0px';
+                }
+            });
+            
+            // Открываем текущий элемент, если он был закрыт
+            if (!isActive) {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+        });
+    });
+}
+
+// Функция копирования промокода
+function initPromoCodeCopy() {
+    const copyButtons = document.querySelectorAll('.copy-code');
+    
+    copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const code = button.dataset.code;
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = button.textContent;
+                button.textContent = 'Скопировано!';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                }, 2000);
+            });
+        });
+    });
+}
+
+// Делаем функции доступными глобально
+window.initCountdownTimer = initCountdownTimer;
+window.initAccordion = initAccordion;
+window.initPromoCodeCopy = initPromoCodeCopy;
+
 document.addEventListener('DOMContentLoaded', () => {
     // Мобильное меню и хедер
     const header = document.querySelector('.header');
@@ -75,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const sortSelect = document.querySelector('.sort-select');
         const priceMinInput = document.querySelector('.price-range__input[name="price_min"]');
         const priceMaxInput = document.querySelector('.price-range__input[name="price_max"]');
-        const sizeButtons = document.querySelectorAll('.size-filter__btn');
         
         // Сохраняем исходное состояние каталога
         const initialProducts = Array.from(catalogGrid.children).map(product => product.cloneNode(true));
@@ -92,12 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return titleElement ? titleElement.textContent : '';
         }
 
-        // Функция получения размеров товара
-        function getProductSizes(product) {
-            const sizesDiv = product.querySelector('.product-card__sizes');
-            return sizesDiv ? sizesDiv.textContent.split(',').map(size => size.trim()) : [];
-        }
-
         // Функция проверки соответствия товара фильтрам
         function checkProductFilters(product) {
             // Проверка категории
@@ -107,10 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const category = product.querySelector('.product-card__category').textContent.toLowerCase();
             const categoryMatch = selectedCategories.length === 0 || 
                 selectedCategories.some(selectedCat => {
-                    if (selectedCat === 'men') return category.includes('мужская');
-                    if (selectedCat === 'women') return category.includes('женская');
-                    if (selectedCat === 'accessories') return category.includes('аксессуары');
-                    return false;
+                    if (selectedCat === 'aviators') return category.includes('мужская');
+                    if (selectedCat === 'sport') return category.includes('женская');
+                    if (selectedCat === 'style') return category.includes('аксессуары');
+                return false;
                 });
 
             // Проверка цены
@@ -118,15 +213,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const minPrice = priceMinInput ? parseInt(priceMinInput.value) || 0 : 0;
             const maxPrice = priceMaxInput ? parseInt(priceMaxInput.value) || Infinity : Infinity;
             const priceMatch = price >= minPrice && price <= maxPrice;
-
-            // Проверка размеров
-            const selectedSizes = Array.from(document.querySelectorAll('.size-filter__btn.active'))
-                .map(btn => btn.dataset.size);
-            const productSizes = getProductSizes(product);
-            const sizeMatch = selectedSizes.length === 0 || 
-                selectedSizes.some(size => productSizes.includes(size));
-
-            return categoryMatch && priceMatch && sizeMatch;
+            
+            return categoryMatch && priceMatch;
         }
 
         // Функция фильтрации товаров
@@ -169,19 +257,15 @@ document.addEventListener('DOMContentLoaded', () => {
         // Проверка, все ли фильтры пусты
         function areAllFiltersEmpty() {
             const noCategories = !document.querySelector('.filter-group input[type="checkbox"]:checked');
-            const noSizes = !document.querySelector('.size-filter__btn.active');
             const noPriceMin = !priceMinInput || !priceMinInput.value;
             const noPriceMax = !priceMaxInput || !priceMaxInput.value;
-            return noCategories && noSizes && noPriceMin && noPriceMax;
+            return noCategories && noPriceMin && noPriceMax;
         }
 
         // Сброс фильтров
         function resetFilters() {
             document.querySelectorAll('.filter-group input[type="checkbox"]').forEach(checkbox => {
                 checkbox.checked = false;
-            });
-            document.querySelectorAll('.size-filter__btn').forEach(btn => {
-                btn.classList.remove('active');
             });
             if (priceMinInput) priceMinInput.value = '';
             if (priceMaxInput) priceMaxInput.value = '';
@@ -242,15 +326,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Фильтры размеров
-        sizeButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                btn.classList.toggle('active');
-                filterProducts();
-                sortProducts();
-            });
-        });
-
         // Фильтры цен
         let priceTimeout;
         [priceMinInput, priceMaxInput].forEach(input => {
@@ -306,23 +381,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (reviewsTrack) {
         const reviews = [
             {
-                text: "Отличное качество одежды! Ношу футболки уже больше года, они как новые. Очень рад, что открыл для себя этот бренд.",
-                author: "Александр Петров",
+                text: "Превосходное качество очков! Ношу их уже больше года, линзы как новые. Очень доволен консультацией при выборе оправы.",
+                author: "Руслан Ахметов",
                 rating: 5
             },
             {
-                text: "Заказывала леггинсы для йоги, они просто идеальные! Удобные, не просвечивают, отлично тянутся. Буду заказывать еще.",
-                author: "Мария Иванова",
+                text: "Заказывала солнцезащитные очки, они просто идеальные! Стильные, хорошо защищают от солнца и очень легкие. Обязательно вернусь за новой парой.",
+                author: "Карина Султанова", 
                 rating: 5
             },
             {
-                text: "Быстрая доставка, отличная упаковка. Качество товаров на высоте. Особенно понравились шорты для бега.",
-                author: "Дмитрий Сидоров",
+                text: "Быстрая доставка, профессиональная упаковка. Качество оправы превзошло ожидания. Особенно понравилось, как тщательно подобрали линзы под мое зрение.",
+                author: "Тимур Нурланов",
                 rating: 4
             },
             {
-                text: "Очень стильная и качественная одежда. Приятно носить и получать комплименты. Отдельное спасибо за внимательный сервис!",
-                author: "Елена Козлова",
+                text: "Шикарный выбор брендовых оправ. Консультанты помогли подобрать идеальную модель под форму лица. Рекомендую всем, кто ищет качественную оптику!",
+                author: "Айгерим Сатпаева",
                 rating: 5
             }
         ];
@@ -661,9 +736,9 @@ document.addEventListener('DOMContentLoaded', () => {
             this.initEventListeners();
         },
 
-        addItem(product, size = 'M') {
+        addItem(product) {
             const existingItem = this.items.find(item => 
-                item.id === product.id && item.size === size
+                item.id === product.id
             );
 
             if (existingItem) {
@@ -674,7 +749,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: product.title,
                     price: product.price,
                     image: product.image,
-                    size: size,
                     quantity: 1
                 });
             }
@@ -734,7 +808,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="cart-item__content">
                             <h3 class="cart-item__title">${item.title}</h3>
                             <div class="cart-item__info">
-                                <span class="cart-item__size">Размер: ${item.size}</span>
                                 <div class="cart-item__quantity">
                                     <button class="quantity-btn minus" onclick="cart.updateQuantity('${item.id}', -1)">-</button>
                                     <span class="quantity-value">${item.quantity || 1}</span>
@@ -774,16 +847,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 addToCartBtn.addEventListener('click', (e) => {
                     e.preventDefault();
                     
-                    const selectedSize = document.querySelector('.size-button.active')?.dataset.size || 'M';
                     const product = {
                         id: Date.now().toString(),
                         title: document.querySelector('.product__title').textContent,
                         price: document.querySelector('.product__price').textContent,
                         image: document.querySelector('.product__slide img').src,
-                        size: selectedSize
                     };
 
-                    this.addItem(product, selectedSize);
+                    this.addItem(product);
                     
                     addToCartBtn.textContent = 'Добавлено ✓';
                     addToCartBtn.classList.add('added');
@@ -805,7 +876,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         title: card.querySelector('.product-card__title').textContent,
                         price: card.querySelector('.product-card__price').textContent,
                         image: card.querySelector('.product-card__image img').src,
-                        size: card.dataset.sizes?.split(',')[0] || 'M'
                     };
 
                     this.addItem(product);
@@ -1168,19 +1238,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categoriesSlider.init();
     });
 
-    // Обработка выбора размера
-    document.querySelectorAll('.size-button').forEach(button => {
-        button.addEventListener('click', () => {
-            // Убираем активный класс у всех кнопок
-            document.querySelectorAll('.size-button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            // Добавляем активный класс нажатой кнопке
-            button.classList.add('active');
-        });
-    });
-
-    // Фильтрация статей в блоге
+    // Фильтрация статей в Полезные статьие
     const blogCategories = document.querySelectorAll('.blog-category');
     const blogCards = document.querySelectorAll('.blog-card');
 
@@ -1224,7 +1282,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Загрузка данных товара на странице товара
+    // Функция загрузки данных товара
     function loadProductData() {
         if (window.location.pathname.includes('product.html')) {
             const urlParams = new URLSearchParams(window.location.search);
@@ -1233,7 +1291,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const productData = {
                 title: urlParams.get('title'),
                 price: urlParams.get('price'),
-                sizes: urlParams.get('sizes')?.split(',') || [],
                 image: urlParams.get('image')
             };
 
@@ -1247,11 +1304,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const titleElement = document.querySelector('.product__title');
             const priceElement = document.querySelector('.product__price');
             const imageElement = document.querySelector('.product__slide img');
-            const sizeButtons = document.querySelector('.size-buttons');
 
             if (titleElement) {
                 titleElement.textContent = productData.title;
-                document.title = `${productData.title} - PIN-UP Sportswear`;
+                document.title = `${productData.title} - PIN-UP Eyewear`;
             }
 
             if (priceElement) {
@@ -1262,62 +1318,111 @@ document.addEventListener('DOMContentLoaded', () => {
                 imageElement.src = productData.image;
                 imageElement.alt = productData.title;
             }
-
-            // Добавляем размеры
-            if (sizeButtons && productData.sizes.length > 0) {
-                sizeButtons.innerHTML = productData.sizes.map(size => `
-                    <button class="size-button" data-size="${size}">${size}</button>
-                `).join('');
-
-                // Добавляем обработчики для кнопок размеров
-                document.querySelectorAll('.size-button').forEach(button => {
-                    button.addEventListener('click', () => {
-                        document.querySelectorAll('.size-button').forEach(btn => {
-                            btn.classList.remove('active');
-                        });
-                        button.classList.add('active');
-                    });
-                });
-
-                // Активируем первый размер по умолчанию
-                const firstSizeButton = document.querySelector('.size-button');
-                if (firstSizeButton) {
-                    firstSizeButton.classList.add('active');
-                }
-            }
         }
     }
 
-    // Вызываем функцию при загрузке страницы
-    document.addEventListener('DOMContentLoaded', loadProductData);
-}); 
-// Обработчик для кнопки "Добавить в корзину"
-document.addEventListener('DOMContentLoaded', function() {
-	const addToCartButtons = document.querySelectorAll('.product__add-to-cart');
-	const favoriteButtons = document.querySelectorAll('.product__favorite');
+    // Функция инициализации аккордеона
+    function initAccordion() {
+        const accordionItems = document.querySelectorAll('.accordion__item');
+        
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion__header');
+            const content = item.querySelector('.accordion__content');
+            
+            if (!header || !content) return;
+            
+            content.style.maxHeight = '0px';
+            content.style.overflow = 'hidden';
+            content.style.transition = 'max-height 0.3s ease-out';
+            
+            header.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Закрываем все элементы
+                accordionItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    const otherContent = otherItem.querySelector('.accordion__content');
+                    if (otherContent) {
+                        otherContent.style.maxHeight = '0px';
+                    }
+                });
+                
+                // Открываем текущий элемент, если он был закрыт
+                if (!isActive) {
+                    item.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+    }
 
-	// Обработка кнопок "Добавить в корзину"
-	addToCartButtons.forEach(button => {
-			button.addEventListener('click', function() {
-					// Добавляем класс added
-					this.classList.add('added');
-					
-					// Меняем текст кнопки
-					this.textContent = 'Добавлено';
-					
-					// Через 2 секунды возвращаем исходное состояние
-					setTimeout(() => {
-							this.classList.remove('added');
-							this.textContent = 'Добавить в корзину';
-					}, 2000);
-			});
-	});
+    // Функция копирования промокода
+    function initPromoCodeCopy() {
+        const copyButtons = document.querySelectorAll('.copy-code');
+        
+        copyButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const code = button.dataset.code;
+                navigator.clipboard.writeText(code).then(() => {
+                    const originalText = button.textContent;
+                    button.textContent = 'Скопировано!';
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                    }, 2000);
+                });
+            });
+        });
+    }
 
-	// Обработка кнопок "В избранное"
-	favoriteButtons.forEach(button => {
-			button.addEventListener('click', function(e) {
-					e.preventDefault(); // Предотвращаем действие по умолчанию
-					this.classList.toggle('active');
-			});
-	});
+    // Функция для подписки на акции
+    function initPromoSubscribe() {
+        const subscribeForm = document.querySelector('.subscribe-form');
+        
+        if (subscribeForm) {
+            subscribeForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const emailInput = subscribeForm.querySelector('input[type="email"]');
+                const email = emailInput.value.trim();
+                
+                if (email) {
+                    // Здесь можно добавить отправку данных на сервер
+                    alert('Спасибо за подписку! Мы будем держать вас в курсе новых акций.');
+                    subscribeForm.reset();
+                }
+            });
+        }
+    }
+
+    // Инициализация всех функций при загрузке страницы
+    document.addEventListener('DOMContentLoaded', () => {
+        // Инициализация функций для страницы товара
+        loadProductData();
+        
+        // Инициализация функций для страницы акций
+        if (document.querySelector('.promo-timer')) {
+            initCountdownTimer();
+        }
+        
+        if (document.querySelector('.copy-code')) {
+            initPromoCodeCopy();
+        }
+        
+        if (document.querySelector('.accordion')) {
+            initAccordion();
+        }
+        
+        if (document.querySelector('.subscribe-form')) {
+            initPromoSubscribe();
+        }
+
+        // Обработчик для кнопки "Добавить в корзину"
+        const addToCartButtons = document.querySelectorAll('.product__btn');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.add('added');
+                this.textContent = 'В корзине';
+            });
+        });
+    });
 }); 

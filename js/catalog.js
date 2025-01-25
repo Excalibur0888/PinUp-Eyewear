@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="product-card__content">
                     <a href="product.html?id=${product.id}" class="product-card__title">${product.name}</a>
                     <div class="product-card__category">${product.category || 'Аксессуары'}</div>
-                    <div class="product-card__sizes">${product.sizes.join(', ')}</div>
                     <div class="product-card__price">${product.price}</div>
                     <a href="product.html?id=${product.id}" class="btn btn--outline product-card__btn">Подробнее</a>
                 </div>
@@ -72,12 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     title: product.name,
                     price: product.price,
                     image: product.images[0],
-                    size: product.sizes[0] || 'M', // Используем первый доступный размер или M по умолчанию
                     quantity: 1
                 };
 
                 const existingItemIndex = cart.findIndex(item => 
-                    item.id === productData.id && item.size === productData.size
+                    item.id === productData.id
                 );
 
                 if (existingItemIndex !== -1) {

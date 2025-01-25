@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Контакты PIN-UP Sportswear - свяжитесь с нами для получения информации о доставке, оплате и других вопросах."
+      content="Контакты PIN-UP Eyewear - свяжитесь с нами для получения информации о доставке, оплате и других вопросах."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Контакты - PIN-UP Sportswear</title>
+    <title>Контакты - PIN-UP Eyewear</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -26,7 +26,7 @@
           <a href="index.html" class="logo">
             <img
               src="images/logo.svg"
-              alt="PIN-UP Sportswear"
+              alt="PIN-UP Eyewear"
               class="logo__img"
             />
           </a>
@@ -44,7 +44,7 @@
                   <svg>
                     <use xlink:href="images/icons.svg#icon-about"></use>
                   </svg>
-                  О бренде
+                  Акции
                 </a>
               </li>
               <li>
@@ -52,7 +52,7 @@
                   <svg>
                     <use xlink:href="images/icons.svg#icon-article"></use>
                   </svg>
-                  Блог
+                  Полезные статьи
                 </a>
               </li>
               <li>
@@ -100,13 +100,13 @@
         <li class="mobile-nav__item">
           <a href="about.html" class="mobile-nav__link">
             <svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
-            О бренде
+            Акции
           </a>
         </li>
         <li class="mobile-nav__item">
           <a href="blog.html" class="mobile-nav__link">
             <svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
-            Блог
+            Полезные статьи
           </a>
         </li>
         <li class="mobile-nav__item">
@@ -247,8 +247,8 @@
                 Email
               </h3>
               <p class="contact-block__text">
-                <a href="mailto:pinupsportswear@gmail.com"
-                  >pinupsportswear@gmail.com</a
+                <a href="mailto:pinupeyewear@gmail.com"
+                  >pinupeyewear@gmail.com</a
                 >
               </p>
             </div>
@@ -316,20 +316,21 @@
             <a href="index.html" class="logo">
               <img
                 src="images/logo.svg"
-                alt="PIN-UP Sportswear"
+                alt="PIN-UP Eyewear"
                 class="logo__img"
               />
             </a>
             <p class="footer__text">
-              Спортивная одежда и аксессуары премиального качества
+              Стильные очки и аксессуары премиального качества
+
             </p>
           </div>
           <div class="footer__column">
             <h4 class="footer__title">Меню</h4>
             <ul class="footer__list">
               <li><a href="catalog.html">Каталог</a></li>
-              <li><a href="about.html">О бренде</a></li>
-              <li><a href="blog.html">Блог</a></li>
+              <li><a href="about.html">Акции</a></li>
+              <li><a href="blog.html">Полезные статьи</a></li>
               <li><a href="contacts.html">Контакты</a></li>
             </ul>
           </div>
@@ -347,8 +348,8 @@
             <ul class="footer__list">
               <li><a href="tel:+75392814760">+7 539 281 47 60</a></li>
               <li>
-                <a href="mailto:pinupsportswear@gmail.com"
-                  >pinupsportswear@gmail.com</a
+                <a href="mailto:pinupeyewear@gmail.com"
+                  >pinupeyewear@gmail.com</a
                 >
               </li>
             </ul>
@@ -376,12 +377,37 @@
         </div>
         <div class="footer__bottom">
           <p class="footer__copyright">
-            © 2024 PIN-UP Sportswear. Все права защищены
+            © 2024 PIN-UP Eyewear. Все права защищены
           </p>
         </div>
       </div>
     </footer>
 
+    <!-- Виджет чата -->
+    <div class="chat-widget">
+        <button class="chat-button" id="chatButton">
+            <svg><use xlink:href="images/icons.svg#icon-chat"></use></svg>
+        </button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h3>Онлайн-чат</h3>
+                <button class="chat-close" id="chatClose">
+                    <svg><use xlink:href="images/icons.svg#icon-close"></use></svg>
+                </button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message support">
+                    Здравствуйте! Как я могу вам помочь?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Введите сообщение..." id="chatInput">
+                <button id="chatSend">Отправить</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/main.js"></script>
+    <script src="js/chat.js"></script>
   </body>
 </html>

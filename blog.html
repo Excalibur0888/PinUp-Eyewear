@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-		<meta name="description" content="Блог PIN-UP Sportswear - полезные статьи о спорте и стиле. Узнавайте о трендах и советы от профессионалов.">
+		<meta name="description" content="Полезные статьи PIN-UP Eyewear - полезные статьи о спорте и стиле. Узнавайте о трендах и советы от профессионалов.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Блог - PIN-UP Sportswear</title>
+    <title>Полезные статьи - PIN-UP Eyewear</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
 			<div class="container">
 					<div class="header__wrapper">
 							<a href="index.html" class="logo">
-									<img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
+									<img src="images/logo.svg" alt="PIN-UP Eyewear" class="logo__img">
 							</a>
 							
 							<nav class="nav">
@@ -27,11 +27,11 @@
 											</a></li>
 											<li><a href="about.html" class="nav__link">
 													<svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
-													О бренде
+													Акции
 											</a></li>
 											<li><a href="blog.html" class="nav__link">
 													<svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
-													Блог
+													Полезные статьи
 											</a></li>
 											<li><a href="contacts.html" class="nav__link">
 													<svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
@@ -74,13 +74,13 @@
             <li class="mobile-nav__item">
                 <a href="about.html" class="mobile-nav__link">
                     <svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
-                    О бренде
+                    Акции
                 </a>
             </li>
             <li class="mobile-nav__item">
                 <a href="blog.html" class="mobile-nav__link">
                     <svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
-                    Блог
+                    Полезные статьи
                 </a>
             </li>
             <li class="mobile-nav__item">
@@ -125,255 +125,124 @@
     </div>
 
     <main>
-    <!-- Блог -->
+    <!-- Полезные статьи -->
     <section class="blog">
         <div class="container">
-            <h1 class="section-title">Блог о спорте и стиле</h1>
+            <h1 class="section-title">Полезные статьи об очках</h1>
             
-            <!-- Категории блога -->
-            <div class="blog__categories">
-                <button class="blog-category active" data-category="all">Все статьи</button>
-                <button class="blog-category" data-category="workouts">Тренировки</button>
-                <button class="blog-category" data-category="nutrition">Питание</button>
-                <button class="blog-category" data-category="fashion">Мода</button>
-                <button class="blog-category" data-category="tips">Советы</button>
-            </div>
+            <!-- Статья 1: Как выбрать очки по форме лица -->
+            <article class="article">
+                <h2 class="article__title">Как выбрать очки по форме лица?</h2>
+                <div class="article__meta">
+                    <span><svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg> 15.03.2024</span>
+                    <span><svg><use xlink:href="images/icons.svg#icon-eye"></use></svg> 2150 просмотров</span>
+                </div>
+                
+                <div class="article__content">
+                    <img src="images/face-shapes-main.jpg" alt="Основные формы лица" class="article__image">
+                    
+                    <p>Выбор правильной оправы очков - это не только вопрос стиля, но и способ подчеркнуть ваши лучшие черты. Давайте разберем, какие очки подходят для разных типов лица.</p>
+                    
+                    <h3>Овальное лицо</h3>
+                    <img src="images/oval-face.jpg" alt="Очки для овального лица" class="article__image-small">
+                    <p>Считается идеальной формой, подходящей практически для любых оправ. Рекомендации:</p>
+                    <ul>
+                        <li>Выбирайте оправы, ширина которых равна самой широкой части лица</li>
+                        <li>Подойдут квадратные, прямоугольные и овальные формы</li>
+                        <li>Избегайте слишком крупных оправ, которые могут нарушить баланс черт</li>
+                    </ul>
 
-            <!-- Статьи -->
-            <div class="blog__grid">
-                <!-- Статья 1 -->
-                <article class="blog-card" data-category="tips">
-                    <div class="blog-card__image">
-                        <img src="images/post1.jpg" alt="Эффективные тренировки">
-                        <div class="blog-card__category">Советы</div>
-                    </div>
-                    <div class="blog-card__content">
-                        <h3 class="blog-card__title">10 эффективных упражнений для всего тела</h3>
-                        <p class="blog-card__excerpt">Узнайте о комплексе упражнений, которые помогут вам поддерживать форму и улучшить здоровье.</p>
-                        <div class="blog-card__meta">
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
-                                15.03.2024
-                            </span>
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
-                                1250
-                            </span>
-                        </div>
-                        <a href="index.html" class="blog-card__link">Читать далее 
-                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
-                        </a>
-                    </div>
-                </article>
+                    <h3>Круглое лицо</h3>
+                    <img src="images/round-face.jpg" alt="Очки для круглого лица" class="article__image-small">
+                    <p>Чтобы визуально удлинить лицо и сделать его более стройным:</p>
+                    <ul>
+                        <li>Выбирайте угловатые и прямоугольные оправы</li>
+                        <li>Отдавайте предпочтение узким оправам</li>
+                        <li>Избегайте круглых и овальных форм</li>
+                    </ul>
 
-                <!-- Статья 2 -->
-                <article class="blog-card" data-category="nutrition">
-                    <div class="blog-card__image">
-                        <img src="images/post2.jpg" alt="Правильное питание">
-                        <div class="blog-card__category">Питание</div>
-                    </div>
-                    <div class="blog-card__content">
-                        <h3 class="blog-card__title">Правильное питание для активного образа жизни</h3>
-                        <p class="blog-card__excerpt">Рассказываем о принципах здорового питания и его влиянии на спортивные результаты.</p>
-                        <div class="blog-card__meta">
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
-                                12.03.2024
-                            </span>
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
-                                980
-                            </span>
-                        </div>
-                        <a href="index.html" class="blog-card__link">Читать далее 
-                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
-                        </a>
-                    </div>
-                </article>
+                    <h3>Квадратное лицо</h3>
+                    <img src="images/square-face.jpg" alt="Очки для квадратного лица" class="article__image-small">
+                    <p>Чтобы смягчить угловатые черты:</p>
+                    <ul>
+                        <li>Выбирайте круглые или овальные оправы</li>
+                        <li>Подойдут оправы с плавными линиями</li>
+                        <li>Избегайте квадратных и прямоугольных форм</li>
+                    </ul>
 
-                <!-- Статья 3 -->
-                <article class="blog-card" data-category="fashion">
-                    <div class="blog-card__image">
-                        <img src="images/post3.jpg" alt="Тренды спортивной моды">
-                        <div class="blog-card__category">Мода</div>
-                    </div>
-                    <div class="blog-card__content">
-                        <h3 class="blog-card__title">Тренды спортивной моды 2024</h3>
-                        <p class="blog-card__excerpt">Обзор главных трендов в спортивной одежде этого сезона и советы по созданию стильных образов.</p>
-                        <div class="blog-card__meta">
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
-                                10.03.2024
-                            </span>
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
-                                1560
-                            </span>
-                        </div>
-                        <a href="index.html" class="blog-card__link">Читать далее 
-                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
-                        </a>
-                    </div>
-                </article>
+                    <h3>Треугольное лицо</h3>
+                    <img src="images/triangle-face.jpg" alt="Очки для треугольного лица" class="article__image-small">
+                    <p>Для баланса широкой верхней части лица с узким подбородком:</p>
+                    <ul>
+                        <li>Выбирайте оправы "кошачий глаз"</li>
+                        <li>Подойдут оправы с декором в верхней части</li>
+                        <li>Избегайте массивных нижних частей оправы</li>
+                    </ul>
+                </div>
+            </article>
 
-                <!-- Статья 4 -->
-                <article class="blog-card" data-category="tips">
-                    <div class="blog-card__image">
-                        <img src="images/post4.jpg" alt="Советы для начинающих">
-                        <div class="blog-card__category">Советы</div>
-                    </div>
-                    <div class="blog-card__content">
-                        <h3 class="blog-card__title">5 советов для начинающих спортсменов</h3>
-                        <p class="blog-card__excerpt">Полезные рекомендации, которые помогут новичкам избежать распространенных ошибок.</p>
-                        <div class="blog-card__meta">
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
-                                08.03.2024
-                            </span>
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
-                                890
-                            </span>
-                        </div>
-                        <a href="index.html" class="blog-card__link">Читать далее 
-                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
-                        </a>
-                    </div>
-                </article>
+            <!-- Статья 2: Советы по уходу за очками -->
+            <article class="article">
+                <h2 class="article__title">Советы по уходу за очками</h2>
+                <div class="article__meta">
+                    <span><svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg> 12.03.2024</span>
+                    <span><svg><use xlink:href="images/icons.svg#icon-eye"></use></svg> 1980 просмотров</span>
+                </div>
+                
+                <div class="article__content">
+                    <img src="images/glasses-care-main.jpg" alt="Уход за очками" class="article__image">
+                    
+                    <p>Правильный уход за очками не только продлевает срок их службы, но и обеспечивает комфортное использование. Рассмотрим основные правила ухода за очками.</p>
 
-                <!-- Статья 5 -->
-                <article class="blog-card" data-category="workouts">
-                    <div class="blog-card__image">
-                        <img src="images/post5.jpg" alt="Йога для начинающих">
-                        <div class="blog-card__category">Тренировки</div>
-                    </div>
-                    <div class="blog-card__content">
-                        <h3 class="blog-card__title">Йога для начинающих: с чего начать</h3>
-                        <p class="blog-card__excerpt">Базовые асаны и советы по правильному выполнению упражнений для новичков.</p>
-                        <div class="blog-card__meta">
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
-                                05.03.2024
-                            </span>
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
-                                720
-                            </span>
-                        </div>
-                        <a href="index.html" class="blog-card__link">Читать далее 
-                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
-                        </a>
-                    </div>
-                </article>
+                    <h3>Ежедневная очистка</h3>
+                    <img src="images/glasses-cleaning.jpg" alt="Очистка очков" class="article__image-small">
+                    <p>Основные правила очистки линз:</p>
+                    <ul>
+                        <li>Промывайте очки теплой водой</li>
+                        <li>Используйте специальное средство для очистки линз</li>
+                        <li>Протирайте только микрофиброй</li>
+                        <li>Не используйте бумажные салфетки или одежду</li>
+                    </ul>
 
-                <!-- Статья 6 -->
-                <article class="blog-card" data-category="nutrition">
-                    <div class="blog-card__image">
-                        <img src="images/post6.jpg" alt="Здоровые перекусы">
-                        <div class="blog-card__category">Питание</div>
-                    </div>
-                    <div class="blog-card__content">
-                        <h3 class="blog-card__title">Здоровые перекусы для спортсменов</h3>
-                        <p class="blog-card__excerpt">Подборка полезных и питательных снеков для поддержания энергии во время тренировок.</p>
-                        <div class="blog-card__meta">
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
-                                03.03.2024
-                            </span>
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
-                                650
-                            </span>
-                        </div>
-                        <a href="index.html" class="blog-card__link">Читать далее 
-                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
-                        </a>
-                    </div>
-                </article>
+                    <h3>Правильное хранение</h3>
+                    <img src="images/glasses-storage.jpg" alt="Хранение очков" class="article__image-small">
+                    <p>Как правильно хранить очки:</p>
+                    <ul>
+                        <li>Всегда храните в футляре</li>
+                        <li>Кладите очки линзами вверх</li>
+                        <li>Избегайте высоких температур</li>
+                        <li>Не оставляйте в машине в жаркую погоду</li>
+                    </ul>
 
-                <!-- Статья 7 -->
-                <article class="blog-card" data-category="workouts">
-                    <div class="blog-card__image">
-                        <img src="images/post7.jpg" alt="Кроссфит тренировки">
-                        <div class="blog-card__category">Тренировки</div>
-                    </div>
-                    <div class="blog-card__content">
-                        <h3 class="blog-card__title">Кроссфит: программа тренировок для начинающих</h3>
-                        <p class="blog-card__excerpt">Полное руководство по началу занятий кроссфитом: техника, программа и советы.</p>
-                        <div class="blog-card__meta">
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
-                                01.03.2024
-                            </span>
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
-                                850
-                            </span>
-                        </div>
-                        <a href="index.html" class="blog-card__link">Читать далее 
-                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
-                        </a>
-                    </div>
-                </article>
+                    <h3>Защита от повреждений</h3>
+                    <img src="images/glasses-protection.jpg" alt="Защита очков" class="article__image-small">
+                    <p>Как избежать повреждений:</p>
+                    <ul>
+                        <li>Снимайте и надевайте очки двумя руками</li>
+                        <li>Не кладите очки линзами вниз</li>
+                        <li>Избегайте контакта с косметикой</li>
+                        <li>Регулярно проверяйте и подтягивайте винты</li>
+                    </ul>
 
-                <!-- Статья 8 -->
-                <article class="blog-card" data-category="fashion">
-                    <div class="blog-card__image">
-                        <img src="images/post8.jpg" alt="Спортивная обувь">
-                        <div class="blog-card__category">Мода</div>
-                    </div>
-                    <div class="blog-card__content">
-                        <h3 class="blog-card__title">Как выбрать идеальные кроссовки для тренировок</h3>
-                        <p class="blog-card__excerpt">Гид по выбору спортивной обуви: на что обращать внимание при покупке.</p>
-                        <div class="blog-card__meta">
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
-                                28.02.2024
-                            </span>
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
-                                920
-                            </span>
-                        </div>
-                        <a href="index.html" class="blog-card__link">Читать далее 
-                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Статья 9 -->
-                <article class="blog-card" data-category="tips">
-                    <div class="blog-card__image">
-                        <img src="images/post9.jpg" alt="Восстановление после тренировок">
-                        <div class="blog-card__category">Советы</div>
-                    </div>
-                    <div class="blog-card__content">
-                        <h3 class="blog-card__title">Правильное восстановление после интенсивных тренировок</h3>
-                        <p class="blog-card__excerpt">Комплексный подход к восстановлению: питание, сон, массаж и другие методы.</p>
-                        <div class="blog-card__meta">
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-calendar"></use></svg>
-                                25.02.2024
-                            </span>
-                            <span>
-                                <svg><use xlink:href="images/icons.svg#icon-eye"></use></svg>
-                                780
-                            </span>
-                        </div>
-                        <a href="index.html" class="blog-card__link">Читать далее 
-                            <svg><use xlink:href="images/icons.svg#icon-arrow-right"></use></svg>
-                        </a>
-                    </div>
-                </article>
-            </div>
+                    <h3>Профессиональный уход</h3>
+                    <img src="images/glasses-professional.jpg" alt="Профессиональный уход" class="article__image-small">
+                    <p>Рекомендации по профессиональному обслуживанию:</p>
+                    <ul>
+                        <li>Регулярно проверяйте очки у оптика</li>
+                        <li>Выполняйте профессиональную чистку раз в полгода</li>
+                        <li>Своевременно меняйте износившиеся детали</li>
+                        <li>Обращайтесь к специалистам при любых повреждениях</li>
+                    </ul>
+                </div>
+            </article>
         </div>
     </section>
 
-    <!-- Подписка на блог -->
+    <!-- Подписка на Полезные статьи -->
     <section class="blog-subscribe">
         <div class="container">
             <div class="blog-subscribe__wrapper">
-                <h2 class="blog-subscribe__title">Подпишитесь на наш блог</h2>
+                <h2 class="blog-subscribe__title">Подпишитесь на наши полезные статьи</h2>
                 <p class="blog-subscribe__text">Получайте свежие статьи и новости о спорте, здоровье и стиле</p>
                 <form action="thanks_form.php" method="post" class="blog-subscribe__form">
                     <input type="email" class="blog-subscribe__input" placeholder="Ваш email">
@@ -395,16 +264,17 @@
             <div class="footer__grid">
                 <div class="footer__column">
                     <a href="index.html" class="logo">
-                        <img src="images/logo.svg" alt="PIN-UP Sportswear" class="logo__img">
+                        <img src="images/logo.svg" alt="PIN-UP Eyewear" class="logo__img">
                     </a>
-                    <p class="footer__text">Спортивная одежда и аксессуары премиального качества</p>
+                    <p class="footer__text">Стильные очки и аксессуары премиального качества
+</p>
                 </div>
                 <div class="footer__column">
                     <h4 class="footer__title">Меню</h4>
                     <ul class="footer__list">
                         <li><a href="catalog.html">Каталог</a></li>
-                        <li><a href="about.html">О бренде</a></li>
-                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">Акции</a></li>
+                        <li><a href="blog.html">Полезные статьи</a></li>
                         <li><a href="contacts.html">Контакты</a></li>
                     </ul>
                 </div>
@@ -419,7 +289,7 @@
                     <h4 class="footer__title">Контакты</h4>
                     <ul class="footer__list">
                         <li><a href="tel:+75392814760">+7 539 281 47 60</a></li>
-                        <li><a href="mailto:pinupsportswear@gmail.com">pinupsportswear@gmail.com</a></li>
+                        <li><a href="mailto:pinupeyewear@gmail.com">pinupeyewear@gmail.com</a></li>
                     </ul>
                     <div class="social">
                         <a href="index.html" class="social__link" title="Instagram">
@@ -438,7 +308,7 @@
                 </div>
             </div>
             <div class="footer__bottom">
-                <p class="footer__copyright">© 2024 PIN-UP Sportswear. Все права защищены</p>
+                <p class="footer__copyright">© 2024 PIN-UP Eyewear. Все права защищены</p>
             </div>
         </div>
     </footer>

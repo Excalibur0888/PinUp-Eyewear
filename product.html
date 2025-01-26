@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+		<meta name="description" content="Страница товара PIN-UP Eyewear - спортивная футболка Pro. Узнайте о характеристиках, стиле и доступных размерах.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спортивная футболка Pro - PIN-UP Eyewear</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Подключаем SVG спрайт -->
+    <object id="svg-sprite" type="image/svg+xml" data="images/icons.svg" style="display: none;"></object>
+
+    <!-- Хедер -->
+    <header class="header">
+			<div class="container">
+					<div class="header__wrapper">
+							<a href="index.html" class="logo">
+									<img src="images/logo.svg" alt="PIN-UP Eyewear" class="logo__img">
+							</a>
+							
+							<nav class="nav">
+									<ul class="nav__list">
+											<li><a href="catalog.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-menu"></use></svg>
+													Каталог
+											</a></li>
+											<li><a href="about.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
+													Акции
+											</a></li>
+											<li><a href="blog.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
+													Полезные статьи
+											</a></li>
+											<li><a href="contacts.html" class="nav__link">
+													<svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+													Контакты
+											</a></li>
+									</ul>
+							</nav>
+
+							<div class="header__controls">
+									<button class="btn-icon search-btn">
+											<svg><use xlink:href="images/icons.svg#icon-search"></use></svg>
+									</button>
+									
+									<a href="cart.html" class="btn-icon">
+											<svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
+									</a>
+									<a href="account.html" class="btn-icon">
+											<svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
+									</a>
+							</div>
+
+							<button class="burger-menu">
+									<span></span>
+									<span></span>
+									<span></span>
+							</button>
+					</div>
+			</div>
+	</header>
+
+    <!-- Мобильная навигация -->
+    <nav class="adaptive">
+        <ul class="adaptive__list">
+            <li class="adaptive__item">
+                <a href="catalog.html" class="adaptive__link">
+                    <svg><use xlink:href="images/icons.svg#icon-menu"></use></svg>
+                    Каталог
+                </a>
+            </li>
+            <li class="adaptive__item">
+                <a href="about.html" class="adaptive__link">
+                    <svg><use xlink:href="images/icons.svg#icon-about"></use></svg>
+                    Акции
+                </a>
+            </li>
+            <li class="adaptive__item">
+                <a href="blog.html" class="adaptive__link">
+                    <svg><use xlink:href="images/icons.svg#icon-article"></use></svg>
+                    Полезные статьи
+                </a>
+            </li>
+            <li class="adaptive__item">
+                <a href="contacts.html" class="adaptive__link">
+                    <svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+                    Контакты
+                </a>
+            </li>
+            
+            <li class="adaptive__item">
+                <a href="cart.html" class="adaptive__link">
+                    <svg><use xlink:href="images/icons.svg#icon-cart"></use></svg>
+                    Корзина
+                </a>
+            </li>
+            <li class="adaptive__item">
+                <a href="account.html" class="adaptive__link">
+                    <svg><use xlink:href="images/icons.svg#icon-user"></use></svg>
+                    Личный кабинет
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Поиск -->
+    <div class="search-form">
+			<div class="search-form__overlay"></div>
+			<div class="search-form__content">
+					<div class="container">
+							<div class="search-form__header">
+									<h3 class="search-form__title">Поиск</h3>
+									<button class="search-close">
+											<svg><use xlink:href="images/icons.svg#icon-close"></use></svg>
+									</button>
+							</div>
+							<div class="search-form__body">
+									<input type="text" class="search-input" placeholder="Введите запрос...">
+									<div class="search-results"></div>
+							</div>
+					</div>
+			</div>
+	</div>
+<main>
+    <!-- Страница товара -->
+    <section class="product">
+        <div class="container">
+            <div class="product__wrapper">
+                <!-- Галерея товара -->
+                <div class="product__gallery">
+                    <div class="product__slider">
+                        <div class="product__slide active">
+                            <img src="images/aviator1.jpg" alt="Очки авиатор">
+                    </div>
+                    </div>
+                </div>
+
+                <!-- Информация о товаре -->
+                <div class="product__info">
+                    <h1 class="product__title">Очки авиатор</h1>
+                    
+                    <div class="product__rating">
+                        <div class="stars">
+                            <svg class="star"><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg class="star"><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg class="star"><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg class="star"><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg class="star"><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                        </div>
+                        <a href="#main__reviews" class="product__rating-count">2 отзыва</a>
+                    </div>
+
+                    <div class="product__price">2 990 ₽</div>
+
+                    <div class="product__actions">
+                        <button class="btn btn--primary product__add-to-cart">
+                            <span class="btn-text">Добавить в корзину</span>
+                        </button>
+                        <button style="display: none;" class="product__favorite">
+                        </button>
+                    </div>
+
+                    <!-- Характеристики -->
+                    <div class="product__why__choose">
+                        <h3 class="product__subtitle">Характеристики</h3>
+                        <ul>
+                            <li><strong>Материал оправы:</strong> Ацетат целлюлозы</li>
+                            <li><strong>Материал линз:</strong> Поликарбонат</li>
+                            <li><strong>Защита UV:</strong> 400</li>
+                            <li><strong>Размер оправы:</strong> 54-18-145</li>
+                            <li><strong>Вес:</strong> 28 г</li>
+                        </ul>
+                    </div>
+
+                    <!-- Комплектность -->
+                    <div class="product__care">
+											<br/>
+                        <h3 class="product__subtitle">Комплектность</h3>
+                        <ul>
+                            <li>Солнцезащитные очки</li>
+                            <li>Фирменный футляр</li>
+                            <li>Салфетка для протирки линз</li>
+                            <li>Гарантийный талон</li>
+                            <li>Паспорт изделия</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Отзывы -->
+            <section class="testimonials">
+                <h2 class="section-title">Отзывы наших клиентов</h2>
+                <div id="main__reviews" class="testimonials__list">
+                    <div class="testimonials__item">
+                        <div class="testimonials__rating">
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                        </div>
+                        <div class="testimonials__badge">
+                            <svg><use xlink:href="images/icons.svg#icon-check"></use></svg>
+                            Проверенный покупатель
+                        </div>
+                        <p class="testimonials__text">Великолепные очки! Качество линз на высоте, защита от солнца отличная. Оправа сидит комфортно, не давит за ушами. Очень стильно смотрятся.</p>
+                        <div class="testimonials__author">Мария Соколова</div>
+                        <div class="testimonials__date">15 марта 2024</div>
+                    </div>
+
+                    <div class="testimonials__item">
+                        <div class="testimonials__rating">
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                            <svg><use xlink:href="images/icons.svg#icon-star"></use></svg>
+                        </div>
+                        <div class="testimonials__badge">
+                            <svg><use xlink:href="images/icons.svg#icon-check"></use></svg>
+                            Проверенный покупатель
+                        </div>
+                        <p class="testimonials__text">Ношу эти очки уже месяц, полностью доволен. Линзы не царапаются, UV защита работает отлично. Комплектация порадовала - чехол очень качественный.</p>
+                        <div class="testimonials__author">Александр Волков</div>
+                        <div class="testimonials__date">10 марта 2024</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- С этим товаром покупают -->
+    <section class="suggestions">
+        <div class="container">
+            <h2 class="section-title">С этим товаром покупают</h2>
+            <div class="suggestions__grid">
+                <div class="suggestions__item" data-product-id="7">
+                    <div class="suggestions__image">
+                        <img src="images/case1.webp" alt="Футляр для очков">
+                    </div>
+                    <div class="suggestions__content">
+                        <h3 class="suggestions__title">Футляр для очков Premium</h3>
+                        <div class="suggestions__category">Аксессуары для очков</div>
+                        <div class="suggestions__price">1 490 ₽</div>
+                        <button class="btn btn--outline suggestions__btn">В корзину</button>
+                    </div>
+                </div>
+
+                <div class="suggestions__item" data-product-id="8">
+                    <div class="suggestions__image">
+                        <img src="images/cleaner1.jpg" alt="Набор для чистки очков">
+                    </div>
+                    <div class="suggestions__content">
+                        <h3 class="suggestions__title">Набор для чистки очков</h3>
+                        <div class="suggestions__category">Уход за очками</div>
+                        <div class="suggestions__price">990 ₽</div>
+                        <button class="btn btn--outline suggestions__btn">В корзину</button>
+                    </div>
+                </div>
+
+                <div class="suggestions__item" data-product-id="9">
+                    <div class="suggestions__image">
+                        <img src="images/chain1.webp" alt="Цепочка для очков">
+                    </div>
+                    <div class="suggestions__content">
+                        <h3 class="suggestions__title">Цепочка для очков</h3>
+                        <div class="suggestions__category">Аксессуары для очков</div>
+                        <div class="suggestions__price">790 ₽</div>
+                        <button class="btn btn--outline suggestions__btn">В корзину</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	</main>
+
+    <!-- Футер -->
+    <footer class="footer">
+			<div class="container">
+					<!-- Верхняя часть футера -->
+					<section class="footer__top">
+							<div class="footer__newsletter">
+									<h3 class="footer__newsletter-title">Подпишитесь на наши новости</h3>
+									<p class="footer__newsletter-text">Будьте в курсе новых коллекций и специальных предложений</p>
+									<form action="thanks_form.php" method="post" class="footer__form">
+											<div class="footer__form-group">
+													<input type="email" class="footer__input" placeholder="Введите ваш email" required>
+													<button type="submit" class="btn btn--primary">Подписаться</button>
+											</div>
+											<div class="footer__form-checkbox">
+													<label class="checkbox checkbox--light">
+															<input type="checkbox" required>
+															<span>Я согласен с <a href="privacy-policy.html" class="footer__policy-link">политикой конфиденциальности</a></span>
+													</label>
+											</div>
+									</form>
+							</div>
+					</section>
+
+					<!-- Основная часть футера -->
+					<section class="footer__grid">
+							<!-- Информация о компании -->
+							<div class="footer__column">
+									<a href="index.html" class="logo footer__logo">
+											<img src="images/logo.svg" alt="PIN-UP Eyewear" class="logo__img">
+									</a>
+									<p class="footer__text">Стильные очки и аксессуары премиального качества</p>
+									<div class="footer__social">
+											<a href="index.html" class="footer__social-link" aria-label="Instagram">
+													<svg><use xlink:href="images/icons.svg#icon-instagram"></use></svg>
+											</a>
+											<a href="index.html" class="footer__social-link" aria-label="Facebook">
+													<svg><use xlink:href="images/icons.svg#icon-facebook"></use></svg>
+											</a>
+											<a href="index.html" class="footer__social-link" aria-label="Telegram">
+													<svg><use xlink:href="images/icons.svg#icon-telegram"></use></svg>
+											</a>
+									</div>
+							</div>
+
+							<!-- Навигация -->
+							<div class="footer__column">
+									<h4 class="footer__title">Навигация</h4>
+									<ul class="footer__list">
+											<li><a href="catalog.html" class="footer__link">Каталог</a></li>
+											<li><a href="about.html" class="footer__link">О нас</a></li>
+											<li><a href="blog.html" class="footer__link">Блог</a></li>
+											<li><a href="contacts.html" class="footer__link">Контакты</a></li>
+									</ul>
+							</div>
+
+							<!-- Категории -->
+							<div class="footer__column">
+									<h4 class="footer__title">Категории</h4>
+									<ul class="footer__list">
+											<li><a href="catalog.html?category=aviator" class="footer__link">Авиаторы</a></li>
+											<li><a href="catalog.html?category=sport" class="footer__link">Спортивные очки</a></li>
+											<li><a href="catalog.html?category=fashion" class="footer__link">Стильные очки</a></li>
+											<li><a href="catalog.html?category=new" class="footer__link">Новинки</a></li>
+									</ul>
+							</div>
+							<!-- Контакты -->
+							<div class="footer__column">
+									<h4 class="footer__title">Контакты</h4>
+									<ul class="footer__list footer__list--contacts">
+											<li class="footer__contact-item">
+													<svg><use xlink:href="images/icons.svg#icon-map"></use></svg>
+													<span>ул. Зенгир 1, Астана 010010, Казахстан</span>
+											</li>
+											<li class="footer__contact-item">
+													<svg><use xlink:href="images/icons.svg#icon-phone"></use></svg>
+													<a href="tel:+75392814760" class="footer__link">+7 539 281 47 60</a>
+											</li>
+											<li class="footer__contact-item">
+													<svg><use xlink:href="images/icons.svg#icon-mail"></use></svg>
+													<a href="mailto:pinupeyewear@gmail.com" class="footer__link">pinupeyewear@gmail.com</a>
+											</li>
+											<li class="footer__contact-item">
+													<svg><use xlink:href="images/icons.svg#icon-clock"></use></svg>
+													<span>Пн-Вс: 10:00 - 22:00</span>
+											</li>
+									</ul>
+							</div>
+					</section>
+
+					<!-- Нижняя часть футера -->
+					<div class="footer__bottom">
+							<div class="footer__bottom-content">
+									<p class="footer__copyright">© 2024 PIN-UP Eyewear. Все права защищены</p>
+									<div class="footer__links">
+											<a href="privacy-policy.html" class="footer__bottom-link">Политика конфиденциальности</a>
+											<a href="terms-conditions.html" class="footer__bottom-link">Пользовательское соглашение</a>
+									</div>
+							</div>
+					</div>
+			</div>
+	</footer>
+
+    <!-- Подключаем скрипты -->
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html> 

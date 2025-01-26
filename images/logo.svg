@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Фоновые элементы -->
+    <path d="M10 0L170 0C175.523 0 180 4.47715 180 10V50C180 55.5228 175.523 60 170 60H10C4.47715 60 0 55.5228 0 50V10C0 4.47715 4.47715 0 10 0Z" fill="#2032ff"/>
+    
+    <!-- Декоративные линии -->
+    <path d="M0 30H180" stroke="rgba(255,255,255,0.1)" stroke-width="40"/>
+    
+    <!-- PIN-UP текст -->
+    <g filter="url(#shadow)">
+        <!-- P -->
+        <path d="M40 15H55C58 15 60 17 60 20V25C60 28 58 30 55 30H47V45H40V15ZM47 24H53C54 24 54 23 54 22V21C54 20 54 19 53 19H47V24Z" fill="white"/>
+        <!-- I -->
+        <path d="M65 15H72V45H65V15Z" fill="white"/>
+        <!-- N -->
+        <path d="M80 15H87L95 30V15H102V45H95L87 30V45H80V15Z" fill="white"/>
+        <!-- - -->
+        <path d="M107 27H122V33H107V27Z" fill="white"/>
+        <!-- U -->
+        <path d="M127 15H134V35C134 38 135 39 137 39C139 39 140 38 140 35V15H147V35C147 42 143 46 137 46C131 46 127 42 127 35V15Z" fill="white"/>
+        <!-- P -->
+        <path d="M152 15H167C170 15 172 17 172 20V25C172 28 170 30 167 30H159V45H152V15ZM159 24H165C166 24 166 23 166 22V21C166 20 166 19 165 19H159V24Z" fill="white"/>
+    </g>
+    
+    <!-- Декоративные элементы -->
+    <path d="M20 30L30 20M20 20L30 30" stroke="white" stroke-width="2"/>
+    <path d="M150 30L160 20M150 20L160 30" stroke="white" stroke-width="2"/>
+    
+    <!-- Блики -->
+    <circle cx="25" cy="15" r="2" fill="rgba(255,255,255,0.5)"/>
+    <circle cx="155" cy="15" r="2" fill="rgba(255,255,255,0.5)"/>
+    
+    <!-- Фильтр для тени -->
+    <defs>
+        <filter id="shadow" x="-2" y="-2" width="184" height="64" filterUnits="userSpaceOnUse">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+        </filter>
+    </defs>
+</svg> 

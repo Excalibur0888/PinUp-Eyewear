@@ -4251,7 +4251,7 @@ svg {
     display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .main__reviews__grid {
         grid-template-columns: 1fr;
     }
@@ -4946,7 +4946,7 @@ svg {
 .chat-window {
     position: fixed;
     bottom: 100px;
-    right: 30px;
+    right: 20px;
     width: 350px;
     height: 450px;
     background: #fff;
@@ -4956,6 +4956,13 @@ svg {
     flex-direction: column;
     overflow: hidden;
     z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .chat-window {
+        width: 320px;
+        border-radius: 0;
+    }
 }
 
 .chat-window.active {

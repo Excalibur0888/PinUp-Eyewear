@@ -233,64 +233,75 @@ function initSearch() {
     const searchClose = document.querySelector('.search-close');
     const searchBtn = document.querySelector('.search-btn');
 
+    // Проверяем наличие необходимых элементов
+    if (!searchBtn) return; // Если нет кнопки поиска, прекращаем выполнение
+
     // Открытие поиска
     searchBtn.addEventListener('click', () => {
+        if (!searchForm || !searchInput) return;
         searchForm.classList.add('active');
         document.body.classList.add('search-open');
         searchInput.focus();
     });
 
     // Закрытие поиска
-    searchClose.addEventListener('click', () => {
-        searchForm.classList.remove('active');
-        document.body.classList.remove('search-open');
-        searchInput.value = '';
-        searchResults.innerHTML = '';
-    });
-
-    // Обработка поиска
-    searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
-        
-        if (query.length === 0) {
-            searchResults.innerHTML = '';
-            return;
-        }
-
-        const filteredProducts = searchProducts.filter(product => 
-            product.title.toLowerCase().includes(query) ||
-            product.category.toLowerCase().includes(query)
-        );
-
-        if (filteredProducts.length === 0) {
-            searchResults.innerHTML = '<div class="search-empty">Ничего не найдено</div>';
-            return;
-        }
-
-        const html = filteredProducts.map(product => `
-            <a href="product.html?id=${product.id}&title=${encodeURIComponent(product.title)}&price=${encodeURIComponent(product.price)}&image=${encodeURIComponent(product.image)}" class="search-result">
-                <div class="search-result__image">
-                    <img src="${product.image}" alt="${product.title}">
-                </div>
-                <div class="search-result__content">
-                    <div class="search-result__title">${product.title}</div>
-                    <div class="search-result__price">${product.price}</div>
-                </div>
-            </a>
-        `).join('');
-
-        searchResults.innerHTML = html;
-    });
-
-    // Закрытие по клику вне формы
-    document.addEventListener('click', (e) => {
-        if (!searchForm.contains(e.target) && !searchBtn.contains(e.target)) {
+    if (searchClose) {
+        searchClose.addEventListener('click', () => {
+            if (!searchForm || !searchInput || !searchResults) return;
             searchForm.classList.remove('active');
             document.body.classList.remove('search-open');
             searchInput.value = '';
             searchResults.innerHTML = '';
-        }
-    });
+        });
+    }
+
+    // Обработка поиска
+    if (searchInput && searchResults) {
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            
+            if (query.length === 0) {
+                searchResults.innerHTML = '';
+                return;
+            }
+
+            const filteredProducts = searchProducts.filter(product => 
+                product.title.toLowerCase().includes(query) ||
+                product.category.toLowerCase().includes(query)
+            );
+
+            if (filteredProducts.length === 0) {
+                searchResults.innerHTML = '<div class="search-empty">Ничего не найдено</div>';
+                return;
+            }
+
+            const html = filteredProducts.map(product => `
+                <a href="product.html?id=${product.id}&title=${encodeURIComponent(product.title)}&price=${encodeURIComponent(product.price)}&image=${encodeURIComponent(product.image)}" class="search-result">
+                    <div class="search-result__image">
+                        <img src="${product.image}" alt="${product.title}">
+                    </div>
+                    <div class="search-result__content">
+                        <div class="search-result__title">${product.title}</div>
+                        <div class="search-result__price">${product.price}</div>
+                    </div>
+                </a>
+            `).join('');
+
+            searchResults.innerHTML = html;
+        });
+    }
+
+    // Закрытие по клику вне формы
+    if (searchForm && searchBtn && searchInput && searchResults) {
+        document.addEventListener('click', (e) => {
+            if (!searchForm.contains(e.target) && !searchBtn.contains(e.target)) {
+                searchForm.classList.remove('active');
+                document.body.classList.remove('search-open');
+                searchInput.value = '';
+                searchResults.innerHTML = '';
+            }
+        });
+    }
 }
 
 // Делаем функции доступными глобально
